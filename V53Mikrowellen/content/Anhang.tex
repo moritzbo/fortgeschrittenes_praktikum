@@ -2,28 +2,98 @@
 
 \begin{table}
     \centering
-    \caption{hallo}
+    \caption{Gemessene Refelektorspannung mit zugehörigen Amplitdenmaxima der Detektorspannung und Frequenz beim Abtasten nach einzelnen Moden in einem Spannungintervall von $50$-$250 \si{\volt}$.} 
     \label{tab:Messreihe11}
     \begin{tabular}{c | c c c}
         \toprule
-        Mode & Reflektorspannung $U_{R} [\si{\volt}] $ & Detektor Spannung $ U_{Mikrowelle} [\si{\milli\volt}] $ & Frequenz $[\si{\hertz}]$ \\
+        Mode & Reflektorspannung $U_{R} [\si{\volt}] $ & Detektorspannung $ U_{Mikrowelle} [\si{\milli\volt}] $ & Frequenz f $[\si{\mega\hertz}]$ \\
         \midrule
-        212      &     150          &               9036        &        1  \\
-        132      &     170          &               9038        &        2  \\
-        80       &     140          &               9045        &        3  \\
+        1      &      212         &       150              &        9036 \\
+        2      &      132         &       170              &        9038 \\
+        3      &      80          &       140              &        9045 \\
     \end{tabular}
+\end{table}
+ 
+\begin{table}
+    \centering
+    \caption{Gemessene Reflektorspannung und Frequenz an den linken und rechten Rändern der einzelnen Moden in einem Spannungintervall von $50$-$250 \si{\volt}$.}
+    \label{tab:Messreihe12}
+    \begin{tabular}{c | c c | c c}
+        \midrule
+        ~ &  \multicolumn{2}{c}{linker Rand} & \multicolumn{2}{c}{rechter Rand} \\
+        \toprule
+        Mode & Spannung $U_{lM} [\si{\volt}] $ & Frequenz $f_{lM}[\si{\mega\hertz}]$ & Spannung $U_{rM} [\si{\volt}] $ & Frequenz $f_{rM}[\si{\mega\hertz}]$ \\
+        \midrule
+        1     &     220         &            9053            &                200          &              9015      \\
+        2      &    152         &            9075            &                115          &              9017      \\
+        3       &   82          &            9087            &                60           &              8987      \\
+    \end{tabular}
+\end{table}
+
+       \begin{table}
+           \centering
+           \caption{Abstände der gefunden Minima mit der errechneten Differenz.}
+           \label{tab:Messreihe21}
+           \begin{tabular}{c c | c}
+               \toprule
+               Minimum & Abstand $d$ $[\si{\milli\meter}]$ & Differenz der Abstände $ \Delta d$ $ [\si{\milli\meter}]$ \\
+               \midrule
+               1 & 51,00 & \multirow{2}{*}{24,5} \\
+               2 & 75,50 &  \\
+           \end{tabular}
+       \end{table}
+
+
+\begin{table}
+    \centering
+    \caption{Messreihe zur Bestimmung und Überprüfung der Dämüfung des Dämpfgliedes mit Hilfe der SWR.}
+    \label{tab:Messreihe22}
+    \begin{tabular}{c c c}
+        \toprule
+       SWR - Ausschlag $[\si{\dB}]$ & Mikrometereinstellung $[\si{\milli\meter}]$ & Dämpfung aus Eichkurve $[\si{\dB}]$ \\
+        \midrule
+        0   & ~ & ~ \\
+        2   & ~ & ~ \\
+        4   & ~ & ~ \\
+        6   & ~ & ~ \\
+        8   & ~ & ~ \\
+        10  & ~ & ~ \\        
+    \end{tabular}
+\end{table}
+
+
+\begin{table}
+    \centering
+    \caption{Stehwellenmessung direkt mit dem SWR - Messggerät. }
+    \label{tab:Messreihe31}
+    \begin{tabular}{c c c c c}
+        \toprule
+        ~ &  3 & 5 & 7 & 9 \\
+        \midrule
+       SWR & 1,06 & 1,3 & 2,2 & 2,8 \\   
+     \end{tabular}
 \end{table}
 
 \begin{table}
     \centering
-    \caption{hallo}
-    \label{tab:Messreihe11}
-    \begin{tabular}{c || c c c}
+    \caption{Stehwellenmessung mit der 3-dB-Methode.}
+    \label{tab:Messreihe32}
+    \begin{tabular}{c c c c c c }
         \toprule
-        Mode & Reflektorspannung $U_{R} [\si{\volt}] $ & Detektor Spannung $ U_{Mikrowelle} [\si{\milli\volt}] $ & Frequenz $[\si{\hertz}]$ \\
+        Abstand $d_1$ $[\si{\milli\meter}]$ & Abstand $d_2$ $[\si{\milli\meter}]$ & $\text{Min}_1 [\si{\milli\meter}]$&  $\text{Min}_2 [\si{\milli\meter}]$ & $\lambda_g [\si{\milli\meter}]$ & SWR \\
         \midrule
-        212      &     150          &               9036        &        1  \\
-        132      &     170          &               9038        &        2  \\
-        80       &     140          &               9045        &        3  \\
-    \end{tabular}
+        &  &  &  & & \\   
+     \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{Stehwellenmessung mit der Abschwäche-Methode.}
+    \label{tab:Messreihe32}
+    \begin{tabular}{c c c c}
+        \toprule
+        $A_1 [\si{\milli\meter}]$ & $A_2 [\si{\milli\meter}]$ & $A_2 - A_1 [\si{\milli\meter}]$ & SWR \\
+        \midrule
+        &  &  & \\   
+     \end{tabular}
 \end{table}

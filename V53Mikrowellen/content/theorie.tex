@@ -1,12 +1,34 @@
 \section{Theorie}
 
-\subsection{Mikro - und Elektromagnetische Wellen }
+\subsection{Mikrowellen und Elektromagnetische Wellen }
 Mikrowellen beschreiben elektromagnetische Wellen, die sich in einem vorher definierten Frequenzspektrum von 1 bis 300 $\si{\giga\hertz}$ befinden. 
-Sie sind im Elktromagnetischem Spektrum eher dem langwelligen Bereich zuzuordnen, weit jenseits des für uns sichtbaren Lichts.
-Elektromagnetische Wellen lassen sich hinreichend durch die Maxwell Glecihungen beschreiben, ohne jedoch dabei die Teilchen Eigenschaften von Photonen zu berücksichtigen. Im Folgenene Versuch wird sich außschließlich auf die Welleneigenschaften bzeogen.
-Charakteristisch für all diese Wellen ist die im Vakuum ungehinderte Geschwindigkeit sich fortzubewegen, besser bekannt als Lichtgeschwindigkeit. 
-Mit dieser Geschwindigkeit $c$ ????, oder im Falle eines Mediums der entsprechend reduzierten, lässt sihc nun die Wellenlänge mithilfe der Frequenz $\nu$ bestimmen.
+Sie sind, im vergleich zu anderen alltäglichen Wellen, eher dem langwelligen Bereich zuzuordnen, weit jenseits dem für uns sichtbaren Lichts.
+Elektromagnetische Wellen lassen sich hinreichend durch die Maxwell Glecihungen beschreiben, ohne jedoch dabei die Teilchen Eigenschaften der Korpuskeltheorie zu berücksichtigen. Im Folgenene Versuch wird sich außschließlich auf die Welleneigenschaften bezogen.
+Charakteristisch für all diese Wellen ist die im Vakuum definierte Geschwindigkeit sich fortzubewegen, besser bekannt als Lichtgeschwindigkeit. Dort propagiert sie außschließlich als Transversalwelle.
+Mit dieser Geschwindigkeit $c$, oder im Falle eines Mediums der entsprechend reduzierten, lässt sich nun die Wellenlänge mithilfe der Frequenz $\nu$ bestimmen.
 \begin{equation}
 \lambda = c/{\nu}
 \end{equation}
-Das Magnetische Feld verhält sich analog zum elktrischen, sthet aber zu jedem Zeitpunkt senkrecht auf seinem elktrischen Partner. 
+Das Magnetische Feld verhält sich analog zum elktrischen, steht aber zu jedem Zeitpunkt senkrecht auf seiner elktrischen Komponente. \\  Große Anwendug 
+finden diese \enquote{Mikrowellen} unter anderem in der Funk - und Radartechnik. Zum Beispiel werden so durch abweichende Brechungsindexe und wechselnden Impedanzen,  Inforationen durch reflektierte Wellen gewonnen. 
+Eine weitere Anwendung ist der Mikrowellenherd, der mit einer Charakteristischen Frequenz von $\SI{2.455}{\giga\hertz}$ die Dipole von Wassermoleküle passend ausrichtet, anregt und so Wärme erzeugt.
+
+\subsection{Reflexklystron}
+
+Das Reflexklystron ist ein Gerät um hochfrequentige Wellen entweder zu verstärken oder selbstständig anzuregen. Grundlage dazu sind zwei angeschlossene Spannungen, 
+die zum einem die Resonatorkammer und zum anderen den wortgebenen Reflektor elektrisch laden. Zudem wird eine Glühkathode verwendet, die aus möglichen Metallen, 
+gegen eine Austrittsarbeit, freie Elektronen löst und in Richtung des Reflektors beschleunigt. Wolfram bietet sich hierfür aufgrund der sehr hohen Schmelztemperatur sehr gut an.
+Diese nun beschleuigten Elektroden finden ihren Weg zum Reflektor durch die Resonatorkammer und werden anschließend in diese Kammer zurückgelenkt. Die anfangs anegelegte Spannung treibt 
+die Elektronen im Resonator folglich schwingend in die Richtung, die der negativen Ladung entgegengesetzt ist. Durch diese frequente Ausrichtung des Elektrischen Felds werden also die emittierten Elektronen entweder weiter beschleunigt oder 
+verlangsamt, was zu einer frequenzabhängigen Modulation der Geschwindigkeit führt. Während die Beschleunigung von Elektronen dem Resonator Energie kostet gewinnt er diese zurück, wenn Elektronen gebremst werden. 
+Eine für den Resonator optimnale Laufzeit ist 
+\begin{equation}
+    \left(n+ \frac{3}{4} \right) \cdot T  \quad \quad n \in \mathbb{N}_0
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{bilder/theo.JPG}
+    \caption{Schematischer Aufbau eines Reflexklystrons. Deutlich zu erkennen sind die blauen Pfeile, die verschiedene Moden abhängig von der angelegten Spannung darstellen. Diese Sammlung an Elketronen nennt sich Bunching.} 
+    \label{fig:ref}
+\end{figure}
