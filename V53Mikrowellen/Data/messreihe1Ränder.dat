@@ -1,0 +1,4 @@
+#mode    linkerRand [Volt]       linker rand Frequenz[Hz]       rechter Rand [Volt]        rechter rand Frequenz[Hz]
+1       220                     9053                            200                         9015
+2       152                     9075                            115                         9017    
+3       82                      9087                            60                          8987

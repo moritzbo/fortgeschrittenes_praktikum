@@ -1,26 +1,13 @@
-all: build/US3.pdf
+all: build/V53.pdf
 
-hier Python-Skripte:
+# hier Python-Skripte:
+#build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
+#	TEXINPUTS=$$(pwd): python plot.py
 
-build/plot1.pdf: python/plt.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plt.py
-build/plot2.pdf: python/plt.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plt.py
-build/plot3.pdf: python/plt.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plt.py
-build/plot4.pdf: python/plt2.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plt2.py
-build/plot5.pdf: python/plt2.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python python/plt2.py
+# hier weitere Abhängigkeiten für build/main.pdf deklarieren:
+#build/V53.pdf: build/plot.pdf
 
-hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/US3.pdf: build/plot1.pdf \
-				build/plot2.pdf \
-				build/plot3.pdf  \
-				build/plot4.pdf  \
-				build/plot5.pdf  \
-
-build/US3.pdf: FORCE | build
+build/V53.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
@@ -29,7 +16,7 @@ build/US3.pdf: FORCE | build
 	  --output-directory=build \
 	  --interaction=nonstopmode \
 	  --halt-on-error \
-	US3.tex
+	V53.tex
 
 build:
 	mkdir -p build
