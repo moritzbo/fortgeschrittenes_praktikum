@@ -79,3 +79,59 @@ Bei der Abschwächermethode bleiben die vorherigen Einstellungen der Geräte bei
 ein gleiches Stehwellenverhältnis bei relativen Maximum und Minimum besitzt. Diese Differenz gibt also die Verstärkung der gemessenen Leistung an und kann somit auf das Stehwellenverhältnis zurückgeführt werden.
 Mit der Sonde wird ein Minimum abgefahren und das SWR-meter so eingestellt, dass eine Verstärkung von $\SI{3}{\decibel}$ angezeigt wird. Die eingestellte Dämpfung wird notiert und anschließend wird das relative Maximum über die Sonde gefunden. Die Dämpfung wird solange
 geändert bis wieder eine $\SI{3}{\decibel}$ Verstärkung zu sehen ist.
+
+\subsection{Hohlleiter}
+Für die Fortleitung von elektromagnetischer Strahlung gibt es einige Methoden. Eine davon ist die Verwendung von Hohlleitern. Sie sind besonders gebräuchlich bei der Verwendung von Mikrowellen, also bei Frequenzen im $\si{\giga\hertz}$-Bereich.
+Dies liegt vorallem daran, dass sie in diesem Bereich besonders verlustarm sind. Koaxialkabel stellen beispielsweise eine andere Möglichkeit dar, sie sind allerdings auf Grund der mit der Frequenz steigenden Absorption deutlich 
+verlustanfälliger. Bei beiden Leitern wird, wie es der Name schon verrät, ein leitender Stoff an der Außenseite angebracht, an dem die elektromagnetische Welle reflektiert werden kann. Diese Reflexion kann in der Theorie ohne Randeffekte natürlich unendlich oft
+wiederholt werden und würde so einen verlustfreien Leiter darstellen. Hohlleiter sind, wie zu erwarten innen hohl, also mit Luft gefüllt.
+\\
+\newline
+Wie eine solche elektromagnetische Welle in einem Leiter propagiert hängt vollständig von den vorliegenden Randbedingungen ab. Mit diesen Randbedingunge lassen sich dann die Maxwellgleichungen für das elektrische, sowie das magnetische Feld lösen.
+Die Form eines Hohlleiters ist beliebig für die Applikation wählbar. Der gängigste und auch in diesem Versuch verwendete Hohlleiter, ist ein Rechteckhohlleiter. 
+\\
+\newline
+Zunächst einige Überlegungen zu den Randbedingungen an einem Rechteckhohlleiter. Die ummantelnde Fläche des Hohlleiters kann als nahezu perfekt leitend angenommen werden. In der Regel wird dazu Kupfer oder Aluminium verwendet. Diese bildet eine 
+Äquipotentialfläche, also muss die parallele Komponente des E-Feldes an jedem Rand des Leiters verschwinden. Daraus folgt, dass die Rotation des E-Feldes dort ebenfalls verschwindet und somit die tangentiale Komponente des B-Felder ebenfalls
+verschwinden muss. Die Bedingungen lauten also
+\begin{align*}
+E_{||} &= 0, \\
+B_{⊥} &= 0.
+\end{align*}
+Wenn nun also der Querschnitt eines Hohlleiters betrachtet wird, müssen diese Randbedinungen in jede einsichtbare Raumrichtung erfüllt sein. Daraus folgt unteranderem das die typische transversale Form von EM-Wellen im Vakuum nicht mehr vorliegen kann, denn
+die E, und B-Komponente müssen senkrecht aufeinander stehen, allerdings sind die nötigen Freiheitsgrade nicht mehr gegeben, um auch senkrecht zur Ausbreitungsrichtung zu stehen. In einem Rechteckhohlleiter ist also eine Komponente immer
+longitudinal. Beschrieben werden die Wellen durch verschiedene Moden, denn durch die Reflektion an den Wänden bilden sich stehende Wellen, die nun je nach Frequenz unterschiedlich viele Schwingungsbäuche ausbilden. 
+\\
+\newline
+Gekennzeichnet werden die einzelnen Moden in Rechteckhohlleitern durch $\textbf{TE}_{m,n}$ oder $\textbf{TM}_{m,n}$. Dabei steht die $\textbf{TE}$ für transversal elektrisch mit dementsprechend longitudinaler B-Komponente und $\textbf{TM}$ genau umgekehrt. Der Fall $\textbf{TEM}_{m,n}$ wurde
+bereits wie vorher erklärt ausgeschlossen. Die Zahlen $m$ und $n$ geben dabei die Mode an und sie können jede beliebige natürliche Zahl, sowie auch Null, annehmen. Sie beschreiben wie viele Wellenbäuche der stehenden Welle in beispielsweise $x$, und $y$-Richtung passen.
+Genauer gesagt stellen sie eine Bedingung der jeweiligen Wellenzahl in dessen Raumrichtung auf. Typischerweise werden in Hohlleitern Frequenzen verwendet, bei denen sich $\textbf{TE}_{1,0}$ oder $\textbf{TM}_{1,0}$ Wellen ausbilden. In der Abbildung \ref{fig:4} ist eine 
+schematische Skizze einer solchen Mode dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{bilder/mode.png}
+    \caption{Darstellung einer $\textbf{TE}_{1,0}$-Mode in einem Rechteckhohlleiter. \cite{skript}} 
+    \label{fig:4}
+\end{figure}
+Durch die zuvor erwähnten Randbedingungen zeigt sich jetzt allerdings auch, dass es eine Grenzwellenlänge gibt, unter der keine Welle innerhalb des Leiters mehr propagieren kann. Formal ergibt sich diese durch die Existenz einer reellen Wellenzahl 
+in Ausbreitungsrichtung. 
+Die Grenzwellenlänge eines Rechteckhohlleiters einer beliebigen Mode lautet
+\begin{equation}
+\lambda_{g} = \frac{2}{\sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2}}.
+\end{equation}
+Für den typischen $\textbf{TE}_{1,0}$-Modus ergibt dies 
+\begin{equation}
+    \lambda_{g} = 2a,
+\end{equation}
+was ebenfalls geomeetrisch einsichtbar ist.
+\\
+Die longitudinale Komponente erfährt ebenfalls eine zur im freien Raum verschobene Wellenlänge, welche durch
+\begin{equation}
+    \lambda_{h} = \frac{\lambda_0}{\sqrt{1 - \left(\frac{\lambda_0}{\lambda_{g}}\right)^2}}.
+\end{equation}
+berechnet wird. Dabei gibt $\lambda_0$ die Wellenlänge im freien Raum an. Aus der klassischen Beziehung \ref{eqn:1} lässt sich nach leichter Umformung auch die Frequenz in Ausbreitungsrichtung als
+\begin{equation}
+    f = c \cdot \sqrt{\left(\frac{1}{\lambda_0}\right)^2 - \left(\frac{1}{2a}\right)^2}
+\end{equation}
+angeben.
