@@ -106,7 +106,7 @@ berechnet wird. Dabei gibt $\lambda_0$ die Wellenlänge im freien Raum an. Aus d
 angeben.
 
 
-\subsection{Stehwellenverhältnis}  %vermutlich müll, mein kopf bisschen weird gerade
+\subsection{Stehwellenverhältnis} 
 Häufig, durch Reflexion von Hindernissen oder anderen Faktoren, treten Wellen als sogenannte \enquote{stehende Wellen} auf. Das charakteristische Merkmal sind die nicht verschobenen Nullpunkte bei einer varibler Zeit $t$.
 Bei Reflexion erfährt die rücklaufende Welle einen Phasensprung und formt so durch Superposition mit der einfallenden Welle eine Überlagerung. Die ursprüngliche Welle wird so periodisch verstärkt, abgeschwächt oder ganz annuliert. 
 In der Anwendung treten solche Reflexionen vorallem durch Impedanzunterschiede oder materielle Störungen auf. Die daraus folgene Proportionalität zwischen dem der Reflexionsamplitude $I_{ref}$ und einem etwaigen Impedanzunterschiede $\Delta Z$
@@ -129,10 +129,13 @@ Auffallend ist, dass wenn das Verhältnis aus den Leistungen $P_1$ und $P_2$ ebe
 \begin{equation*}
     \si{\decibel} = 10 \cdot \text{log} 2 = 3.
 \end{equation*}
-Dieser Zusammenhang kann zum Stehwellenverhältnis führen, da die Leistung eng mit der elektrischen Spannung verknüpft ist. Weitere Möglichkeiten sind 
+Dieser Zusammenhang kann durch 
 \begin{equation}
     \text{SWR} =\sqrt{1 + \frac{1}{ sin^2 \left( \frac{\pi (d_1 - d_2)}{\lambda_h}  \right)} } 
 \end{equation}
+zum Stehwellenverhältnis führen, da die Leistung eng mit der elektrischen Spannung verknüpft ist. 
+Hier ist $\lambda_h$ die Wellenlänge im Hohlleiter und $d_1$ und $d_2$ sind die Abstände von einem gewählten Minimum, so dass sich die Leistung verdoppelt wird. \\
+Alternativ können mit der \enquote{Abschwächer-Methode} zwei $\si{\decibel}$ Werte zum Verhältnis führen.
 \begin{equation}
     \text{SWR} = 10^{\frac{A_2-A_1}{20}}
 \end{equation}
