@@ -19,9 +19,9 @@ Die jeweiligen Konstanten sind für die einzelnen Moden in der Tabelle \ref{tab:
         \toprule
         Mode & A $[\si{\per\volt}] $ & B  & C $[\si{\volt}]$ \\
         \midrule
-        1      &      $\SI{-0.0012}{}$         &       $\SI{0.1657}{}$             &        $\SI{-5.7400}{}$ \\
+        1      &      $\SI{-0.0016}{}$         &       $\SI{0.6563}{}$             &        $\SI{-68.7500}{}$ \\
         2      &      $\SI{-0.0005}{}$         &       $\SI{0.1335}{}$             &        $\SI{-8.7400}{}$ \\
-        3      &      $\SI{-0.0016}{}$         &       $\SI{0.6563}{}$             &        $\SI{-68.7500}{}$ \\
+        3      &      $\SI{-0.0012}{}$         &       $\SI{0.1657}{}$             &        $\SI{-5.7400}{}$ \\
     \end{tabular}
 \end{table}
 
@@ -38,18 +38,21 @@ durchgeführt werden. Die ermittelten Koeffizienten sind in der Tabelle \ref{tab
         \toprule
         Mode & $\tilde{A}$ $[\si{\mega\hertz\per\volt\squared}] $ & $\tilde{B} $ $[\si{\mega\hertz\per\volt}] $ & $\tilde{C}$ $[\si{\mega\hertz}]$ \\
         \midrule
-        1      &      $\SI{-0.1045}{}$        &       $\SI{19.3909}{}$              &        $\SI{-845.0909}{}$ \\
+        1      &      $\SI{0.0188}{}$        &       $\SI{-5.9500}{}$              &        $\SI{424.0000}{}$ \\
         2      &      $\SI{0.0166}{}$        &       $\SI{-2.8683}{}$              &        $\SI{89.1367}{}$ \\
-        3      &      $\SI{0.0188}{}$        &       $\SI{-5.9500}{}$              &        $\SI{424.0000}{}$ \\
+        3      &      $\SI{-0.1045}{}$        &       $\SI{19.3909}{}$              &        $\SI{-845.0909}{}$ \\
+        
     \end{tabular}
 \end{table}
 Die Abbildung .. zeigt nun die Messwerte sowie die passenden Ausgleichspolynome. Diese lassen bereits auf die Bandbreite schließen. Um diese zu berechnen werden die um die Hälfte reduzierten maximalen Spannungen jeder Mode benötigt. Diese können
 gemessen oder beispielsweise über die zuvor bestimmten Ausgleichsfunktionen genähert werden. Für die Bandbreite $B$ gilt ganz allgemein
 \begin{equation}
+    \label{eqn:g1}
 B = f' - f''
 \end{equation}
 und die Abstimm-Empfindlichtkeit $A$ ist definiert als 
 \begin{equation}
+    \label{eqn:g2}
 A = \frac{f' - f''}{V' - V''}.
 \end{equation}
 Dabei gibt $f'$ die halbe Maximumsfrequenz links vom Maximum und $f''$ rechts davon an. Das gleiche gilt für die Spannungen $V'$ und $V''$.
@@ -62,8 +65,22 @@ Die über die Funktionen genäherten Werte sind in der Tabelle \ref{tab:13} ange
         \toprule
         Mode &  $f'$ $[\si{\mega\hertz}] $& $f''$ $[\si{\mega\hertz}] $&  $V'$ $[\si{\volt}] $& $V''$ $[\si{\volt}] $ \\
         \midrule
-        1      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
-        2      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
-        3      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
+        1      &      $\SI{9019.40}{}$      &       $\SI{9046.80}{}$              &        $\SI{202.79}{}$ &        $\SI{217.21}{}$ \\
+        2      &      $\SI{9022.61}{}$      &       $\SI{9063.76}{}$              &        $\SI{120.38}{}$ &        $\SI{146.63}{}$ \\
+        3      &      $\SI{9007.77}{}$      &       $\SI{9076.90}{}$              &        $\SI{63.19}{}$ &        $\SI{78.18}{}$ \\
+    \end{tabular}
+\end{table}
+Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit leicht über die Gleichungen \ref{eqn:g1} und \ref{eqn:g2} berechnen. In der folgenden Tabelle \ref{tab:111} sind die Ergebnisse notiert.
+\begin{table}
+    \centering
+    \caption{Bandbreiten und Abstimm-Empfindlichtkeiten.} 
+    \label{tab:111}
+    \begin{tabular}{c | c c}
+        \toprule
+        Mode &  Bandbreite $B$ $[\si{\mega\hertz}] $& Abstimm-Empfindlichtkeit $A$ $[\si{\mega\hertz\per\volt}]$ \\
+        \midrule
+        1      &      $\SI{27.40}{}$      &       $\SI{1.90}{}$              \\
+        2      &      $\SI{41.15}{}$      &       $\SI{1.57}{}$              \\
+        3      &      $\SI{69.13}{}$      &       $\SI{4.61}{}$               \\
     \end{tabular}
 \end{table}
