@@ -29,16 +29,18 @@ print("MODE FÜR FREQUENZZZZZZZZZZZZZ")
 params, covariance_matrix = curve_fit(sigmoid1, v1, m1)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
-print("MODE 3")
+print("MODE 1")
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
-
+print(params[0])
+print(params[1])
+print(params[2])
 
 x = np.linspace(200,220)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
         'c-',
-        label='Mode 3',
+        label='Mode 1',
         linewidth=1.5)
 
 
@@ -51,7 +53,9 @@ uncertainties = np.sqrt(np.diag(covariance_matrix))
 print("MODE 2")
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
-
+print(params[0])
+print(params[1])
+print(params[2])
 x = np.linspace(115,152)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
@@ -64,19 +68,21 @@ def sigmoid3(x, a, b, c):
     return a*x**2+b*x+c
 
 
-print("MODE 1")
+print("MODE 3")
 params, covariance_matrix = curve_fit(sigmoid3, v3, m3)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
-
+print(params[0])
+print(params[1])
+print(params[2])
 x = np.linspace(60,82)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
         'g-',
-        label='Mode 1',
+        label='Mode 3',
         linewidth=1.5)
 
 plt.ylabel(r'$\Delta f$[$\si{\mega\hertz}$]$')

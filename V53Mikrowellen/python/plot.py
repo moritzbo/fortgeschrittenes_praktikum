@@ -23,22 +23,27 @@ plt.plot(v3, m3,
 
 #### MODE - miliVOLT
 def sigmoid1(x, a, b, c):
-    return a*x**2+b*x+c
+    return a*x**2 + b*x + c
 
 
 params, covariance_matrix = curve_fit(sigmoid1, v1, m1)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
-print("MODE 3:")
+print("MODE 1:")
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
 
+
+print("#######################")
+print(params[0])
+print(params[1])
+print(params[2])
 
 x = np.linspace(200,220)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
         'c-',
-        label='Mode 3',
+        label='Mode 1',
         linewidth=1.5)
 
 
@@ -51,7 +56,9 @@ uncertainties = np.sqrt(np.diag(covariance_matrix))
 
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
-
+print(params[0])
+print(params[1])
+print(params[2])
 x = np.linspace(115,152)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
@@ -63,7 +70,7 @@ plt.plot(x,
 def sigmoid3(x, a, b, c):
     return a*x**2+b*x+c
 
-print("MODE 1")
+print("MODE 3")
 
 params, covariance_matrix = curve_fit(sigmoid3, v3, m3)
 
@@ -71,19 +78,21 @@ uncertainties = np.sqrt(np.diag(covariance_matrix))
 
 for name, value, uncertainty in zip('abc', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
-
+print(params[0])
+print(params[1])
+print(params[2])
 x = np.linspace(60,82)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
         'g-',
-        label='Mode 1',
+        label='Mode 3',
         linewidth=1.5)
 
 plt.ylabel(r'$U_{mikro}$[$\si{\volt}$]$')
 plt.xlabel(r'$U_{ref}$[$\si{\volt}$]$')
 
  
-plt.ylim((0,0.2))
+plt.ylim((0,0.3))
 plt.grid()
 plt.legend(loc="best")
 plt.tight_layout()
