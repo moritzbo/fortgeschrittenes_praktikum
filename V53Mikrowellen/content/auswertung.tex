@@ -1,0 +1,69 @@
+\section{Auswertung}
+
+\subsection{Modenanalyse und Bandbreite}
+
+Die Spannungsmesswerte zur Darstellung der einzelnen Moden im Hohlleiter sind in den Tabellen \ref{tab:Messreihe11} und \ref{tab:Messreihe12} aufgelistet.
+Nun kann die gemessene Mikrowellenspannung, welche proportional zur Leistung ist, in Abhängigkeit der Reflektorspannung aufgetragen werden. Durch die drei Messwerte pro Mode werden jeweils Polynome zweiten Grades gefittet.
+Die Form sieht also folgendermaßen aus
+\begin{equation}
+U_{m} = A \cdot U_{r}^2 + B \cdot  U_{r} + C.
+\end{equation}
+Über einen Curvefit mit der Bibliothek Scipy \cite{scipy} werden diese Koeffizienten bestimmt.
+Die jeweiligen Konstanten sind für die einzelnen Moden in der Tabelle \ref{tab:11} angegeben.
+
+\begin{table}
+    \centering
+    \caption{Koeffizienten der Ausgleichspolynome der Moden.} 
+    \label{tab:11}
+    \begin{tabular}{c | c c c}
+        \toprule
+        Mode & A $[\si{\per\volt}] $ & B  & C $[\si{\volt}]$ \\
+        \midrule
+        1      &      $\SI{-0.0012}{}$         &       $\SI{0.1657}{}$             &        $\SI{-5.7400}{}$ \\
+        2      &      $\SI{-0.0005}{}$         &       $\SI{0.1335}{}$             &        $\SI{-8.7400}{}$ \\
+        3      &      $\SI{-0.0016}{}$         &       $\SI{0.6563}{}$             &        $\SI{-68.7500}{}$ \\
+    \end{tabular}
+\end{table}
+
+Ebenfalls können die Frequenzshifts der einzelnen Moden aus den Tabellen \ref{tab:Messreihe11} und \ref{tab:Messreihe12} geplottet werden. Hier kann wieder eine Ausgleichsrechnung anhand eines Polynom zweiten Grades der Form 
+\begin{equation}
+\increment f = \tilde{A} \cdot U_{r}^2 + \tilde{B} \cdot  U_{r} + \tilde{C}
+\end{equation}
+durchgeführt werden. Die ermittelten Koeffizienten sind in der Tabelle \ref{tab:12} aufgetragen.
+\begin{table}
+    \centering
+    \caption{Koeffizienten der Ausgleichspolynome der Frequenzshifts.} 
+    \label{tab:12}
+    \begin{tabular}{c | c c c}
+        \toprule
+        Mode & $\tilde{A}$ $[\si{\mega\hertz\per\volt\squared}] $ & $\tilde{B} $ $[\si{\mega\hertz\per\volt}] $ & $\tilde{C}$ $[\si{\mega\hertz}]$ \\
+        \midrule
+        1      &      $\SI{-0.1045}{}$        &       $\SI{19.3909}{}$              &        $\SI{-845.0909}{}$ \\
+        2      &      $\SI{0.0166}{}$        &       $\SI{-2.8683}{}$              &        $\SI{89.1367}{}$ \\
+        3      &      $\SI{0.0188}{}$        &       $\SI{-5.9500}{}$              &        $\SI{424.0000}{}$ \\
+    \end{tabular}
+\end{table}
+Die Abbildung .. zeigt nun die Messwerte sowie die passenden Ausgleichspolynome. Diese lassen bereits auf die Bandbreite schließen. Um diese zu berechnen werden die um die Hälfte reduzierten maximalen Spannungen jeder Mode benötigt. Diese können
+gemessen oder beispielsweise über die zuvor bestimmten Ausgleichsfunktionen genähert werden. Für die Bandbreite $B$ gilt ganz allgemein
+\begin{equation}
+B = f' - f''
+\end{equation}
+und die Abstimm-Empfindlichtkeit $A$ ist definiert als 
+\begin{equation}
+A = \frac{f' - f''}{V' - V''}.
+\end{equation}
+Dabei gibt $f'$ die halbe Maximumsfrequenz links vom Maximum und $f''$ rechts davon an. Das gleiche gilt für die Spannungen $V'$ und $V''$.
+Die über die Funktionen genäherten Werte sind in der Tabelle \ref{tab:13} angegeben.
+\begin{table}
+    \centering
+    \caption{Koeffizienten der Ausgleichspolynome der Frequenzshifts.} 
+    \label{tab:13}
+    \begin{tabular}{c || c c | c c}
+        \toprule
+        Mode &  $f'$ $[\si{\mega\hertz}] $& $f''$ $[\si{\mega\hertz}] $&  $V'$ $[\si{\volt}] $& $V''$ $[\si{\volt}] $ \\
+        \midrule
+        1      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
+        2      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
+        3      &      $\SI{()}{}$      &       $\SI{()}{}$              &        $\SI{()}{}$ &        $\SI{()}{}$ \\
+    \end{tabular}
+\end{table}
