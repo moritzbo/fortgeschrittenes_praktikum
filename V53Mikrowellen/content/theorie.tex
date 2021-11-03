@@ -6,10 +6,10 @@ Sie sind, im vergleich zu anderen alltäglichen Wellen, eher dem langwelligen Be
 Elektromagnetische Wellen lassen sich hinreichend durch die Maxwell Glecihungen beschreiben, ohne jedoch dabei die Teilchen Eigenschaften der Korpuskeltheorie zu berücksichtigen. Im Folgenene Versuch wird sich außschließlich auf die Welleneigenschaften bezogen.
 Charakteristisch für all diese Wellen ist die im Vakuum definierte Geschwindigkeit sich fortzubewegen, besser bekannt als Lichtgeschwindigkeit. Dort propagiert sie außschließlich als Transversalwelle.
 Mit dieser Geschwindigkeit $c$, oder im Falle eines Mediums der entsprechend reduzierten, lässt sich nun die Wellenlänge mithilfe der Frequenz $\nu$ bestimmen.
-\begin{equation}
+\begin{equation*}
     \label{eqn:1}
 \lambda = c/{\nu}
-\end{equation}
+\end{equation*}
 Das Magnetische Feld verhält sich analog zum elktrischen, steht aber zu jedem Zeitpunkt senkrecht auf seiner elktrischen Komponente. \\  Große Anwendug 
 finden diese \enquote{Mikrowellen} unter anderem in der Funk - und Radartechnik. Zum Beispiel werden so durch abweichende Brechungsindexe und wechselnden Impedanzen,  Inforationen durch reflektierte Wellen gewonnen. 
 Eine weitere Anwendung ist der Mikrowellenherd, der mit einer Charakteristischen Frequenz von $\SI{2.455}{\giga\hertz}$ die Dipole von Wassermoleküle passend ausrichtet, anregt und so Wärme erzeugt.
@@ -23,9 +23,9 @@ Diese nun beschleuigten Elektroden finden ihren Weg zum Reflektor durch die Reso
 die Elektronen im Resonator folglich schwingend in die Richtung, die der negativen Spannungskomponente entgegengesetzt ist. Durch diese frequente Ausrichtung des Elektrischen Felds werden die emittierten Elektronen entweder weiter beschleunigt oder 
 verlangsamt, was zu einer frequenzabhängigen Modulation der Geschwindigkeit führt. Während die Beschleunigung von Elektronen dem Resonator Energie kostet gewinnt er diese zurück, wenn Elektronen gebremst werden. 
 Eine für den Resonator optimnale Laufzeit für Energiegewinnung ist 
-\begin{equation}
+\begin{equation*}
     \left(n+ \frac{3}{4} \right) \cdot T  \quad \quad n \in \mathbb{N}_0.
-\end{equation}
+\end{equation*}
 Die so entstehende Schwingung wird anschließend durch einen Hohlwellenleiter ausgekoppelt und weiter transportiert.
 \begin{figure}
     \centering
@@ -42,9 +42,9 @@ Die so entstehende Schwingung wird anschließend durch einen Hohlwellenleiter au
     \label{fig:ref}
 \end{figure}
 Durch Änderungen am internen Aufbau des Klystron lassen sich die Moden unteranderem durch Spannungsunterschiede verschieben. 
-\begin{equation}
+\begin{equation*}
     P_{\text{Output}} (\si{\volt}) \sim P_{\text{Output}} (\si{\volt} + \tau)
-\end{equation}
+\end{equation*}
 Die Variabel $\tau$ ist hier so gewählt, dass $\si{\volt} + \tau$ wieder die vorher von $\si{\volt}$ getroffene Mode beschreibt.
 Analog lässt sich die Frequenz durch den mechanischen Aufbau ändern. Eine größere Resonatorkammer würder den Elektronen 
 mehr Laufzeit bieten und so das \enquote{Bunching} verlangsamen.
@@ -119,24 +119,30 @@ Dieses Verhätnis beschreibt die Überlagerung der Wellen, also der resultierend
 Gemessen werden die Amplituden bei elektrischen Leitern meist direkt durch das elektrische Feld $E$ oder der Spannung $U$, da diese proportional zueinander sind.
 Alternativ lassen sich die einzelnen Komponenten, die zu Superposition führen, getrennt betrachten. Hier entsteht das Verhältnis aus der maximal moöglichen, verstärkten Amplitude $|E_i| + |E_r|$ und dem abschgeschwächten Anteil$|E_i| - |E_r|$.
 Der Betrag der einfallenden Feldstärke ist als $E_i$ -und der reflektierte als $E_r$ gekennzeichnet. Dieses eignet sich also gut zur Quantisierung der Güte eines entsprechend leitenden Mediums. Bei einem Verhältnis von $1$ wäre die Leitung perfekt.
-\begin{equation}
+\begin{equation*}
     \text{SWR} = \frac{E_{max}}{E_{min}} =  \frac{|E_i| + |E_r|}{|E_i| - |E_r|}
-\end{equation}
+\end{equation*}
 Eine äquivalente Beschreibung ist durch die sogenannte \enquote{Dämpfung} möglich. Diese hat die abolute Einheit $\si{\decibel}$ und beschreibt das Verhältnis von optimaler -und, durch z.B. Reflexion, abgeschwächter Leistung $P$. 
-\begin{equation}
+\begin{equation*}
     \si{\decibel} = 10 \cdot \text{log} \frac{P_1}{P_2}
-\end{equation}
+\end{equation*}
 Auffallend ist, dass wenn das Verhältnis aus den Leistungen $P_1$ und $P_2$ eben genau $2$ ergbit, eine Dämpfung von 3 $\si{\decibel}$ folgt
 \begin{equation*}
     \si{\decibel} = 10 \cdot \text{log} 2 = 3.
 \end{equation*}
 Dieser Zusammenhang kann durch 
 \begin{equation}
+    \label{eqn:SWR}
     \text{SWR} =\sqrt{1 + \frac{1}{ sin^2 \left( \frac{\pi (d_1 - d_2)}{\lambda_h}  \right)} } 
 \end{equation}
 zum Stehwellenverhältnis führen, da die Leistung eng mit der elektrischen Spannung verknüpft ist. 
 Hier ist $\lambda_h$ die Wellenlänge im Hohlleiter und $d_1$ und $d_2$ sind die Abstände von einem gewählten Minimum, so dass sich die Leistung verdoppelt wird. \\
 Alternativ können mit der \enquote{Abschwächer-Methode} und zwei $\si{\decibel}$ Werten das Verhältnis errechnet werden.
 \begin{equation}
+    \label{eqn:SWR2}
     \text{SWR} = 10^{\frac{A_2-A_1}{20}}
 \end{equation}
+
+
+
+

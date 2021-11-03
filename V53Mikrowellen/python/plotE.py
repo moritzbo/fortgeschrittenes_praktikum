@@ -15,7 +15,7 @@ plt.plot(U, dB, "gx",
         label="Messwerte"
         )
 plt.plot(U, K, "ro",
-        label="Korregierte Messwerte"
+        label="Korrigierte Messwerte"
         )        
 
 def sigmoid1(x, a, b, c):
@@ -36,7 +36,7 @@ x = np.linspace(0,3)
 plt.plot(x, 
         params[0]*x**2 + params[1]*x +params[2],
         'k-',
-        label='Eickurve',
+        label='Eichkurve',
         linewidth=1.5)
 
 
