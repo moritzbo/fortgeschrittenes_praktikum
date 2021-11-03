@@ -98,3 +98,61 @@ Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit l
     \end{tabular}
 \end{table}
 
+\subsection{Bestimmung von Frequenz, Wellenlänge und Dämpfung}
+
+Aus den gemessenen Abständen zwischen den Minima der stehenden Wellen im Hohlleiter lässt sich die Wellenlänge im Hohlleiter $\lambda_g$ über
+\begin{equation}
+\increment x = \frac{\lambda_g}{2}
+\end{equation}
+berechnen. Mit den Messwerten aus Tabelle \ref{tab:Messreihe21} ergibt sich dadurch ein Wert von
+\begin{equation}
+\lambda_h = \SI{49}{\milli\meter}.
+\end{equation}
+Zusammen mit der Innenabmessung der längeren Seite des Hohlleiters
+\begin{equation}
+a = \SI{22.860(46)}{\milli\meter}
+\end{equation}
+lässt sich nun über die Gleichung \ref{eqn:222}, die Frequenz der longitudinalen Komponente berechnen.
+Es ergibt sich 
+\begin{equation}
+f_h = \SI{8.968(10)}{\giga\hertz}.
+\end{equation}
+Über die klassische Beziehung 
+\begin{equation}
+v_{\text{phase}} = f_h \cdot \lambda_h
+\end{equation}
+lässt sich ebenfalls noch die Phasengeschwindigkeit bestimmen und es zeigt sich, dass mit 
+\begin{equation}
+v_{\text{phase}} = \left(\SI{1.4658(16)}{}\right) c
+\end{equation}
+die Phasengeschwindigkeit schneller als die Lichtgeschwindigkeit $c$ ist. Da diese allerdings, anders als die Gruppengeschwindigkeit, keine Informationen übertragt, ist dies nicht verwunderlich.
+\\
+\newline
+Für die Bestimmung der Dämpfungskurve werden die gemessenen $\si{\decibel}$ und Gleitschraubentiefwerte aus der Tabelle \ref{tab:Messreihe22} in ein Diagramm geplottet.
+Dafür wird wie zuvor ein Polynom zweiten Grades an die Theoriewerte gefittet. Die Form sieht wieder wie folgt aus
+\begin{equation}
+D = ax^2 + bx + c.
+\end{equation}
+Dabei steht das $D$ für die Dämpfung in $\si{\decibel}$ und die ermittelten Koeffizienten sind
+\begin{align*}
+a &= \SI{1.7014(1894)}{\decibel\per\milli\meter\squared}, \\
+b &= \SI{0.4574(4478)}{\decibel\per\milli\meter}, \\
+c &= \SI{0.0311(2385)}{\decibel}.
+\end{align*}
+Die gemessenen Werte, sowie das Ausgleichspolynom sind in der Abbildung \ref{111} zu erkennen.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{build/plot3.pdf}
+    \caption{Abbildung zur Dämpfungskurve mit den gemessenen und Theoriewerten, sowie einem Ausgleichspolynom. Ergänzt wurden die korrigierten Messwerte.} 
+    \label{111}
+\end{figure}
+Erkennbar ist der Offset zwischen den gemessenen und den theoretischen Werten, weshalb ebenfalls korrigierte Messwerte aufgetragen wurden. Diese werden in der Diskussion näher
+erläutert.
+
+\subsection{Stehwellenverhältnismessung}
+
+\subsubsection{Direkte Methode}
+Die Ergebnisse der direkten Methode sind in der Tabelle \ref{tab:Messreihe31} eingetragen. Sie dienen nachher als Vergleich zu den anderen Messmethoden.
+
+\subsubsection{3 dB-Methode}
+
