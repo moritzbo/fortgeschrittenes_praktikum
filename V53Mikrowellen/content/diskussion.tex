@@ -1,0 +1,55 @@
+\section{Diskussion}
+
+Zunächst lässt sich folgendes an dem Versuchsaufbau und der Durchführung anmerken. An jeder Stelle bei der ein weiteres Messgerät
+eingebaut ist entstehen mögliche Reflektionsstellen, die mögliche Ungenauigkeiten liefern. Daher ist es 
+unteranderem wichtig die Verstärkung am SWR-meter in Zusammenhang mit der einstellbaren Dämpfung am 
+Dämpfungsglied richtig zu kalibrieren. 
+\\
+Die einzelnen Bauelemente sollten ebenfalls immer gut verschraubt sein. Dies ist leicht zu bemerken wenn der Hohlleiter bewegt wird und 
+anschließend am SWR-meter eine große Schwankung entsteht. Unterstützt werden kann dies mit Halterungen unter den Bauelementen, um ein Absinken und dadurch auftretende
+Spalte zu vermeiden.
+\\
+Über die Genauigkeit von beispielsweise Einweggleichrichter, sowie Abschluss lässt sich nicht viel sagen. Die Werte bei
+herausgedrehter Dämpfung scheinen allerdings nicht stark gestört zu sein.
+\\
+\newline
+Bei der Bestimmung der einzelnen Moden ließen sich die Mikrowellenspannungen gut am Oszilloskop ablesen und deuten auf 
+keine großen systematischen Fehler. Das gleiche gilt für die Frequenz nach dem Frequenzmessgerät, welches gut eingestellt werden konnte.
+Die Ergebnisse zeigen wie zu erwarten war, höhere Modenzahlen für kleinere Reflektorspannungen. Die Bandbreite nimmt mit steigender Mode zu, wie in 
+der Tabelle \ref{tab:111} zu erkennen ist. Eine Modenanalyse mit diesem Messprinzip scheint also sinnvolle Ergebnisse zu liefern. Dennoch sind drei Messwerte
+pro Mode das mindeste für die Bestimmung eines brauchbaren Ausgleichpolynoms und könnte somit beliebig erhöht werden.
+\\
+\newline
+Die Frequenz und Wellenlängenmessungen beruhen alle auf nur zwei Messwerten, sorgen somit also für besonders hohe Ungenauigkeiten. Es gibt keinen Grund diesen
+Wert als nicht tragbar anzusehen, allerdings ist es sinnvoll, beliebig viele weitere Minima zu messen und über diese zu mitteln. Die errechnete Hohlleiterfrequenz
+von $f_h = \SI{8.968(10)}{\giga\hertz}.$ scheint allerdings sehr plausibel. Die prozentuale Abweichung zur Messung mit dem Frequenzmessgerät beträgt $\increment f = \SI{0.75(11)}{\percent}$.
+\\
+\newline
+Bei der Auswertung der Dämpfungskurve zeigt sich deutlich, dass das SWR-meter bei herausgedrehter Dämpfung nicht perfekt auf $\SI{0}{\decibel}$ kalibriert wurde. 
+Dies liegt daran, dass die Dämpfungskurve exponentiell ansteigt und somit die ersten Werte nahezu Null anzeigen. Der Nullpunkt lässt sich somit nur sehr
+ungenau bestimmen, was in der Grafik \ref{123} zu sehen ist. Eine Möglichkeit um den Offset zu verringern wäre beispielsweise eine feste Dämpfung am
+Dämpfungsglied einzustellen und diese am SWR-meter so umzustellen, dass sie als genau diese angezeigt wird. Danach kann zurück zu $\SI{0}{\decibel}$ gedreht werden und
+es lässt sich ein nur geringer Offset vermuten. 
+In unserem Fall beträgt der Offset knapp $\SI{8}{\decibel}$. Diese Werten liegen dennoch sehr gut auf der ermittelten Ausgleichskurve.
+\\
+\newline
+Die drei verwendeten Methoden zur Bestimmung des Stehwellenverhältnisses zeigen unterschiedliche Genauigkeiten in verschiedenen Messbereichen. Dabei ist die direkte Methode besser verwendbar
+für kleinere Dämpfungen und die 3 dB, sowie Abschwächermethode für größere geeignet. Dies ist unteranderem an dem Messwert für die Gleitschraubentiefe von $\SI{9}{\milli\meter}$ 
+bei der direkten Methode im Vergleich zu den anderen erkennbar. Sie liefert dort ein SWR von $\infty$ während die beiden anderen Methoden noch konkrete Werte geben. 
+Über die Notwendigkeit der Messwerte für SWR > 10 lässt sich allerdings streiten, da elektrische Leiter mit solchen SWR-Werten in der Anwendung bereits unbrauchbar sind.
+\begin{table}
+    \centering
+    \caption{Vergleich der Stehwellenverhältnisse bei einer Gleitschraubentiefe von $ \SI{9}{\milli\meter}$.}
+    \label{tab:1}
+    \begin{tabular}{c  c || c }
+        \toprule
+        Methode & $\text{SWR}$ & Abweichung \hspace{0.5cm} $\text{SWR}_{\text{3dB}}$ $\sim$ $\text{SWR}_{\text{A}}$ \hspace{0.5cm} [$\%$]  \\
+        \midrule
+         3 dB-Methode        & 8.987 & \multirow{2}{*}{36.38} \\
+         Abschwächer-Methode & 14.125 & \\ 
+         Direkt              & $ \infty$ & \\ 
+     \end{tabular}
+\end{table}
+\begin{flushleft}
+Die prozentuale Abweichung auf das SWR zwischen 3 dB, und Abschwächermethode beträgt $\SI{36.38}{\percent}$. 
+\end{flushleft}
