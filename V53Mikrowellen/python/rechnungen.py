@@ -41,3 +41,15 @@ print(SWR)
 SWR_neu = 10**((23)/20)
 
 print(SWR_neu)
+
+fneu= f* 10**(-9)
+print(fneu)
+print("Fehler frequenz:")
+deltaf = 100*(9.036-fneu)/9.036
+
+print(deltaf)
+
+
+print("abweichung SWR:")
+delta = 100*(14.125-8.987)/14.125 
+print(delta)
