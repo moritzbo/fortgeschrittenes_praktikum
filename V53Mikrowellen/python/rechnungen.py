@@ -24,3 +24,20 @@ print(f)
 vphase = f * lambda_g
 
 print(vphase/c)
+
+
+d1 = 63.5*10**(-3)
+d2 = 61.8*10**(-3)
+
+dist = d1 - d2
+
+lambda_g_neu = 47.60*10**(-3)
+
+SWR = np.sqrt(1+(1/(np.sin((np.pi*(dist))/(lambda_g_neu))**2)))
+
+print(SWR)
+
+
+SWR_neu = 10**((23)/20)
+
+print(SWR_neu)
