@@ -5,9 +5,9 @@
 Die Spannungsmesswerte zur Darstellung der einzelnen Moden im Hohlleiter sind in den Tabellen \ref{tab:Messreihe11} und \ref{tab:Messreihe12} aufgelistet.
 Nun kann die gemessene Mikrowellenspannung, welche proportional zur Leistung ist, in Abhängigkeit der Reflektorspannung aufgetragen werden. Durch die drei Messwerte pro Mode werden jeweils Polynome zweiten Grades gefittet.
 Die Form sieht also folgendermaßen aus
-\begin{equation}
+\begin{equation*}
 U_{m} = A \cdot U_{r}^2 + B \cdot  U_{r} + C.
-\end{equation}
+\end{equation*}
 Über einen Curvefit mit der Bibliothek Scipy \cite{scipy} werden diese Koeffizienten bestimmt.
 Die jeweiligen Konstanten sind für die einzelnen Moden in der Tabelle \ref{tab:11} angegeben.
 
@@ -26,9 +26,9 @@ Die jeweiligen Konstanten sind für die einzelnen Moden in der Tabelle \ref{tab:
 \end{table}
 
 Ebenfalls können die Frequenzshifts der einzelnen Moden aus den Tabellen \ref{tab:Messreihe11} und \ref{tab:Messreihe12} geplottet werden. Hier kann wieder eine Ausgleichsrechnung anhand eines Polynom zweiten Grades der Form 
-\begin{equation}
+\begin{equation*}
 \increment f = \tilde{A} \cdot U_{r}^2 + \tilde{B} \cdot  U_{r} + \tilde{C}
-\end{equation}
+\end{equation*}
 durchgeführt werden. Die ermittelten Koeffizienten sind in der Tabelle \ref{tab:12} aufgetragen.
 \begin{table}
     \centering
@@ -102,38 +102,38 @@ Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit l
 \subsection{Bestimmung von Frequenz, Wellenlänge und Dämpfung}
 
 Aus den gemessenen Abständen zwischen den Minima der stehenden Wellen im Hohlleiter lässt sich die Wellenlänge im Hohlleiter $\lambda_h$ über
-\begin{equation}
+\begin{equation*}
 \increment x = \frac{\lambda_h}{2}
-\end{equation}
+\end{equation*}
 berechnen. Mit den Messwerten aus Tabelle \ref{tab:Messreihe21} ergibt sich dadurch ein Wert von
-\begin{equation}
+\begin{equation*}
 \lambda_h = \SI{49}{\milli\meter}.
-\end{equation}
+\end{equation*}
 Zusammen mit der Innenabmessung der längeren Seite des Hohlleiters
-\begin{equation}
+\begin{equation*}
 a = \SI{22.860(46)}{\milli\meter}
-\end{equation}
+\end{equation*}
 lässt sich nun über die Gleichung \ref{eqn:222}, die Frequenz der longitudinalen Komponente berechnen.
 Es ergibt sich 
-\begin{equation}
+\begin{equation*}
 f_h = \SI{8.968(10)}{\giga\hertz}.
-\end{equation}
+\end{equation*}
 Über die klassische Beziehung 
-\begin{equation}
+\begin{equation*}
 v_{\text{phase}} = f_h \cdot \lambda_h
-\end{equation}
+\end{equation*}
 lässt sich ebenfalls noch die Phasengeschwindigkeit bestimmen und es zeigt sich, dass mit 
-\begin{equation}
+\begin{equation*}
 v_{\text{phase}} = \left(\SI{1.4658(16)}{}\right) c
-\end{equation}
+\end{equation*}
 die Phasengeschwindigkeit schneller als die Lichtgeschwindigkeit $c$ ist. Da diese allerdings, anders als die Gruppengeschwindigkeit, keine Informationen überträgt, ist dies nicht verwunderlich.
 \\
 \newline
 Für die Bestimmung der Dämpfungskurve werden die gemessenen $\si{\decibel}$ und Gleitschraubentiefwerte aus der Tabelle \ref{tab:Messreihe22} in ein Diagramm geplottet.
 Dafür wird wie zuvor ein Polynom zweiten Grades an die Theoriewerte gefittet. Die Form sieht wieder wie folgt aus
-\begin{equation}
+\begin{equation*}
 D = ax^2 + bx + c.
-\end{equation}
+\end{equation*}
 Dabei steht das $D$ für die Dämpfung in $\si{\decibel}$ und die ermittelten Koeffizienten sind
 \begin{align*}
 a &= \SI{1.7014(1894)}{\decibel\per\milli\meter\squared}, \\
@@ -158,20 +158,20 @@ Die Ergebnisse der direkten Methode sind in der Tabelle \ref{tab:Messreihe31} ei
 \subsubsection{3 dB-Methode}
 Alle Messungen zur 3 dB-Methode sind in der Tabelle \ref{tab:Messreihe32} aufgetragen. Hier wird wieder die Hohlleiterwellenlänge $\lambda_h$ 
 benötigt welche wieder über die vorherige Methode der stehenden Welle zu
-\begin{equation}
+\begin{equation*}
 \lambda_h = 2 \cdot (\text{Min}_2 - \text{Min}_1) = \SI{47.60}{\milli\meter}
-\end{equation}
+\end{equation*}
 bestimmt wird.
 Über die Gleichung \ref{eqn:SWR} lässt sich nun ein Stehwellenverhältnis von
-\begin{equation}
+\begin{equation*}
 \text{SWR} = 8.987
-\end{equation}
+\end{equation*}
 berechnen.
 
 \subsubsection{Abschwächer-Methode}
 Die für diese Methode nötigen Messwerte werden der Tabelle \ref{tab:Messreihe33} entnommen.
 $A_1$ und $A_2$ stehen für die gemessenen Dämpfungen bei den verschiedenen Einstellungen und führen mit der Gleichung 
 \eqref{eqn:SWR2} zu dem Stehwellenverhältnis von
-\begin{equation}
+\begin{equation*}
 \text{SWR} = 14.125.
-\end{equation}
+\end{equation*}

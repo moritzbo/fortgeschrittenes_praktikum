@@ -27,29 +27,17 @@ von $f_h = \SI{8.968(10)}{\giga\hertz}.$ scheint allerdings sehr plausibel. Die 
 \newline
 Bei der Auswertung der Dämpfungskurve zeigt sich deutlich, dass das SWR-meter bei herausgedrehter Dämpfung nicht perfekt auf $\SI{0}{\decibel}$ kalibriert wurde. 
 Dies liegt daran, dass die Dämpfungskurve exponentiell ansteigt und somit die ersten Werte nahezu Null anzeigen. Der Nullpunkt lässt sich somit nur sehr
-ungenau bestimmen, was in der Grafik \ref{123} zu sehen ist. Eine Möglichkeit um den Offset zu verringern wäre beispielsweise eine feste Dämpfung am
+ungenau bestimmen, was in der Grafik \ref{111} zu sehen ist. Eine Möglichkeit um den Offset zu verringern wäre beispielsweise eine feste Dämpfung am
 Dämpfungsglied einzustellen und diese am SWR-meter so umzustellen, dass sie als genau diese angezeigt wird. Danach kann zurück zu $\SI{0}{\decibel}$ gedreht werden und
 es lässt sich ein nur geringer Offset vermuten. 
 In unserem Fall beträgt der Offset knapp $\SI{8}{\decibel}$. Diese Werten liegen dennoch sehr gut auf der ermittelten Ausgleichskurve.
-\\
+\\ 
 \newline
 Die drei verwendeten Methoden zur Bestimmung des Stehwellenverhältnisses zeigen unterschiedliche Genauigkeiten in verschiedenen Messbereichen. Dabei ist die direkte Methode besser verwendbar
-für kleinere Dämpfungen und die 3 dB, sowie Abschwächermethode für größere geeignet. Dies ist unteranderem an dem Messwert für die Gleitschraubentiefe von $\SI{9}{\milli\meter}$ 
+für kleinere Dämpfungen und die 3 dB, sowie Abschwächermethode für größere. Dies ist unteranderem an dem Messwert für die Gleitschraubentiefe von $\SI{9}{\milli\meter}$ 
 bei der direkten Methode im Vergleich zu den anderen erkennbar. Sie liefert dort ein SWR von $\infty$ während die beiden anderen Methoden noch konkrete Werte geben. 
 Über die Notwendigkeit der Messwerte für SWR > 10 lässt sich allerdings streiten, da elektrische Leiter mit solchen SWR-Werten in der Anwendung bereits unbrauchbar sind.
-\begin{table}
-    \centering
-    \caption{Vergleich der Stehwellenverhältnisse bei einer Gleitschraubentiefe von $ \SI{9}{\milli\meter}$.}
-    \label{tab:1}
-    \begin{tabular}{c  c || c }
-        \toprule
-        Methode & $\text{SWR}$ & Abweichung \hspace{0.5cm} $\text{SWR}_{\text{3dB}}$ $\sim$ $\text{SWR}_{\text{A}}$ \hspace{0.5cm} [$\%$]  \\
-        \midrule
-         3 dB-Methode        & 8.987 & \multirow{2}{*}{36.38} \\
-         Abschwächer-Methode & 14.125 & \\ 
-         Direkt              & $ \infty$ & \\ 
-     \end{tabular}
-\end{table}
+\\
 \begin{flushleft}
-Die prozentuale Abweichung auf das SWR zwischen 3 dB, und Abschwächermethode beträgt $\SI{36.38}{\percent}$. 
+Die prozentuale Abweichung auf das SWR zwischen 3 dB, und Abschwächermethode beträgt $\SI{36.38}{\percent}$ wie in der Tabelle \ref{tab:1111} eingetragen.
 \end{flushleft}
