@@ -44,7 +44,20 @@ durchgeführt werden. Die ermittelten Koeffizienten sind in der Tabelle \ref{tab
         
     \end{tabular}
 \end{table}
-Die Abbildung .. zeigt nun die Messwerte sowie die passenden Ausgleichspolynome. Diese lassen bereits auf die Bandbreite schließen. Um diese zu berechnen werden die um die Hälfte reduzierten maximalen Spannungen jeder Mode benötigt. Diese können
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{bilder/SO.jpg}
+    \caption{Der obere Graph stellt die parabelähnlichen, gefundenen Ausgleichsfunktionen zur Bestimmung der Detekorspannung dar. Die schwarzen
+            Punkte sind die gefundenen Messwerte bei entsprechender Reflektorspannung $U_{ref}$ in Volt. Durch die gefundenen Parameter in \ref{tab:11}
+            lässt sich so eine Funktion finden, die den Verlauf wiedergibt.    \\
+            Analog für die Frequenzbestimmung formen die gefunden Parameter in \ref{tab:12} drei passende Ausgleichsfunktionenen in einem passenden 
+            Intervall für die entsprechende Reflektorspannung $U_{ref}$. \\
+            Durch eine vertikale Linie sind die Moden mit der zugehörigen Frequenzverschiebung verbunden.} 
+    \label{fig:gimp}
+\end{figure}
+
+Die Abbildung \ref{fig:gimp} zeigt nun die Messwerte sowie die passenden Ausgleichspolynome. Diese lassen bereits auf die Bandbreite schließen. Um diese zu berechnen werden die um die Hälfte reduzierten maximalen Spannungen jeder Mode benötigt. Diese können
 gemessen oder beispielsweise über die zuvor bestimmten Ausgleichsfunktionen genähert werden. Für die Bandbreite $B$ gilt ganz allgemein
 \begin{equation}
     \label{eqn:g1}
@@ -84,3 +97,4 @@ Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit l
         3      &      $\SI{69.13}{}$      &       $\SI{4.61}{}$               \\
     \end{tabular}
 \end{table}
+
