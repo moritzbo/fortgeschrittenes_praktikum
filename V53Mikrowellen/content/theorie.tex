@@ -3,13 +3,13 @@
 \subsection{Mikrowellen und Elektromagnetische Wellen }
 Mikrowellen beschreiben elektromagnetische Wellen, die sich in einem Frequenzspektrum von 1 bis 300 $\si{\giga\hertz}$ befinden. 
 Sie sind, im Vergleich zu sichtbarem Licht, eher dem langwelligen Bereich zuzuordnen.
-Elektromagnetische Wellen lassen sich hinreichend durch die Maxwellgleichungen beschreiben, ohne jedoch dabei die Teilcheneigenschaften der Korpuskeltheorie zu berücksichtigen. Im folgenden Versuch wird sich ausschließlich auf die Welleneigenschaften bezogen.
+Elektromagnetische Wellen lassen sich hinreichend durch die Maxwell-Gleichungen beschreiben, ohne jedoch dabei die Teilcheneigenschaften der Korpuskeltheorie zu berücksichtigen. Im folgenden Versuch wird sich ausschließlich auf die Welleneigenschaften bezogen.
 Charakteristisch für all diese Wellen ist die im Vakuum definierte Lichtgeschwindigkeit. Im Vakuum propagiert die Welle ausschließlich als Transversalwelle.
 Mit dieser Geschwindigkeit $c$- oder im Falle eines Mediums der entsprechend reduzierten Geschwindigkeit, lässt sich nun die Wellenlänge mithilfe der Frequenz $f$ bestimmen.
-\begin{equation*}
+\begin{equation}
     \label{eqn:1}
 \lambda = c/f
-\end{equation*}
+\end{equation}
 Das magnetische Feld verhält sich analog zum elektrischen, steht aber zu jedem Zeitpunkt senkrecht auf seiner elektrischen Komponente. \\
 \newline
 Große Anwendug finden diese \enquote{Mikrowellen} unter anderem in der Funk - und Radartechnik. Zum Beispiel werden so durch abweichende Brechungsindizes und wechselnden Impedanzen,  Informationen durch reflektierte Wellen gewonnen. 
@@ -17,36 +17,38 @@ Eine weitere Anwendung ist der Mikrowellenherd, der mit einer charakteristischen
 
 \subsection{Reflexklystron}
 
-Das Reflexklystron ist ein Gerät um hochfrequente Wellen entweder zu verstärken oder selbstständig anzuregen. Grundlage dazu sind zwei angeschlossene Spannungen, 
-die zum einem die Resonatorkammer und zum anderen den wortgebenen Reflektor elektrisch laden. Zudem wird eine Glühkathode verwendet, die aus möglichen Metallen, 
-gegen eine Austrittsarbeit, freie Elektronen löst und in Richtung des Reflektors beschleunigt. Wolfram bietet sich hierfür aufgrund der hohen Schmelztemperatur sehr gut an.
-Diese nun beschleunigten Elektroden finden ihren Weg zum Reflektor durch die Resonatorkammer und werden anschließend in diese Kammer zurückgelenkt. Die anfangs angelegte Spannung treibt 
-die Elektronen im Resonator folglich schwingend in die Richtung, die der negativen Spannungskomponente entgegengesetzt ist. Durch diese frequente Ausrichtung des elektrischen Felds werden die emittierten Elektronen entweder weiter beschleunigt oder 
-verlangsamt, was zu einer frequenzabhängigen Modulation der Geschwindigkeit führt. Während die Beschleunigung von Elektronen dem Resonator Energie kostet, gewinnt er diese zurück, wenn Elektronen gebremst werden. 
+Das Reflexklystron ist ein Gerät, um hochfrequente Wellen entweder zu verstärken oder selbstständig anzuregen. Grundlage dazu sind zwei angeschlossene Spannungen, 
+die zum einem die Resonatorkammer und zum anderen den wortgebenen Reflektor elektrisch laden. Zudem wird eine Glühkathode verwendet, die  
+gegen eine Austrittsarbeit, freie Elektronen löst und in Richtung des Reflektors, auf Grund eines angebrachten Beschleunigungsgitters, beschleunigt. Wolfram bietet sich hierfür aufgrund der hohen Schmelztemperatur sehr gut an.
+Durch die Ausrichtung des elektrischen Felds werden die emittierten Elektronen entweder weiter beschleunigt oder 
+verlangsamt, was zu einer Modulation der Geschwindigkeit führt. Diese nun beschleunigten Elektronen finden ihren Weg zum Reflektor durch die Resonatorkammer und werden anschließend in diese Kammer zurückgelenkt. 
+Während die Beschleunigung von Elektronen dem Resonator Energie kostet, gewinnt er diese zurück, wenn Elektronen gebremst werden. 
 Eine für den Resonator optimale Laufzeit $t$ für Energiegewinnung ist 
 \begin{equation*}
     t = \left(n+ \frac{3}{4} \right) \cdot T  \quad \quad n \in \mathbb{N}_0.
 \end{equation*}
+Dabei kommen die $\frac{3}{4}$ aus dem Abstand zum nächsten Schwingungsmaximum, eines nicht geschwindigkeitmodulierten Elektrons. Damit die Elektronen bei einem Schwingungsmaximum wieder 
+in der Resonatorkammer ankommen, muss ein vielfaches dieser $\frac{3}{4}$ Zeitverschiebung überbrückt werden.
 Die so entstehende Schwingung wird anschließend durch einen Hohlwellenleiter ausgekoppelt und weiter transportiert.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{Bilder/dia.jpg}
-    \caption{In diesem Diagram ist die abgegriffene Leistug der Wellenmoden aus einem Reflexklystron, abhängig von der angelegten Reflektorspannung dargestellt.
+    \caption{In diesem Diagram ist die abgegriffene Leistung der Wellenmoden aus einem Reflexklystron abhängig von der angelegten Reflektorspannung dargestellt.
     Die entsprechende Frequenz ist darunter mit gleicher Abszisse dargestellt. Deutlich erkennbar sind hier die einzelenen Moden die durch die Modulation entstehen.} 
     \label{fig:ref}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{Bilder/theo.JPG}
-    \caption{Schematischer Aufbau eines Reflexklystrons. Deutlich zu erkennen sind die blauen Pfeile, die verschiedene Elektronen abhängig von der angelegten Spannung darstellen. 
+    \caption{Schematischer Aufbau eines Reflexklystrons. Deutlich zu erkennen sind die blauen Pfeile, die verschiedene Elektronen abhängig von der angelegten Spannung im Hohlraumresonator darstellen. 
     Diese Sammlung an Elketronen nennt sich \enquote{Bunching}.} 
     \label{fig:ref}
 \end{figure}
-Durch Änderungen am internen Aufbau des Klystrons lassen sich die Moden unteranderem durch Spannungsunterschiede verschieben. 
+Durch Änderungen am internen Aufbau des Klystrons lassen sich die Moden durch Spannungsunterschiede verschieben. 
 \begin{equation*}
-    P_{\text{Output}} (\si{\volt}) \sim P_{\text{Output}} (\si{\volt} + \tau)
+    P_{\text{Output}} (\si{\volt}, t = 0) \sim P_{\text{Output}} (\si{\volt}, t = \tau)
 \end{equation*}
-Die Variabel $\tau$ ist hier so gewählt, dass $\si{\volt} + \tau$ wieder die vorher von $\si{\volt}$ getroffene Mode beschreibt.
+Die Variabel $\tau$ ist hier so gewählt, dass bei $t = \tau$ wieder die vorher getroffene Mode beschrieben wird.
 Analog lässt sich die Frequenz durch den mechanischen Aufbau ändern. Eine größere Resonatorkammer würder den Elektronen 
 mehr Laufzeit bieten und so das \enquote{Bunching} verlangsamen.
 
@@ -55,12 +57,11 @@ mehr Laufzeit bieten und so das \enquote{Bunching} verlangsamen.
 \subsection{Hohlleiter}
 Für die Fortleitung von elektromagnetischer Strahlung gibt es einige Methoden. Eine davon ist die Verwendung von Hohlleitern. Sie sind besonders gebräuchlich bei der Verwendung von Mikrowellen, also bei Frequenzen im $\si{\giga\hertz}$-Bereich.
 Dies liegt vorallem daran, dass sie in diesem Bereich besonders verlustarm sind. Koaxialkabel stellen beispielsweise eine andere Möglichkeit dar, sie sind allerdings auf Grund der mit der Frequenz steigenden Absorption deutlich 
-verlustanfälliger. Bei beiden Leitern wird, wie es der Name schon verrät, ein leitender Stoff an der Außenseite angebracht, an dem die elektromagnetische Welle reflektiert werden kann. Diese Reflexion kann in der Theorie ohne Randeffekte natürlich unendlich oft
-wiederholt werden und würde so einen verlustfreien Leiter darstellen. Hohlleiter sind, wie zu erwarten innen hohl, also mit Luft gefüllt.
-\\
-\newline
-Wie eine solche elektromagnetische Welle in einem Leiter propagiert hängt vollständig von den vorliegenden Randbedingungen ab. Mit diesen Randbedingunge lassen sich dann die Maxwellgleichungen für das elektrische, sowie das magnetische Feld lösen.
-Die Form eines Hohlleiters ist beliebig für die Applikation wählbar. Der gängigste und auch in diesem Versuch verwendete Hohlleiter, ist ein Rechteckhohlleiter. 
+verlustanfälliger. Bei einem Hohlleiter wird ein leitender Stoff an der Außenseite angebracht, an dem die elektromagnetische Welle reflektiert werden kann. Diese Reflexion kann in der Theorie ohne Randeffekte natürlich unendlich oft
+wiederholt werden und würde so einen verlustfreien Leiter darstellen. Hohlleiter sind innen hohl und können für beliebige Anwendugen beispielsweise evakuirt werden, oder
+in den einfachsten Anwendungen mit Luft gefüllt sein.
+Wie eine elektromagnetische Welle in einem Leiter propagiert, hängt vollständig von den vorliegenden Randbedingungen ab. Mit diesen Randbedingunge lassen sich dann die Maxwell-Gleichungen für das elektrische-, sowie das magnetische Feld lösen.
+Die Form eines Hohlleiters ist beliebig für die Applikation wählbar. Der gängigste und auch in diesem Versuch verwendete Hohlleiter ist ein Rechteckhohlleiter. 
 \\
 \newline
 Zunächst einige Überlegungen zu den Randbedingungen an einem Rechteckhohlleiter. Die ummantelnde Fläche des Hohlleiters kann als nahezu perfekt leitend angenommen werden. In der Regel wird dazu Kupfer oder Aluminium verwendet. Diese bildet eine 
@@ -70,12 +71,10 @@ verschwinden muss. Die Bedingungen lauten also
 E_{||} &= 0, \\
 B_{⊥} &= 0.
 \end{align*}
-Wenn nun also der Querschnitt eines Hohlleiters betrachtet wird, müssen diese Randbedingungen in jede einsichtbare Raumrichtung erfüllt sein. Daraus folgt unteranderem, dass die typische transversale Form von EM-Wellen im Vakuum nicht mehr vorliegen kann, denn
-die E, und B-Komponente müssen senkrecht aufeinander stehen. Allerdings sind die nötigen Freiheitsgrade nicht mehr gegeben, um auch senkrecht zur Ausbreitungsrichtung zu stehen. In einem Rechteckhohlleiter ist also eine Komponente immer
+Wenn nun also der Querschnitt eines Hohlleiters betrachtet wird, müssen diese Randbedingungen in jede einsichtbare Raumrichtung erfüllt sein. Daraus folgt, dass die typische transversale Form von EM-Wellen im Vakuum nicht mehr vorliegen kann, denn
+die E-, und B-Komponente müssen senkrecht aufeinander stehen. Allerdings sind die nötigen Freiheitsgrade nicht mehr gegeben, um auch senkrecht zur Ausbreitungsrichtung zu stehen. In einem Rechteckhohlleiter ist also eine Komponente immer
 longitudinal. Beschrieben werden die Wellen durch verschiedene Moden, denn durch die Reflektion an den Wänden bilden sich stehende Wellen, die nun je nach Frequenz unterschiedlich viele Schwingungsbäuche ausbilden. 
-\\
-\newline
-Gekennzeichnet werden die einzelnen Moden in Rechteckhohlleitern durch $\textbf{TE}_{m,n}$ oder $\textbf{TM}_{m,n}$. Dabei steht $\textbf{TE}$ für transversal elektrisch mit dementsprechend longitudinaler B-Komponente und $\textbf{TM}$ genau umgekehrt. Der Fall $\textbf{TEM}_{m,n}$ wurde
+Gekennzeichnet werden die einzelnen Moden in Rechteckhohlleitern durch $\textbf{TE}_{m,n}$ oder $\textbf{TM}_{m,n}$. Dabei steht $\textbf{TE}$ für transversal elektrisch mit dementsprechend longitudinaler B-Komponente und $\textbf{TM}$ vice versa. Der Fall $\textbf{TEM}_{m,n}$ wurde
 bereits wie vorher erklärt ausgeschlossen. Die Zahlen $m$ und $n$ geben dabei die Mode an und sie können jede beliebige natürliche Zahl, sowie auch Null, annehmen. Sie beschreiben wie viele Wellenbäuche der stehenden Welle in beispielsweise $x$, und $y$-Richtung passen.
 Genauer gesagt stellen sie eine Bedingung der jeweiligen Wellenzahl in dessen Raumrichtung auf. Typischerweise werden in Hohlleitern Frequenzen verwendet, bei denen sich $\textbf{TE}_{1,0}$ oder $\textbf{TM}_{1,0}$ Wellen ausbilden. In der Abbildung \ref{fig:4} ist eine 
 schematische Skizze einer solchen Mode dargestellt.
@@ -86,7 +85,7 @@ schematische Skizze einer solchen Mode dargestellt.
     \caption{Darstellung einer $\textbf{TE}_{1,0}$-Mode in einem Rechteckhohlleiter. \cite{skript}} 
     \label{fig:4}
 \end{figure}
-Durch die zuvor erwähnten Randbedingungen zeigt sich jetzt allerdings auch, dass es eine Grenzwellenlänge gibt, unter der keine Welle innerhalb des Leiters mehr propagieren kann. Formal ergibt sich diese durch die Existenz einer reellen Wellenzahl 
+Durch die zuvor erwähnten Randbedingungen zeigt sich jetzt allerdings auch, dass es eine Grenzwellenlänge für jede Mode gibt, unter der keine Welle innerhalb des Leiters mehr perfekt leiten wird. Formal ergibt sich diese durch die Existenz einer reellen Wellenzahl 
 in Ausbreitungsrichtung. 
 Die Grenzwellenlänge eines Rechteckhohlleiters einer beliebigen Mode lautet
 \begin{equation*}
@@ -98,11 +97,11 @@ Für den typischen $\textbf{TE}_{1,0}$-Modus ergibt dies
 \end{equation*}
 was ebenfalls geometrisch einsichtbar ist.
 \\
-Die longitudinale Komponente erfährt ebenfalls eine zur im freien Raum verschobene Wellenlänge, welche durch
+Die longitudinale Komponente erfährt ebenfalls eine zur im freien Raum gestreckte Wellenlänge, welche durch
 \begin{equation*}
-    \lambda_{h} = \frac{\lambda_0}{\sqrt{1 - \left(\frac{\lambda_0}{\lambda_{g}}\right)^2}}
+    \lambda_{g} = \frac{\lambda_0}{\sqrt{1 - \left(\frac{\lambda_0}{\lambda_{g}}\right)^2}}
 \end{equation*}
-berechnet wird. Dabei gibt $\lambda_0$ die Wellenlänge im freien Raum an. Aus der klassischen Beziehung \ref{eqn:1} lässt sich nach leichter Umformung auch die Frequenz in Ausbreitungsrichtung als
+berechnet wird. Dabei gibt $\lambda_0$ die Wellenlänge im freien Raum an. Aus der dispersionsfreihen Beziehung \ref{eqn:1} lässt sich nach Umformung auch die Frequenz in Ausbreitungsrichtung als
 \begin{equation}
     \label{eqn:222}
     f = c \cdot \sqrt{\left(\frac{1}{\lambda_h}\right)^2 - \left(\frac{1}{2a}\right)^2}
@@ -111,32 +110,32 @@ angeben.
 
 
 \subsection{Stehwellenverhältnis} 
-Häufig, durch Reflexion von Hindernissen oder anderen Faktoren, treten Wellen als sogenannte \enquote{stehende Wellen} auf. %Das charakteristische Merkmal sind die nicht verschobenen Nullpunkte bei einer variabler Zeit $t$.
+Häufig-, durch Reflexion von Hindernissen oder anderen Faktoren treten Wellen als sogenannte \enquote{stehende Wellen} auf. %Das charakteristische Merkmal sind die nicht verschobenen Nullpunkte bei einer variabler Zeit $t$.
 Bei Reflexion erfährt die rücklaufende Welle einen Phasensprung und formt so durch Superposition mit der einfallenden Welle eine Überlagerung. Die ursprüngliche Welle wird so periodisch verstärkt, abgeschwächt oder ganz annuliert. 
-In der Anwendung treten solche Reflexionen vorallem durch Impedanzunterschiede oder materielle Störungen auf. Die daraus folgene Proportionalität zwischen dem der Reflexionsamplitude $I_{ref}$ und einem etwaigen Impedanzunterschiede $\Delta Z$
+In der Anwendung treten solche Reflexionen vorallem durch Impedanzunterschiede oder materielle Störungen auf. Die daraus folgene Proportionalität zwischen dem der Reflexionsamplitude $I_{ref}$ und einem etwaigen Impedanzunterschiede $\increment Z$
 führt zu einer Definition des \enquote{Stehwellenverhältnis} SWR. (SWR für \enquote{Standing Wave Ratio}) 
 \begin{equation*}
-    I_{ref} \sim \Delta Z \sim \text{SWR}.
+    I_{\text{ref}} \sim \increment Z \sim \text{SWR}.
 \end{equation*}
-Dieses Verhätnis beschreibt die Überlagerung der Wellen, also der resultierenden Amplitude, bei ihrer maximalen -und ihrer minimalen Auslenkung. 
+Dieses Verhältnis beschreibt die Überlagerung der Wellen, also der resultierenden Amplitude, bei ihrer maximalen -und ihrer minimalen Auslenkung. 
 Gemessen werden die Amplituden bei elektrischen Leitern meist direkt durch das elektrische Feld $E$ oder der Spannung $U$, da diese proportional zueinander sind.
 Alternativ lassen sich die einzelnen Komponenten, die zu Superposition führen, getrennt betrachten. Hier entsteht das Verhältnis aus der maximal möglichen, verstärkten Amplitude $|E_i| + |E_r|$ und dem abschgeschwächten Anteil $|E_i| - |E_r|$.
-Der Betrag der einfallenden Feldstärke ist als $E_i$ -und der reflektierte als $E_r$ gekennzeichnet. Dieses eignet sich also gut zur Quantisierung der Güte eines entsprechend leitenden Mediums. Bei einem Verhältnis von $1$ wäre die Leitung perfekt.
+Der Betrag der einfallenden Feldstärke ist als $E_i$ und der reflektierte als $E_r$ gekennzeichnet. Dieses eignet sich also gut zur Quantisierung der Güte eines entsprechend leitenden Mediums. Bei einem Verhältnis von $1$ wäre die Leitung perfekt abgestimmt.
 \begin{equation*}
     \text{SWR} = \frac{E_{max}}{E_{min}} =  \frac{|E_i| + |E_r|}{|E_i| - |E_r|}
 \end{equation*}
 Eine äquivalente Beschreibung ist durch die sogenannte \enquote{Dämpfung} möglich. Diese hat die absolute Einheit $\si{\decibel}$ und beschreibt das Verhältnis von optimaler -und, durch z.B. Reflexion, abgeschwächter Leistung $P$. 
 \begin{equation*}
-    \si{\decibel} = 10 \cdot \text{log} \frac{P_1}{P_2}
+    \si{\decibel} = 10 \cdot \text{log}_{10} \left(\frac{P_1}{P_2}\right)
 \end{equation*}
 Auffallend ist, dass wenn das Verhältnis aus den Leistungen $P_1$ und $P_2$ eben genau $2$ ergibt, eine Dämpfung von 3 $\si{\decibel}$ folgt
 \begin{equation*}
-    \si{\decibel} = 10 \cdot \text{log} 2 = 3.
+    \si{\decibel} = 10 \cdot \text{log}_{10} (2) = 3.
 \end{equation*}
 Dieser Zusammenhang kann durch 
 \begin{equation}
     \label{eqn:SWR}
-    \text{SWR} =\sqrt{1 + \frac{1}{ sin^2 \left( \frac{\pi (d_1 - d_2)}{\lambda_h}  \right)} } 
+    \text{SWR} =\sqrt{1 + \frac{1}{ \text{sin}^2 \left( \frac{\pi (d_1 - d_2)}{\lambda_h}  \right)} } 
 \end{equation}
 zum Stehwellenverhältnis führen, da die Leistung eng mit der elektrischen Spannung verknüpft ist. 
 Hier ist $\lambda_h$ die Wellenlänge im Hohlleiter und $d_1$ und $d_2$ sind die Abstände von einem gewählten Minimum, so dass sich die Leistung verdoppelt. \\
