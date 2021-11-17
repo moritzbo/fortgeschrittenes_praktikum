@@ -3,7 +3,7 @@
 \subsection{Modenanalyse und Bandbreite}
 
 Die Spannungsmesswerte zur Darstellung der einzelnen Moden im Hohlleiter sind in den Tabellen \ref{tab:Messreihe11} und \ref{tab:Messreihe12} aufgelistet.
-Nun kann die gemessene Mikrowellenspannung, welche proportional zur Leistung ist, in Abhängigkeit der Reflektorspannung aufgetragen werden. Durch die drei Messwerte pro Mode werden jeweils Polynome zweiten Grades gefittet.
+Nun kann die gemessene Mikrowellenspannung, welche proportional zur Leistung ist, in Abhängigkeit der Reflektorspannung aufgetragen werden. Durch die drei Messwerte pro Mode werden jeweils Polynome zweiten Grades gefittet. Die Messwerte werden also interpoliert.
 Die Form sieht also folgendermaßen aus
 \begin{equation*}
 U_{m} = A \cdot U_{r}^2 + B \cdot  U_{r} + C.
@@ -98,9 +98,40 @@ Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit l
         3      &      $\SI{69.13}{}$      &       $\SI{4.61}{}$               \\
     \end{tabular}
 \end{table}
-
+\newline
+Aus der vorherigen Modenanalyse lässt sich nun auch die Länge zwischen Hohlraumresonator und Reflektoranode $L$ berechnen. Dazu müssen die Moden bekannt sein. Die höchste Reflektorspannung bei der eine Mode erkennbar ist, muss die
+erste Mode sein, also die mit $n=0$ in Gleichung \ref{eqn:trash}. Da wir mit dem Detekor nur das elektrische Feld messen, verwenden wir hier also die Mode $\textbf{TE}_{1,0}$.
+Die beschleunigten Elektronen haben durch das Beschleunigungsgitter eine mittlere Geschwindigkeit erhalten. Jene die eine höhere Geschwindigkeitsmodulation erfahren haben, werden statistisch von denen 
+die abgebremst werden, herausgekürzt. Dies gilt nur für eine rein sinusförmige Schwingung im Resonator. Die mittlere Geschwindigkeit hinter dem Gitter lässt sich also durch ein Elektron ohne Geschwindigkeitsmodulation 
+beschreiben. Es gilt
+\begin{equation}
+    \label{eqn:lol1}
+e \cdot U_{B} = \frac{1}{2}m_e \bar{v}^2.
+\end{equation}
+Die Flugdauer der Elektronen lässt sich angeben durch
+\begin{equation}
+\frac{t_0}{2} = \frac{\bar{v}}{a},
+\end{equation}
+dabei ist $a$ die Beschleunigung, welche durch die angelegten Spannungen induziert wird. Aus der Energiebetrachtung
+\begin{equation}
+m_e a \cdot L = e \cdot (U_b + U_R)
+\end{equation}
+lässt sich nun $a$ berechnen. Zusammen mit $\bar{v}$ aus Gleichung \ref{eqn:lol1} und der Beziehung \ref{eqn:trash} folgt nun
+\begin{equation*}
+\frac{\left(n + \frac{3}{4}\right)}{f} = 2 \sqrt{\frac{2e}{m_e}}\cdot \frac{\sqrt{U_b}}{e (U_b + U_R)} \cdot m_e L.
+\end{equation*}
+Eine Umformung nach $L$ liefert 
+\begin{equation}
+    \label{eqn:wtfisthis}
+L =  \sqrt{\frac{e}{2 m_e U_b}} \cdot \frac{(U_b + U_R)}{2f} \cdot \left(n + \frac{3}{4}\right).
+\end{equation}
+Die erste Mode mit $n = 0$ wurde bei einer Reflektorspannung von $U_R = \SI{212}{\volt}$ gefunden. Da die Spannung des Beschleunigungsgitter unbekannt ist, kann diese abgeschätzt werden.
+Damit die Elektronen auch durch den gesamten Hohlraumresonator laufen, lässt sich eine Beschleunigungsspannung in derselben Größenordnung wie die Reflektorspannung erwarten. 
+Sei diese nun also in einem Intervall $\SI{150}{\volt} < U_b < \SI{500}{\volt}$, dann ergibt sich nach Gleichung \ref{eqn:wtfisthis} eine mögliche Resonatorlänge im Bereich
+\begin{equation}
+   \SI{4.46}{\milli\meter} < L < \SI{8.76}{\milli\meter}.
+\end{equation}
 \subsection{Bestimmung von Frequenz, Wellenlänge und Dämpfung}
-
 Aus den gemessenen Abständen zwischen den Minima der stehenden Wellen im Hohlleiter lässt sich die Wellenlänge im Hohlleiter $\lambda_h$ über
 \begin{equation*}
 \increment x = \frac{\lambda_h}{2}
@@ -126,7 +157,7 @@ lässt sich ebenfalls noch die Phasengeschwindigkeit bestimmen und es zeigt sich
 \begin{equation*}
 v_{\text{phase}} = \left(\SI{1.4658(16)}{}\right) c
 \end{equation*}
-die Phasengeschwindigkeit schneller als die Lichtgeschwindigkeit $c$ ist. Da diese allerdings, anders als die Gruppengeschwindigkeit, keine Informationen überträgt, ist dies nicht verwunderlich.
+die Phasengeschwindigkeit schneller als die Lichtgeschwindigkeit $c$ ist. 
 \\
 \newline
 Für die Bestimmung der Dämpfungskurve werden die gemessenen $\si{\decibel}$ und Gleitschraubentiefwerte aus der Tabelle \ref{tab:Messreihe22} in ein Diagramm geplottet.
