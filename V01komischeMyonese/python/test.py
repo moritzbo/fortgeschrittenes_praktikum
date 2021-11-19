@@ -8,10 +8,10 @@ import uncertainties.unumpy as unp
 
 t20, p20 = np.genfromtxt("../data/delay20.dat", unpack=True)
 t10, p10 = np.genfromtxt("../data/delay10.dat", unpack=True)
-                              
+            
 t21, p21 = np.genfromtxt("../data/delay21.dat", unpack=True)
 t22, p22 = np.genfromtxt("../data/delay22.dat", unpack=True)
-                                                           
+                                         
 t11, p11 = np.genfromtxt("../data/delay11.dat", unpack=True)
 t12, p12 = np.genfromtxt("../data/delay12.dat", unpack=True)
 
@@ -105,4 +105,4 @@ plt.plot(x, params[0]*x+params[1],
 
 # plt.legend(loc="upper left")
 # plt.grid()
-plt.savefig("build/plot1.pdf")
+plt.savefig("../build/plot1.pdf")
