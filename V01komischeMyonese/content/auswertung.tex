@@ -1,0 +1,62 @@
+\section{Auswertung}
+
+In der folgenden Versuchsauswertung werden für die Methode der kleinsten Quadrate als auch lineare Regressionen, die Bibliotheken NumPy \cite{NumPy} und SciPy \cite{SciPy} 
+in Python verwendet. Die Fehlerrechnungen wurden ebenfalls über die Bibliothek \enquote{uncertainties} \cite{uncertainties} bestimmt.
+
+\subsection{Justierung der Verzögerung}
+Da an dem Szintillator zwei Photomultiplier angeschlossen sind, müssen diese Signale zeitlich aneinander angepasst an die Koinzidenzschaltung gelangen. An beiden 
+Leitungen lässt sich durch eine variable Kabellänge eine Verzögerung generieren, sodass dies gewährleistet ist. Im folgenden wurden die ankommenden Spannungsimpulse
+über einen Diskriminator angepasst. Dazu wurde eine hinreichend große Schwellspannung zum herausfiltern des Rauschens und eine Impulsbreite eingestellt. Die Verzögerungsanpassung
+wurde im Folgenden für zwei unterschiedliche Impulsbreiten von $\SI{10}{\nano\second}$ und $\SI{20}{\nano\second}$ durchgeführt. 
+\\
+Die Messreihen mit unterschiedlich eingebauten Verzögerungen und den dazu gemessenen Zählraten pro $\SI{10}{\second}$ hinter der Koinzidenz, sind in den Tabellen
+\ref{tab:MessreiheDelay20ns} und \ref{tab:MessreiheDelay10ns} notiert.
+\\
+Zusätzlich gilt eine Poissonverteilung der Messwerte, da es sich um Zählraten handelt. Die Fehler der einzelnen Werte werden also mit $\sqrt{N}$ angegeben.
+Von Interesse ist nun die Halbwertsbreite der Verzögerungseinstellung. Diese lässt sich über zwei Lineare Regressionen an den jeweiligen Flanken für je eine Impulsbreite bestimmen.
+\\
+Die Lineare Ausgleichgerade hat dabei die Form
+\begin{equation*}
+N(t) = at + b.
+\end{equation*}
+In den Tabelle \ref{tab:112233} und \ref{tab:332211} sind die ermittelten Werte der Parameter aufgelistet.
+
+\begin{table}
+    \centering
+    \caption{Parameter der Linearen Regression für die Bestimmung der Halbwertsbreite bei einer Impulsbreite von $\SI{10}{\second}$.} 
+    \label{tab:112233}
+    \begin{tabular}{c | c c }
+        \toprule
+        Flanke & a [$\si{\per\nano\second}$] & b \\
+        \midrule
+            Links    &      $\SI{15.87(69)}{}$     &   $\SI{302.49(843)}{}$      \\               
+            Rechts    &     $\SI{-16.33(85)}{}$     &   $\SI{306.60(1121)}{}$    \\ 
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{Parameter der Linearen Regression für die Bestimmung der Halbwertsbreite bei einer Impulsbreite von $\SI{10}{\second}$.} 
+    \label{tab:332211}
+    \begin{tabular}{c | c c }
+        \toprule
+        Flanke & a [$\si{\per\nano\second}] $ & b \\
+        \midrule
+            Links    &      $\SI{12.85(61)}{}$      &    $\SI{132.21(406)}{}$  \\               
+            Rechts    &     $\SI{-15.26(88)}{}$      &  $\SI{150.28(605)}{}$   \\ 
+    \end{tabular}
+\end{table}
+
+Aus den Messreihen \ref{tab:MessreiheDelay20ns} und \ref{tab:MessreiheDelay10ns} lassen sich nun die Maxima ablesen und in die jeweiligen halben Maxima in die Ausgleichgeraden einsetzten.
+Wenn diese nach $t$ umgeformt werden, ergeben sich die Werte
+\begin{align}
+t_{\text{links, }10} &= ,\\
+t_{\text{rechts, }10} &= ,\\
+t_{\text{links, }20} &= ,\\
+t_{\text{rechts, }20} &= .\\
+\end{align}
+Aus den Differenzen der Beträge folgen somit die beiden Halbwertsbreiten
+\begin{align}
+T_{10} &= \\
+T_{20} &= \\
+\end{align}
