@@ -52,6 +52,10 @@ plt.plot(x, params[0]*x+params[1],
         'k--',
         label="lineare Regression",
         linewidth=1)
+paras1 = ufloat(params[1], uncertainties[1])
+paras0 = ufloat(params[0], uncertainties[0])
+
+tlinks20 = (127 - paras1)/paras0
 
 
 def sigmoid2(x, a, b):
@@ -71,6 +75,10 @@ plt.plot(x, params[0]*x+params[1],
         'r--',
         linewidth=1)
 
+paras1 = ufloat(params[1], uncertainties[1])
+paras0 = ufloat(params[0], uncertainties[0])
+trechts20 = (127 - paras1)/paras0
+
 def sigmoid3(x, a, b):
     return a*x+b
 
@@ -87,6 +95,9 @@ x = np.linspace(-13,0)
 plt.plot(x, params[0]*x+params[1], 
         'r--',
         linewidth=1)
+paras1 = ufloat(params[1], uncertainties[1])
+paras0 = ufloat(params[0], uncertainties[0])
+tlinks10 = (67 - paras1)/paras0
 
 def sigmoid4(x, a, b):
     return a*x+b
@@ -104,6 +115,9 @@ x = np.linspace(0, 12)
 plt.plot(x, params[0]*x+params[1], 
         'r--',
         linewidth=1)
+paras1 = ufloat(params[1], uncertainties[1])
+paras0 = ufloat(params[0], uncertainties[0])
+trechts10 = (67 - paras1)/paras0
 
 # plt.ylabel(r'Impulse $1/10 [\si{\per\seconds}]$')
 # plt.xlabel(r'$\increment t$ [\si{\seconds}]$')
@@ -111,6 +125,20 @@ plt.plot(x, params[0]*x+params[1],
 
 # plt.legend(loc="upper left")
 # plt.grid()
+
+print(f"Tlinks20: {tlinks20:.2f}")
+print(f"Trechts20: {trechts20:.2f}")
+print(f"Tlinks10: {tlinks10:.2f}")
+print(f"Trechts10: {trechts10:.2f}")
+
+T20 = trechts20 - tlinks20
+T10 = trechts10 - tlinks10
+
+print(f"T20: {T20:.2f}")
+print(f"T10: {T10:.2f}")
+
+plt.hlines(127, unp.nominal_values(tlinks20), unp.nominal_values(trechts20), colors=None, linestyle='solid', label='Halbwertsbreite ')
+plt.hlines(67, unp.nominal_values(tlinks10), unp.nominal_values(trechts10), colors=None, linestyle='solid', label='Halbwertsbreite ')
 plt.savefig("build/plot1.pdf")
 
 
