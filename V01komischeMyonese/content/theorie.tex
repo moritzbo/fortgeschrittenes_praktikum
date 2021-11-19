@@ -78,8 +78,39 @@ vervielfacht. Am Ende des Photomultipliers ist meist ein Vorverstärker eingebau
 \subsection{Zerfall und Lebensdauer}
 Der Zerfall eines einzelnen Myons ist ein statischer Prozess und unabhängig von der Zeit die es bereits vorliegt. Es gibt also keinen Alterungsprozess von Myonen.
 Die Wahrscheinlichkeit das ein Teilchen zerfällt ist lässt sich also für ein beliebig kleinen Zeitraum $\text{d}t$ als
-\begin{equation*}
+\begin{equation}
+    \label{eqn:lolol}
 \text{dW} = \lambda_{\mu} \text{d}t
-\end{equation*}
+\end{equation}
 angeben. Die Konstante $\lambda_{\mu}$ beschreibt die Zerfallswahrscheinlichkeit eines Myons pro Zeiteinheit.
-Wenn nun eine Anzahl $N$ an Myonen vorliegt,
+Wenn nun eine Anzahl N an Myonen vorliegt, lässt sich der zeitliche Verlauf dieser durch
+\begin{equation}
+\text{dN} = - \text{N} \text{dW}
+\end{equation}
+beschreiben. Mit der Beziehung \ref{eqn:lolol} folgt nun
+\begin{equation*}
+\text{dN} = - \text{N} \lambda_{\mu} \text{d}t.
+\end{equation*}
+Diese Differentialgleichung wird gelöst durch 
+\begin{equation}
+    \label{eqn:lololol}
+\text{N}(t) = \text{N}_0 \cdot \text{exp}(- \lambda_{\mu}t),
+\end{equation}
+wobei $\text{N}_0$ die Anzahl der Myonen zum Zeitpunkt $t=0$ beschreibt. Um nun eine Verteilungsfunktion zu erhalten wird eine infinitesimale
+Änderung der Myonenanzahl betrachtet. Es gilt
+\begin{equation}
+\frac{\text{dN}(t)}{\text{N}_0} = \frac{\text{N}(t + \text{d}t) - \text{N}(t)}{\text{N}_0} = - \left(\frac{\text{dN}}{\text{d}t}\right)\frac{\text{d}t}{\text{N}_0}.
+\end{equation}
+Wird nun die Ableitung ausgeführt, ergibt sich eine Verteilungsfunktion welche zur Berechnung des Mittelwerts genutzt werden kann. Der Mittelwert über die Zeit 
+entspricht der Lebensdauer der Myonen. Die Lebensdauer folgt also aus
+\begin{equation}
+    \label{eqn:123123}
+    \langle t \rangle := \tau = \int_0^{\infty} t \lambda_{\mu} \text{exp}(- \lambda_{\mu} t) \text{d}t = \frac{1}{\lambda_{\mu}}.
+\end{equation}
+Für die Bestimmung der Lebensdauer in diesem Versuch wird die Methode der kleinsten Quadrate verwendet. Dazu werden die Individuallebenszeiten der Myonen gemessen und an 
+die Anzahl dieser Lebensdauern an eine Exponentialfunktion der Form \ref{eqn:lololol} angepasst. 
+Analytisch sieht dies folgendermaßen aus
+\begin{equation}
+\sum_{i=1}^{n} \left( \text{N}(t_i) - \text{N}_0 \cdot \text{exp}(- \lambda_{\mu}t_i)\right)^2 \stackrel{!}{=} \text{min}
+\end{equation}
+Dies lässt sich durch eine bestimmte Wahl von $\lambda_{\mu}$ und $\text{N}_0$ minimieren, woraus auch $\tau$ über Beziehung \ref{eqn:123123} berechnet werden kann.
