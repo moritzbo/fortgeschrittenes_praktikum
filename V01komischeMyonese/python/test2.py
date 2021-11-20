@@ -9,7 +9,6 @@ import uncertainties.unumpy as unp
 
 
 # matplotlib.pyplot.rcdefaults()
-# plt.rcdefaults()
 
 
 t20, p20 = np.genfromtxt("data/delay20.dat", unpack=True)
@@ -88,8 +87,9 @@ plt.ylim(-20)
 plt.vlines(unp.nominal_values(tlinks20), -20, 127, colors='r', linestyle='dashed')
 plt.vlines(unp.nominal_values(trechts20), -20, 127, colors='r', linestyle='dashed')
 plt.hlines(127, unp.nominal_values(tlinks20), unp.nominal_values(trechts20), colors='r', linestyle='dashed', label='Halbwertsbreite')
-plt.legend()
+plt.legend(prop={'size': 8})
 plt.grid()
+<<<<<<< HEAD
 
 
 plt.xlabel(r'$\SI{10}{}$') 
@@ -97,6 +97,10 @@ plt.xlabel(r'$\SI{10}{}$')
 
 plt.ylabel(r'\text{N}[\text{Imp}\si{\per{10}\second}]')
 
+=======
+plt.xlabel(r'$t$[$\si{\nano\second}$]')
+plt.ylabel(r'$\text{N}$[$\text{Imp}\si{\per{10}\second}$]')
+>>>>>>> 7c40956e44ac20ebacdb5b49f592b08f4917d91b
 plt.savefig("build/plot11.pdf")
 plt.clf()
 
@@ -167,10 +171,11 @@ plt.ylim(-10)
 plt.vlines(unp.nominal_values(tlinks10), -10, 67, colors='r', linestyle='dashed')
 plt.vlines(unp.nominal_values(trechts10), -10, 67, colors='r', linestyle='dashed')
 plt.hlines(67, unp.nominal_values(tlinks10), unp.nominal_values(trechts10), colors='r', linestyle='dashed', label='Halbwertsbreite')
-plt.legend()
+plt.legend(prop={'size': 8})
 plt.grid()
-#plt.xlabel(r'\SI{10}{}')
-#plt.ylabel(r'\text{N}[\text{Imp}\si{\per{10}\second}]')
+plt.xlabel(r'$t$[$\si{\nano\second}$]')
+plt.ylabel(r'$\text{N}$[$\text{Imp}\si{\per{10}\second}$]')
+
 plt.savefig("build/plot12.pdf")
 
 # plt.hlines(127, unp.nominal_values(tlinks20), unp.nominal_values(trechts20), colors=None, linestyle='solid', label='Halbwertsbreite ')
