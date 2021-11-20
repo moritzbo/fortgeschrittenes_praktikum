@@ -60,5 +60,40 @@ Aus den Differenzen der Beträge folgen somit die beiden Halbwertsbreiten
 T_{10} &= \SI{10.53(64)}{\nano\second},\\
 T_{20} &= \SI{22.06(115)}{\nano\second}.\\
 \end{align*}
-In den Abbildungen ... und ... sind die Messwerte mit poissonverteiltem Fehlerbalken, sowie Ausgleichgeraden und Halbwertsbreite für beide Impulsbreiten 
+In den Abbildungen \ref{fig:111} und \ref{fig:222} sind die Messwerte mit poissonverteiltem Fehlerbalken, sowie Ausgleichgeraden und Halbwertsbreite für beide Impulsbreiten 
 aufgetragen.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/plot11.pdf}
+    \caption{Gemessene Impulse pro 10 Sekunden mit Fehlerbalken, Ausgleichsgeraden und Halbwertsbreite für eine Impulsbreite von $\SI{20}{\nano\second}$.} 
+    \label{fig:111}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/plot12.pdf}
+    \caption{Gemessene Impulse pro 10 Sekunden mit Fehlerbalken, Ausgleichsgeraden und Halbwertsbreite für eine Impulsbreite von $\SI{10}{\nano\second}$.} 
+    \label{fig:222}
+\end{figure}
+
+\subsection{Kalibrierung des Vielkanalanalysators}
+Um die Spannungsimpulse hinter dem TAC einer Zeit zuzuordnen, werden mit einem Doppelimpulsgenerator feste Zeitabstände generiert. Die am Rechner abgelesenen Kanäle pro Zeitabstand $\increment t$
+sind in der Tabelle \ref{tab:1122332211} eingetragen. Sie zeigen einen linearen Verlauf. Es lässt sich also durch die Messwerte eine lineare Ausgleichgerade bestimmen. Durch diese kann dann einem
+beliebigen Kanal eine Zeitdifferenz $\increment t$ zugeorndet werden.
+\\
+Die Form der Ausgleichgeraden sieht folgendermaßen aus
+\begin{equation}
+\increment t (\text{C}) = a  \text{C} + b.
+\end{equation}
+Dabei steht $\text{C}$ für den jeweiligen Channel. 
+Es ergeben sich die folgenden Parameter
+\begin{align*}
+    a &= \SI{2.750(1)}{\nano\second\per{\text{Channel}}},\\
+    b &= \SI{0.286(226)}{\micro\second}.\\
+\end{align*}
+Die gemessenen Werte aus der Tabelle \ref{tab:1122332211} sind zusammen mit der Ausgleichgerade in der Abbildungen \ref{fig:333} aufgetragen.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/plot2.pdf}
+    \caption{.} 
+    \label{fig:333}
+\end{figure}
