@@ -54,8 +54,14 @@ So ist mit diesem Aufbau möglich Myonen erfolgreich zu detektieren und sogar di
 Um Aufschluss über alle detektierten Teilchen zu bekommen, bietet es sich an gleich hinter dem ersten AND-Gatter zusätzlich einen Impulszähler anzubringen. 
 Dieser reagiert auf jedes Signal und erhöht entsprechend den aktuellen Zähler stand. Durch den vorherigen Aufbau lässt es sich so erreichen, dass eben nur die Impulse gezählt werden, die 
 in den Szintillator einfallen, keine Zerfälle.
-
-
+\\
+\newline
+Zusätzlich gibt es noch einen Doppelimpulsgenerator um wichtige Eigenschaften bei der Auslesung der Amplituden 
+richtig einorndnen zu können. Der Generator muss alternativ zum Szintillator an die Koinzidenzschaltung geschlossen werden,
+wo er dann zeitlich abgestimmte Impulse gibt. Diese sind einer Skaler am Bauelement zu entnehmen. 
+Die weitergeleitete Amplitude wird mit einem System ausgewertet und einem Kanal zugewiesen. Dieser Kanal ist abhängig 
+von der Impulsdauer. So lässt sich mit eingigen bekannten Impulsabständen aus dem Generator und dem enstprechend angezeigten Kanälen
+feststellen, welcher Kanal bei der echten Messung für welches Zeitintervall $\increment T$ steht.
 
 
 

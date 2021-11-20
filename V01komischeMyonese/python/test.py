@@ -9,7 +9,6 @@ import uncertainties.unumpy as unp
 
 
 # matplotlib.pyplot.rcdefaults()
-plt.rcdefaults()
 
 
 t20, p20 = np.genfromtxt("data/delay20.dat", unpack=True)

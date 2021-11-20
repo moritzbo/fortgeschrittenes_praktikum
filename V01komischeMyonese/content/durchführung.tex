@@ -1,0 +1,25 @@
+\section{Durchführung}
+Der in \ref{fig:aufbauSCHEMATISCH} gezeigte Aufbau wird schrittweise aufgebaut, was ermölglicht, die einzelnen Elemente
+frühzeitig zu kalbirieren. Zu Beginn werden die Diskriminatoren eingestellt um ein Rauschen zu vermeiden und die Impulsbreite zu definieren.
+Hierbei wird mit einem Schraubenzieher eine kleine Stellschraube in dem Bauelement verstellt. Die Schwelle für einkommende Signale
+wird durch die \enquote{Threshhold}-Schraube geändert und die Breite durch \enquote{width}. Das Ziel ist eine möglichst flache, ungestörte Linie 
+neben den einfallenden Impulsen am Oszillograhpen zu beobachten. Dierser Impuls soll eine Breite von $\SI{10}{\micro\second}$ und $\SI{20}{\nano\second}$ haben.
+\\
+\newline
+Es folgen die \enquote{Delays}, deren Verzögerungen angepasst werden müssen. Als Impuls werden einfallende Myonen und deren Zerfälle 
+benutzt, die in ihrerem Signal keinen unterscheidbaren Unterschied haben. Weiter wird der Aufbau so verändert, dass die Koinzidenzschaltung direkt in eine Zählereinheit läuft. 
+Zu erwarten sind bei einer perfekten Abstimmung der Delays maximale Zählraten. Es gilt analog, dass eine schlechte Abstimmung zu niedrigen Raten führt. 
+Die Verzögerungen an den Delays sind in nano Sekunden als zweier Potenzen, wobei zusätzlich $0.5$ Möglich ist, einstellbar und lassen sich addieren. So kann pro Delay
+ein Maximum von $\SI{63.5}{\nano\second}$ Verzögerungen erreicht werden. Zur bestimmung des optimalen verhätnis werden beide Delays auf einen gleichen Wert über $\SI{0}{\nano\second}$ eingestellt und von dort 
+in mehreren Schritten variert. Der Zähler soll für eine Länge von $10$ Sekunden suchen und das Ergebnis gilt es zu notieren.
+Nach hinreichender Beobachtung werden die Delays für eine maximale Zählraten eingestellt.
+\\
+\newline
+Die restlichen Elemente werden hinzugenommen und an dem \enquote{Monoflop} wird die Suchzeit $\increment T_s = \SI{15}{\micro\second}$ eingestellt. 
+Um die Auswertung durchen den TAC zu ermöglichen muss vor der eigentlichen Messreihe der Doppelimpulsgernator alleine an die Koinzidenzschaltung
+geschlossen werden. Der Aufbau ab dem Ausgang der Koinzidenzschaltung ändert sich dabei nicht. 
+Jetzt werden mehrere Doppelimpuslse bei bekannter zeitlichen Länge erzeugt und durch den TAC ausgewertet. Die entsprechenden Kanäle können am PC, der mit der TAC-Einheit verbunden ist, 
+ausgelesen und notiert werden. So ist bekannt, welchem Kanal eine Impulsdauer zugeordnet ist. 
+Final wird der Sizillator wieder an die Koinzidenzschaltung angeschlossen und die eigentlich Messreihe kann beginnen. 
+Es müssen alle Messvorgänge zur gleichen Zeit gestartet werden. Dazu gehört die Zählung der einfallenden Teilchen und die Messung der Lebensdauer am PC.
+Nach einer beliebigen Zeit, wahlweise groß um die Mittellung zu verbessern, wird der Messvorgang gestoppt und die Daten entnommen.
