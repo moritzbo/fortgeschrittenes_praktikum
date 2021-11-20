@@ -28,7 +28,7 @@ p10err = np.sqrt(p10)
 #            'kx',
 #            label="Messdaten mit Fehlerbalken bei einer Breite von 20",
 #            linewidth=1.5)
-plt.errorbar(t20, p20, xerr=None, yerr=p20err, fmt='kx', elinewidth=1, label="Messdaten bei Breite 20") 
+plt.errorbar(t20, p20, xerr=None, yerr=p20err, fmt='kx', elinewidth=0.7, label="Messdaten bei Breite 20", markersize=3, capsize=1.5, markeredgewidth=0.5) 
 
 
 # plt.plot(t10, p10,
@@ -156,7 +156,7 @@ trechts10 = (67 - paras1)/paras0
 # print(f"T20: {T20:.2f}")
 # print(f"T10: {T10:.2f}")
 
-plt.errorbar(t10, p10, xerr=None, yerr=p10err, fmt='kx', elinewidth=1, label="Messdaten bei Breite 10") 
+plt.errorbar(t10, p10, xerr=None, yerr=p10err, fmt='kx', elinewidth=0.7, label="Messdaten bei Breite 10",markersize=3, capsize=1.5, markeredgewidth=0.5) 
 plt.ylim(-10)
 plt.vlines(unp.nominal_values(tlinks10), -10, 67, colors='r', linestyle='dashed')
 plt.vlines(unp.nominal_values(trechts10), -10, 67, colors='r', linestyle='dashed')
