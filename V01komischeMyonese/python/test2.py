@@ -89,18 +89,8 @@ plt.vlines(unp.nominal_values(trechts20), -20, 127, colors='r', linestyle='dashe
 plt.hlines(127, unp.nominal_values(tlinks20), unp.nominal_values(trechts20), colors='r', linestyle='dashed', label='Halbwertsbreite')
 plt.legend(prop={'size': 8})
 plt.grid()
-<<<<<<< HEAD
-
-
-plt.xlabel(r'$\SI{10}{}$') 
-
-
-plt.ylabel(r'\text{N}[\text{Imp}\si{\per{10}\second}]')
-
-=======
 plt.xlabel(r'$t$[$\si{\nano\second}$]')
 plt.ylabel(r'$\text{N}$[$\text{Imp}\si{\per{10}\second}$]')
->>>>>>> 7c40956e44ac20ebacdb5b49f592b08f4917d91b
 plt.savefig("build/plot11.pdf")
 plt.clf()
 
