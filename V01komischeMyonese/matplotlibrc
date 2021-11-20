@@ -20,6 +20,6 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 # Inhalt des matplotlib headers, da \input nicht geht
-pgf.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{mathtools} \usepackage{fontspec} \usepackage[math-style=ISO, bold-style=ISO, sans-style=italic, nabla=upright, partial=upright, warnings-off={ mathtools-colon, mathtools-overbracket}]{unicode-math} \setmathfont{Latin Modern Math} \setmathfont{XITS Math}[range={scr, bfscr}] \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1] \usepackage[locale=DE,separate-uncertainty=true, per-mode=reciprocal, output-decimal-marker=.]{siunitx}\usepackage[version=4,math-greek=default, text-greek=default]{mhchem}\usepackage{xfrac}
+pgf.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{mathtools} \usepackage{fontspec} \usepackage[math-style=ISO, bold-style=ISO, sans-style=italic, nabla=upright, partial=upright, warnings-off={ mathtools-colon, mathtools-overbracket}]{unicode-math} \setmathfont{Latin Modern Math} \setmathfont{XITS Math}[range={scr, bfscr}] \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1] \usepackage[locale=DE,separate-uncertainty=true, per-mode=reciprocal, output-decimal-marker=.]{siunitx} \usepackage[version=4,math-greek=default, text-greek=default]{mhchem}\usepackage{xfrac}
 
 # pgf.preamble : \input{header-matplotlib.tex}
