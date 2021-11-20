@@ -9,7 +9,7 @@ import uncertainties.unumpy as unp
 
 
 # matplotlib.pyplot.rcdefaults()
-plt.rcdefaults()
+# plt.rcdefaults()
 
 
 t20, p20 = np.genfromtxt("data/delay20.dat", unpack=True)
@@ -90,8 +90,13 @@ plt.vlines(unp.nominal_values(trechts20), -20, 127, colors='r', linestyle='dashe
 plt.hlines(127, unp.nominal_values(tlinks20), unp.nominal_values(trechts20), colors='r', linestyle='dashed', label='Halbwertsbreite')
 plt.legend()
 plt.grid()
-#plt.xlabel(r'$\SI{10}{}$')
-#plt.ylabel(r'\text{N}[\text{Imp}\si{\per{10}\second}]')
+
+
+plt.xlabel(r'$\SI{10}{}$') 
+
+
+plt.ylabel(r'\text{N}[\text{Imp}\si{\per{10}\second}]')
+
 plt.savefig("build/plot11.pdf")
 plt.clf()
 
