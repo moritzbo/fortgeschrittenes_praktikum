@@ -27,7 +27,7 @@ Untergrundchannel = Untergrundges/511
 # print(Untergrundges)
 # print(Untergrundchannel)
 
-Counts, Kanal = np.genfromtxt("../data/new2.txt", unpack=True)
+Counts, Kanal = np.genfromtxt("data/new2.txt", unpack=True)
 
 Countsextra = Counts
 Countserr = np.sqrt(Countsextra)
@@ -70,6 +70,32 @@ plt.errorbar(tliste, unp.nominal_values(Counts), xerr= 0, yerr = Countserr,  fmt
 
 tyo = np.linspace(0, 10.6)
 plt.plot(tyo, params[0] * np.exp(- params[1] * tyo), "b-", label="Ausgleichsfunktion")
+plt.xlabel(r'$t$[$\si{\nano\second}$]')
+plt.ylabel(r'$\text{N}$[$\text{Imp}$]')
 plt.legend()
 plt.grid()
-plt.show()
+
+lebensdauer = 1/ufloat(params[1], uncertainties[1])
+print(lebensdauer)
+plt.tight_layout()
+plt.savefig("build/plotmessung.pdf")
+
+plt.clf()
+
+plt.errorbar(tliste, unp.nominal_values(Counts), xerr= 0, yerr = Countserr,  fmt='kx', elinewidth=0.7, label="Messdaten",markersize=3, capsize=1.5, markeredgewidth=0.5)
+
+tyo = np.linspace(0, 10.5)
+plt.plot(tyo, params[0] * np.exp(- params[1] * tyo), "b-", label="Ausgleichsfunktion")
+plt.xlabel(r'$t$[$\si{\nano\second}$]')
+plt.ylabel(r'$\text{N}$[$\text{Imp}$]')
+plt.legend()
+plt.grid()
+
+plt.yscale("symlog")
+plt.savefig("build/test3.pdf")
+
+ttheo = 2.197
+
+abweichung = 100 * (ttheo - lebensdauer)/ttheo
+
+print(f"{abweichung:.2f}")

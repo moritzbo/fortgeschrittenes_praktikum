@@ -146,14 +146,32 @@ Da sich diese Untergrundrate auf alle Channel statistisch gleichmäßig verteile
 \end{equation*}
 subtrahiert.
 \\
-In der Abbildung ... sind die Messwerte aus der Tabelle ... aufgetrage. Dabei wurde die Untergrundrate pro Channel $U_{\text{channel}}$ zunächst abgezogen und die Messwerte dann
-poissonfehlerbehaftet. Die eingezeichnete Ausgleichfunktion besitzt die Form einer Exponentialfunktion wie in Gleichung \ref{{eqn:lololol}}. Hier wird also zunächst eine Form 
+In der Abbildung \ref{fig:mess} sind die Messwerte aus der Tabelle ... aufgetragen. Dabei wurde die Untergrundrate pro Channel $U_{\text{channel}}$ zunächst abgezogen und die Messwerte dann
+poissonfehlerbehaftet. Die eingezeichnete Ausgleichfunktion besitzt die Form einer Exponentialfunktion wie in Gleichung \ref{eqn:lololol}. Hier wird also zunächst eine Form 
 \begin{equation*}
 N(t) = N_0 \cdot \text{exp}(-\lambda t)
 \end{equation*}
 angenommen und an die Werte über die Bibliothek SciPy \cite{scipy} gefittet.
 Es ergeben sich die Parameter
 \begin{align*}
-    N_0 &= \SI{250.189(4118)}{\micro\second\per{\text{Channel}}},\\
-    \lambda &= \SI{0.4152(98)}{\micro\second}.\\
+    N_0 &= \SI{281.147(1820)}{{\text{Imp}}},\\
+    \lambda &= \SI{0.4707(42)}{\per\micro\second}.\\
 \end{align*}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/plotmessung.pdf}
+    \caption{Gemessene Impulse mit Fehlerbalken und Ausgleichsgerade unter Berücksichtigung der Untergrundrate.} 
+    \label{fig:mess}
+\end{figure}
+Aus der Beziehung \ref{eqn:123123} lässt sich nun sofort die Lebensdauer der Myonen angeben als
+\begin{equation}
+\tau_{\mu} = \SI{2.125(19)}{\micro\second}.
+\end{equation}
+Der Plot der Messdaten lässt sich ebenfalls noch halblogarithmisch darstellen. Diese Darstellung ist in Abbildung \ref{fig:lol123} gezeigt.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/test3.pdf}
+    \caption{Gemessene Impulse mit Fehlerbalken und Ausgleichsgerade in halblogaritmischer Darstellung unter Berücksichtigung der Untergrundrate.} 
+    \label{fig:lol123}
+\end{figure}
+
