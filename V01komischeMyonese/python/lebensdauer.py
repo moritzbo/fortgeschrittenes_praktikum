@@ -27,33 +27,49 @@ Untergrundchannel = Untergrundges/511
 # print(Untergrundges)
 # print(Untergrundchannel)
 
-Counts, Kanal = np.genfromtxt("../data/new.txt", unpack=True)
+Counts, Kanal = np.genfromtxt("../data/new2.txt", unpack=True)
 
 Countsextra = Counts
+Countserr = np.sqrt(Countsextra)
+
 Counts = Counts - Untergrundchannel
-for n in range(511):
-    if unp.nominal_values(Counts[n]) < 0:
-        Counts[n] = 0
 
 a = 0.0223
 b = -0.0148
 
 tliste = a*  Kanal + b
 
+#for n in range(len(Counts) - m):
+#    if unp.nominal_values(Counts[n]) <= 0:
+#        Counts = np.delete(Counts, n)
+#        tliste = np.delete(tliste, n)
+#        Countserr = np.delete(Countserr, n)
+#        #print(Counts[n])
+#        #print(n)
+#    elif n == len(Counts):
+            #break
+#print(unp.nominal_values(Counts))
 
-def sigmoid1(x, A, B, C):
-    return A * np.exp(- B*x) + C
+
+
+
+def sigmoid1(x, A, B):
+    return A * np.exp(- B*x)
 
 
 params, covariance_matrix = curve_fit(sigmoid1, tliste, unp.nominal_values(Counts))
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 print("Params:")
-for name, value, uncertainty in zip('ABC', params, uncertainties): 
+for name, value, uncertainty in zip('AB', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
 
-Countserr = np.sqrt(Countsextra)
 
-plt.errorbar(tliste, Counts, xerr= 0, yerr = Countserr,  fmt='kx', elinewidth=0.7, label="Messdaten",markersize=3, capsize=1.5, markeredgewidth=0.5)
 
+plt.errorbar(tliste, unp.nominal_values(Counts), xerr= 0, yerr = Countserr,  fmt='kx', elinewidth=0.7, label="Messdaten",markersize=3, capsize=1.5, markeredgewidth=0.5)
+
+tyo = np.linspace(0, 10.6)
+plt.plot(tyo, params[0] * np.exp(- params[1] * tyo), "b-", label="Ausgleichsfunktion")
+plt.legend()
+plt.grid()
 plt.show()

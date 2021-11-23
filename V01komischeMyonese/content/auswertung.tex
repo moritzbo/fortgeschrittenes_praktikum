@@ -149,12 +149,11 @@ subtrahiert.
 In der Abbildung ... sind die Messwerte aus der Tabelle ... aufgetrage. Dabei wurde die Untergrundrate pro Channel $U_{\text{channel}}$ zunächst abgezogen und die Messwerte dann
 poissonfehlerbehaftet. Die eingezeichnete Ausgleichfunktion besitzt die Form einer Exponentialfunktion wie in Gleichung \ref{{eqn:lololol}}. Hier wird also zunächst eine Form 
 \begin{equation*}
-N(t) = N_0 \cdot \text{exp}(-\lambda t) + N_1
+N(t) = N_0 \cdot \text{exp}(-\lambda t)
 \end{equation*}
 angenommen und an die Werte über die Bibliothek SciPy \cite{scipy} gefittet.
 Es ergeben sich die Parameter
 \begin{align*}
-    N_0 &= \SI{0.0223}{\micro\second\per{\text{Channel}}},\\
-    N_1 &= \SI{-0.0148}{\micro\second},\\
-    \lambda &= \SI{-0.0148}{\micro\second}.\\
+    N_0 &= \SI{250.189(4118)}{\micro\second\per{\text{Channel}}},\\
+    \lambda &= \SI{0.4152(98)}{\micro\second}.\\
 \end{align*}
