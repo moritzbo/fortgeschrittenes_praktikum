@@ -97,3 +97,64 @@ Die gemessenen Werte aus der Tabelle \ref{tab:1122332211} sind zusammen mit der 
     \caption{Zuordnung von Zeitintervallen zu den Kanälen über eine Lineare Regression der Messwerte.} 
     \label{fig:333}
 \end{figure}
+\\
+\newline
+Im folgenden Auswertungsteil wird eine weitere Messreihe verwendet, die unter den gleichen Umständen gemessen wurde. Dabei ergab sich bei Kalibrierung des Vielkanalanalysators eine lineare 
+Ausgleichgerade mit den Parametern
+\begin{align*}
+    a &= \SI{0.0223}{\micro\second\per{\text{Channel}}},\\
+    b &= \SI{-0.0148}{\micro\second}.\\
+\end{align*}
+Diese werden im Folgenden für die weitere Auswertung verwendet.
+
+\subsection{Bestimmung der Lebensdauer kosmischer Myonen}
+Zunächst muss zu den gemessenen Counts, notiert in Tabelle ..., eine Untergrundrate pro Channel berechnet werden. Diese Korrektur ist statistischer Natur und ergibt sich durch eine Poissonverteilung \cite{poisson}
+\begin{equation*}
+P(r) = \frac{\mu^r}{r!}\text{exp}(-\mu).
+\end{equation*}
+Hierbei steht $\mu$ für einen Erwartungswert. Dieser ist in diesem Fall die gemittelte Anzahl der Startsignale in der Suchzeit $T$. Das $r$ gibt dabei eine Ereigniszahl an. Für $r = 1$ lässt sich
+also die Wahrscheinlichkeit bestimmen, in einer Suchzeit $T$ zwei Myonen zu messen.
+Gemessen wurde über einen Zeitraum von
+\begin{equation*}
+T_\text{ges} = \SI{272190}{\second}.
+\end{equation*}
+Dabei wurden  
+\begin{equation*}
+    N_\text{start} = \SI{3256768}{{\text{Imp}}}
+\end{equation*}
+Startsignale gemessen.
+Nun lässt sich eine Zählrate von
+\begin{equation*}
+R = \frac{N_\text{start}}{T_\text{ges}} = \SI{11.965(7)}{{\text{Imp}}\per\second}
+\end{equation*}
+angeben. Bei einer Suchzeit von $T = \SI{10}{\micro\second}$ ergibt sich nun die gemittelte Anzahl an Impulsen pro Suchzeit zu
+\begin{equation*}
+    N_{\text{such}} = R \cdot T = \SI{0.11965(7)e-3}{{\text{Imp}}}.
+\end{equation*}
+Dieser Wert kann nun als Mittelwert, zusammen mit einer Ereigniszahl von $r = 1$, in die Poissonverteilung eingesetzt werden.
+Die Wahrscheinlichkeit zwei Myonen in einem Messintervall zu messen ist somit 
+\begin{equation*}
+P(r=1) = N_{\text{such}} \cdot \text{exp}(-N_{\text{such}}) = \SI{0.11964(7)e-3}{}.
+\end{equation*}
+Für die gesamte Messdauer ist die Untergrundrate nun also
+\begin{equation*}
+    U_{\text{ges}} = N_{\text{start}} \cdot P(1) = \SI{389.6(4)}{\text{Imp}}.
+\end{equation*}
+Da sich diese Untergrundrate auf alle Channel statistisch gleichmäßig verteilen sollte, wird pro gemessenem Channel eine Untergrundrate von
+\begin{equation*}
+    U_{\text{channel}} = \frac{U_{\text{ges}}}{511} = \SI{0.7625(8)}{\text{Imp}}
+\end{equation*}
+subtrahiert.
+\\
+In der Abbildung ... sind die Messwerte aus der Tabelle ... aufgetrage. Dabei wurde die Untergrundrate pro Channel $U_{\text{channel}}$ zunächst abgezogen und die Messwerte dann
+poissonfehlerbehaftet. Die eingezeichnete Ausgleichfunktion besitzt die Form einer Exponentialfunktion wie in Gleichung \ref{{eqn:lololol}}. Hier wird also zunächst eine Form 
+\begin{equation*}
+N(t) = N_0 \cdot \text{exp}(-\lambda t) + N_1
+\end{equation*}
+angenommen und an die Werte über die Bibliothek SciPy \cite{scipy} gefittet.
+Es ergeben sich die Parameter
+\begin{align*}
+    N_0 &= \SI{0.0223}{\micro\second\per{\text{Channel}}},\\
+    N_1 &= \SI{-0.0148}{\micro\second},\\
+    \lambda &= \SI{-0.0148}{\micro\second}.\\
+\end{align*}
