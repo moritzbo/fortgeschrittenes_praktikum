@@ -4,8 +4,8 @@
 \begin{minipage}{0.49\textwidth}
 Maßgebend für den Aufbau ist der $50 \si{\liter}$ große, mit Edelstahl umhüllte Szintillator vom Typ \enquote{NE 102} und mit Tuluol gefüllt. Diesem ist ein eigener Abschnitt gewidmet und dort entsprechend erläutert \ref{szin}. 
 Mit ihm werden die einfallenden Myonen für die Detektion sichtbar gemacht. Da die entstehenden Signale schwach sind, bietet es sich an diese durch einen Sekundärelektronenverstärker, kurz SEV, zu verstärken. An diesen Verstärkern ist für
-die Funnktionalität eine Hochspannung angelegt. Dieser Teil des Aufbaus ist symetrisch an beiden Stirnseiten des Szintillator angebracht. So ist es also möglich die einfallenden Teilchen als Lichtsignal durch die SEVs zu verstärken.
-Das Signal der zwei Sekundärelektronenverstärker kann durch vielerlei Gründe einseitig verschoben sein, das heißt es tritt durch asymetrische Verzögerungen eine zeitliche Differenz $\increment t$ auf.
+die Funktionalität eine Hochspannung angelegt. Dieser Teil des Aufbaus ist symmetrisch an beiden Stirnseiten des Szintillator angebracht. So ist es also möglich die einfallenden Teilchen als Lichtsignal durch die SEVs zu verstärken.
+Das Signal der zwei Sekundärelektronenverstärker kann durch vielerlei Gründe einseitig verschoben sein, das heißt es tritt durch asymmetrische Verzögerungen eine zeitliche Differenz $\increment t$ auf.
 \end{minipage}%
 \begin{minipage}[h]{0.49\textwidth}
     \centering
@@ -17,8 +17,8 @@ Das Signal der zwei Sekundärelektronenverstärker kann durch vielerlei Gründe 
 \end{figure}
 \vspace{0.5cm}
 Die Zeitliche Differenz zwischen den SEVs kann man durch passend eingesetzte \enquote{Delays} entgegenwirken. Diese sind weitere Kabel, 
-die durch ihre wählbare Länge die Zeit des Sginals verzögern. So ist es also, dass ein einfallendes Teilchen ein Signal zeitgleich an beiden Anschlüssen ankommen lässt.
-Der Aufbau neigt dazu Störeffekte (i.e. durch etweige spontane Emission von Elektronen an der Photokathode) zuzulassen. Hier wird ein Diskriminator verwendet, um das Rauschen zu filtern.
+die durch ihre wählbare Länge die Zeit des Signals verzögern. So ist es also, dass ein einfallendes Teilchen ein Signal zeitgleich an beiden Anschlüssen ankommen lässt.
+Der Aufbau neigt dazu Störeffekte (i.e. durch etwaige spontane Emission von Elektronen an der Photokathode) zuzulassen. Hier wird ein Diskriminator verwendet, um das Rauschen zu filtern.
 Dieses Bauteil ist direkt mit den SEVs verbunden, es gibt also zwei individuell einstellbare Diskriminatoren.
 Bei diesem Elementen ist sowohl ein \enquote{Threshhold}, also eine Art Schwelle für die einlaufenden Impulse, und die Breite \enquote{Width} einstellbar.
 Die Schwelle ermöglicht es Rauschen aus ungewollten Quellen zu filtern, mit der Gefahr die Impulse selbst nicht mehr wahrzunehmen. 
@@ -53,10 +53,10 @@ der Monoflop zur Ausgangseinstllung zurückkehrt. Die Verzögerung zum Monoflop 
 Parallel zum ersten AND-Gatter läuft ein zweites Signal vom Monoflop, dieses mal nicht invers, zu einem zweiten AND-Gatter.
 Diesem ist also für den Zeitraum $\increment T_s$ ein Signal gegeben und es bedarf nur einem logischen Partner um die und-Bedingung zu erfüllen. 
 Das Partnersignal wird hier durch etwaige Impulse im Szintillator gegeben und von der Koinzidenzschaltung direkt zum zweiten AND-Gatter geleitet.
-Sollte die Zeit $\increment T_s$ bei einem solchen Event im Monoflop noch nicht agelaufen sein, so ist die und-Bedingung erfüllt,
+Sollte die Zeit $\increment T_s$ bei einem solchen Event im Monoflop noch nicht abgelaufen sein, so ist die und-Bedingung erfüllt,
 also das Signal läuft weiter und löst den Stopp für die Zeitmessung aus.
 Diese Stoppuhr wird in einem Bauelement namens \enquote{Time to Amplitude Converter}, kurz TAC, realisiert. 
-Die hier herausgegene Amplitude ist also proportional zur gemessenen Zeit, die das Myon gebraucht hat um zu zerfallen. Bei erneutem Auslösen des erstem AND-Gatter wird 
+Die hier herausgehende Amplitude ist also proportional zur gemessenen Zeit, die das Myon gebraucht hat um zu zerfallen. Bei erneutem Auslösen des erstem AND-Gatter wird 
 im TAC die Zeit neu gestartet.
 So ist mit diesem Aufbau möglich Myonen erfolgreich zu detektieren und sogar die, vor dem Zerfall, im Szintillator verbrachte Zeit zu messen.
 Um Aufschluss über alle detektierten Teilchen zu bekommen, bietet es sich an gleich hinter dem ersten AND-Gatter zusätzlich einen Impulszähler anzubringen. 
@@ -66,7 +66,7 @@ in den Szintillator einfallen, keine Zerfälle.
 \newline
 Zusätzlich gibt es noch einen Doppelimpulsgenerator um wichtige Eigenschaften bei der Auswertung der Amplituden 
 richtig einorndnen zu können. Der Generator muss alternativ zum Szintillator an die Koinzidenzschaltung geschlossen werden,
-wo er dann zeitlich abgestimmte Impulse gibt. Diese sind einer Skaler am Bauelement zu entnehmen. 
+wo er dann zeitlich abgestimmte Impulse gibt. Diese sind einer Skala am Bauelement zu entnehmen. 
 Die weitergeleitete Amplitude wird mit einem System ausgewertet und einem Kanal zugewiesen. Dieser Kanal ist abhängig 
 von der Impulsdauer. So lässt sich mit eingigen bekannten Impulsabständen aus dem Generator und dem enstprechend angezeigten Kanälen
 feststellen, welcher Kanal bei der echten Messung für welches Zeitintervall $\increment T$ steht.
@@ -83,7 +83,7 @@ feststellen, welcher Kanal bei der echten Messung für welches Zeitintervall $\i
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{bilder/aufbau.png}
+    \includegraphics[width=0.7\textwidth]{bilder/aufbau.png}
     \caption{Schematischer Aufbau zur bestimmung der Lebensdauer von Myonen. \cite{skript}} 
     \label{fig:1}
 \end{figure}
