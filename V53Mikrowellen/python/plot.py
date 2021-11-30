@@ -88,8 +88,8 @@ plt.plot(x,
         label='Mode 3',
         linewidth=1.5)
 
-plt.ylabel(r'$U_{mikro}$[$\si{\volt}$]$')
-plt.xlabel(r'$U_{ref}$[$\si{\volt}$]$')
+plt.ylabel(r'$U_{\text{mikro}}$[$\si{\volt}$]$')
+plt.xlabel(r'$U_{\text{ref}}$[$\si{\volt}$]$')
 
  
 plt.ylim((0,0.3))

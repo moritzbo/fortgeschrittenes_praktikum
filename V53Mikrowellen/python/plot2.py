@@ -85,8 +85,8 @@ plt.plot(x,
         label='Mode 3',
         linewidth=1.5)
 
-plt.ylabel(r'$\Delta f$[$\si{\mega\hertz}$]$')
-plt.xlabel(r'$U_{ref}$[$\si{\volt}$]$')
+plt.ylabel(r'$\increment f$[$\si{\mega\hertz}$]$')
+plt.xlabel(r'$U_{\text{ref}}$[$\si{\volt}$]$')
 
 plt.ylim((-60,60))
 plt.grid()
