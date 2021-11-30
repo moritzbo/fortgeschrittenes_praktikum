@@ -103,55 +103,73 @@ Aus diesen Werten lassen sich nun die Bandbreiten und Abstimm-Empfindlichtkeit l
     \end{tabular}
 \end{table}
 \newline
-Aus der vorherigen Modenanalyse lässt sich nun auch die Länge zwischen Hohlraumresonator und Reflektoranode $L$ berechnen. Dazu müssen die Moden bekannt sein. Die höchste Reflektorspannung bei der eine Mode erkennbar ist, muss die
-erste Mode sein, also die mit $n=0$ in Gleichung \ref{eqn:trash}. Da wir mit dem Detekor nur das elektrische Feld messen, verwenden wir hier also die Mode $\textbf{TE}_{1,0}$.
-Die beschleunigten Elektronen haben durch das Beschleunigungsgitter eine mittlere Geschwindigkeit erhalten. Jene die eine höhere Geschwindigkeitsmodulation erfahren haben, werden statistisch von denen 
+Aus der vorherigen Modenanalyse lässt sich nun auch die Länge zwischen Hohlraumresonator und Reflektoranode $L$ berechnen. Dazu müssen die Moden bekannt sein. Die höchste Reflektorspannung bei der eine Mode erkennbar ist, 
+sollte also die kleinste aller gemessenen Moden sein. Da wir mit dem Detekor nur das elektrische Feld messen, verwenden wir hier also die Moden $\textbf{TE}_{n,0}$.
+Die beschleunigten Elektronen haben durch das Beschleunigungsgitter eine mittlere Geschwindigkeit erhalten. Dies lässt sich aber auf das neutral modulierte Elektron, um welches sich das Bündel bildet, mit 
+Geschwindigkeit $v_n$ beschränken. Jene die eine höhere Geschwindigkeitsmodulation erfahren haben, werden statistisch von denen 
 die abgebremst werden, herausgekürzt. Dies gilt nur für eine rein sinusförmige Schwingung im Resonator. Die mittlere Geschwindigkeit hinter dem Gitter lässt sich also durch ein Elektron ohne Geschwindigkeitsmodulation 
 beschreiben. Es gilt
 \begin{equation}
     \label{eqn:lol1}
-e \cdot U_{B} = \frac{1}{2}m_e \bar{v}^2.
+e \cdot U_{B} = \frac{1}{2}m_e v_{n}^2.
 \end{equation}
 Die Flugdauer der Elektronen lässt sich angeben durch
 \begin{equation}
-\frac{t_0}{2} = \frac{\bar{v}}{a},
+\frac{t_0}{2} = \frac{v_{n}}{a},
 \end{equation}
 dabei ist $a$ die Beschleunigung, welche durch die angelegten Spannungen induziert wird. Aus der Energiebetrachtung
 \begin{equation}
+    \label{eqn:11aa}
 m_e a \cdot L = e \cdot (U_b + U_R)
 \end{equation}
-lässt sich nun $a$ berechnen. Zusammen mit $\bar{v}$ aus Gleichung \ref{eqn:lol1} und der Beziehung \ref{eqn:trash} folgt nun
+lässt sich nun $a$ berechnen. Mit $v_{n}$ aus Gleichung \ref{eqn:lol1} und $a$ aus Gleichung \ref{eqn:11aa}, sowie der Beziehung \ref{eqn:trash} folgt nun
 \begin{equation*}
-\frac{\left(n + \frac{3}{4}\right)}{f} = 2 \sqrt{\frac{2e}{m_e}}\cdot \frac{\sqrt{U_b}}{e (U_b + U_R)} \cdot m_e L.
+\left(n + \frac{3}{4}\right)T = 2 \sqrt{\frac{2eU_b}{m_e}} \cdot \frac{m_e L}{e (U_b + U_R)}.
 \end{equation*}
 Eine Umformung nach $L$ liefert 
 \begin{equation}
     \label{eqn:wtfisthis}
 L =  \sqrt{\frac{e}{2 m_e U_b}} \cdot \frac{(U_b + U_R)}{2f} \cdot \left(n + \frac{3}{4}\right).
 \end{equation}
-Die erste Mode mit $n = 0$ wurde bei einer Reflektorspannung von $U_R = \SI{212}{\volt}$ gefunden. Da die Spannung des Beschleunigungsgitter unbekannt ist, kann diese abgeschätzt werden.
-Damit die Elektronen auch durch den gesamten Hohlraumresonator laufen, lässt sich eine Beschleunigungsspannung in derselben Größenordnung wie die Reflektorspannung erwarten. 
-Sei diese nun also in einem Intervall $\SI{150}{\volt} < U_b < \SI{500}{\volt}$, dann ergibt sich nach Gleichung \ref{eqn:wtfisthis} eine mögliche Resonatorlänge im Bereich
+Um die Länge jedoch unabhängig von der Modenzahl zu bestimmen, lässt sich die Differenz zwischen der Mode $n+1$ und $n$ bilden und nach $L$ umformen. Es ergibt sich
 \begin{equation}
-   \SI{4.46}{\milli\meter} < L < \SI{8.76}{\milli\meter}.
+    \label{eqn:kackL}
+L = \frac{1}{2}\sqrt{\frac{e}{2m_eU_b}} \cdot \left( \frac{f_{n+1}}{U_b+U_{R\text{,}n+1}} - \frac{f_{n}}{U_b+U_{R\text{,}n}}\right)^{-1}
 \end{equation}
+Es lässt sich somit also auch wieder die Modenzahl $n$ bestimmen, da eine Berechnung von $L$ ohne $n$-Abhängigkeit möglich ist. Durch Umformung von Gleichung \ref{eqn:wtfisthis} nach $n$ 
+ergibt sich
+\begin{equation}
+    \label{eqn:ayaya}
+n = 2 \left(\sqrt{\frac{2m_eU_b}{e}} \cdot \frac{fL}{U_b + U_R} - \frac{3}{8}\right).
+\end{equation}
+Die erste Mode wurde bei einer Reflektorspannung von $U_R = \SI{212}{\volt}$ gefunden. Die Spannung des Beschleunigungsgitter $U_b$ beträgt nach \cite{skript} $\SI{300}{\volt}$.
+Dann ergibt sich nach Gleichung \ref{eqn:kackL} eine Resonatorlänge von
+\begin{equation}
+L = \SI{2.616}{\milli\meter}.
+\end{equation}
+Die Moden lassen sich nun ebenfalls über Gleichung \ref{eqn:ayaya} bestimmen, dabei gibt der Index die jeweilige Messreihe an
+\begin{align*}
+n_1 &= \SI{4.642}{},\\
+n_2 &= \SI{5.642}{},\\
+n_3 &= \SI{6.523}{}.\\
+\end{align*}
 \subsection{Bestimmung von Frequenz, Wellenlänge und Dämpfung}
 Aus den gemessenen Abständen zwischen den Minima der stehenden Wellen im Hohlleiter lässt sich die Wellenlänge im Hohlleiter $\lambda_h$ über
 \begin{equation*}
 \increment x = \frac{\lambda_h}{2}
 \end{equation*}
-berechnen. Mit den Messwerten aus Tabelle \ref{tab:Messreihe21} ergibt sich dadurch ein Wert von
+berechnen. Mit den Messwerten aus Tabelle \ref{tab:Messreihe21} und einer zusätzlichen Messunsicherheit von $\SI{0.3}{\milli\meter}$ ergibt sich dadurch ein Wert von
 \begin{equation*}
-\lambda_h = \SI{49}{\milli\meter}.
+\lambda_h = \SI{49.0(8)}{\milli\meter}.
 \end{equation*}
-Zusammen mit der Innenabmessung der längeren Seite des Hohlleiters
+Zusammen mit der gegebenen Innenabmessung der längeren Seite des Hohlleiters
 \begin{equation*}
 a = \SI{22.860(46)}{\milli\meter}
 \end{equation*}
 lässt sich nun über die Gleichung \ref{eqn:222}, die Frequenz der longitudinalen Komponente berechnen.
 Es ergibt sich 
 \begin{equation*}
-f_h = \SI{8.968(10)}{\giga\hertz}.
+f_h = \SI{8.97(7)}{\giga\hertz}.
 \end{equation*}
 Über die klassische Beziehung 
 \begin{equation*}
@@ -159,7 +177,7 @@ v_{\text{phase}} = f_h \cdot \lambda_h
 \end{equation*}
 lässt sich ebenfalls noch die Phasengeschwindigkeit bestimmen und es zeigt sich, dass mit 
 \begin{equation*}
-v_{\text{phase}} = \left(\SI{1.4658(16)}{}\right) c
+v_{\text{phase}} = \left(\SI{1.466(14)}{}\right) c
 \end{equation*}
 die Phasengeschwindigkeit schneller als die Lichtgeschwindigkeit $c$ ist. 
 \\
@@ -171,9 +189,9 @@ D = ax^2 + bx + c.
 \end{equation*}
 Dabei steht das $D$ für die Dämpfung in $\si{\decibel}$ und die ermittelten Koeffizienten sind
 \begin{align*}
-a &= \SI{1.7014(1894)}{\decibel\per\milli\meter\squared}, \\
-b &= \SI{0.4574(4478)}{\decibel\per\milli\meter}, \\
-c &= \SI{0.0311(2385)}{\decibel}.
+a &= \SI{1.70(19)}{\decibel\per\milli\meter\squared}, \\
+b &= \SI{0.46(45)}{\decibel\per\milli\meter}, \\
+c &= \SI{0.03(24)}{\decibel}.
 \end{align*}
 Die gemessenen Werte, sowie das Ausgleichspolynom sind in der Abbildung \ref{111} zu erkennen.
 \begin{figure}
@@ -199,7 +217,7 @@ benötigt welche wieder über die vorherige Methode der stehenden Welle zu
 bestimmt wird.
 Über die Gleichung \ref{eqn:SWR} lässt sich nun ein Stehwellenverhältnis von
 \begin{equation*}
-\text{SWR} = 8.987
+\text{SWR} = \SI{8.987}{}
 \end{equation*}
 berechnen.
 
@@ -208,5 +226,5 @@ Die für diese Methode nötigen Messwerte werden der Tabelle \ref{tab:Messreihe3
 $A_1$ und $A_2$ stehen für die gemessenen Dämpfungen bei den verschiedenen Einstellungen und führen mit der Gleichung 
 \eqref{eqn:SWR2} zu dem Stehwellenverhältnis von
 \begin{equation*}
-\text{SWR} = 14.125.
+\text{SWR} = \SI{14.125}{}.
 \end{equation*}
