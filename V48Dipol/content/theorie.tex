@@ -1,9 +1,74 @@
 \section{Zielsetzung}
-In diesem Versuch geht es darum, die Relaxationszeit in Abgängigkeit der Temperatur und die Aktivierungsenergie für Diffusion der Leerstellen
-von Kaliumbromit, welches mit Strontium dotier ist, zu finden. 
+In diesem Versuch geht es um die Bestimmung der Relaxationszeit $\tau_0$ einer strontiumdotierten Kaliumbromitprobe in Abgängigkeit von der Temperatur. Ebenfalls wird die charakteristische Aktivierungsenergie $W$ für die Diffusion der Leerstellen
+untersucht.
 
-\section{Theorie}
+\section{Theoretische Grundlagen}
 
+Im Folgenden werden die theoretischen Prinzipien von Polarisationen in Ionenkristallen erläutert und die wichtigen Beziehungen für die Auswertung hergeleitet.
+
+\subsection{Ionenkristalle}
+Ionenkristalle beschreiben die periodische Anordnung von verschieden geladenen Atomen (Ionen). Diese sind auf Grund ihrer unterschiedlichen Ladungsvorzeichen vor allem über eine Ionenbindung 
+gebunden. Ein idealer Kristall besitzt lokal sowie makroskopisch eine Ladungsneutralität, da die Gesamtbindungsenergie so maximiert wird. In einem reellen Kristall kommt es allerdings in den meisten Fällen auf Grund von 
+Unreinheiten durch Wechselwirkung mit der Umgebung,
+nur lokal zu Ladungsneutralen Konfigurationen, da die Coulombwechselwirkung vorallem bei kleinen Abständen von Bedeutung ist. Denn es gilt
+\begin{equation*}
+F_{C} \propto \frac{1}{r^2}.
+\end{equation*}
+\newline
+Nun können ebenfalls weitere Stoffe in den Kristall eingebaut werden. Dieser Prozess wird als Dotierung bezeichnet und ist vor allem dann von Interesse, wenn die Eigenschaften des Kristalls 
+beinflusst werden wollen. Die Dotierung von Ionenkristallen mit einem weiteren Ion, welches eine andere Ladung im Vergleich zu den jeweils anderen Basisatomen in dem Kristall hat, sorgt für eine permanente Dipolausbildung.
+Ein Beispiel für eine solche Dipolbildung ist anhand einer strontiumdotierten Caesiumiodidkristallstruktur in Abbildung ... angedeutet.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{bilder/theo1.png}
+    \caption{Schematische Darstellung einer Caesiumiodidkristallstruktur mit Strontiumdotierung. Zu sehen ist die Dipolbildung $\vec{P}$ zwischen Strontium und Leerstelle. Abbildung nach \cite{altskript}.
+            }
+    \label{fig:theo1}
+\end{figure}
+Das Dotierungsmaterial, sowie die Leerstelle, verdrängen hierbei die vorher vorliegenden Gitteratome. Die Einbindung der Leerstellen sorgt für eine lokale Ladungsneutralität. Unterhalb sehr großer Temperaturen sind
+sowohl Leerstelle, als auch Strontium, an die diskreten Gitterplätze gebunden. Es liegen somit nur diskrete Dipolmomente $\vec{P}$ vor.
+\\
+Bei Temperaturen unterhalb $T = \SI{500}{\celsius}$ bewegen sich hauptsächlich die Leerstellen durch den Kristall \cite{altskript}. Somit wird in diesem Versuch nur diese Art von Polarisation berücksichtigt.
+Damit es zur Umpolarisation kommt müssen die Leerstellen nun die periodischen Potentialschwellen überwinden können. Die benötigte Energie ist eine charakteristische Größe für die verwendete Probe und 
+sie wird Aktivierungsenergie $W$ bezeichnet.
+
+\subsection{Dipolrelaxation und Boltzmann-Statistik}
+In einem makroskopischen Kristall der zuvor genannten Art ist die Richtung der vorliegenden Dipole statistisch verteilt, wodurch sich im Mittel ohne äußere Einwirkung ein Gesamtdipolmoment
+\begin{equation*}
+\sum_{i} \vec{P_{i}} = \vec{0}
+\end{equation*}
+ergibt. Wird nun als äußere Einwirkung eine Temperatur $T$ der Probe betrachtet, so erhalten die Gitteratome eine thermische Energie die sich aus der Boltzmann-Statistik bestimmen lässt.
+Hierbei gilt nun für die Wahrscheinlichtkeit eines Zustandes $n$ nach \cite{Briels2016}
+\begin{equation*}
+P_n \propto e^{- E_n / k_{B}\text{T}}.
+\end{equation*}
+Interessant wird es bei Energien $E_n \geq W$, dann haben die Leerstellen genügend Energie um sich im Raum zu bewegen.
+\\
+Die Relaxationszeit beschreibt nun die Zeit $\tau_0$ zwischen der ersten Umpolarisation des Dipols und der Rückkehr an seine ursprünglichen Stelle.
+Somit lässt sich für die Relaxationszeit die folgende Proportionalität erwarten
+\begin{equation}
+    \label{eqn:lol1}
+\tau(\text{T}) \propto  \left( e^{- W / k_{B}\text{T}}\right)^{-1} \quad \to \quad \tau(\text{T}) = \tau_0  e^{ W / k_{B}\text{T}}
+\end{equation}
+Dabei beschreibt das $\tau_0$ die charakteristische Relaxationszeit.
+Die herausgearbeitete Gleichung \eqref{lol1} zeigt dabei schon eine Möglichkeit die Relaxationszeit möglichst groß werden zu lassen. Dies kann in diesem Versuch durch die starke Abkühlung der Probe
+erreicht werden, wodurch die Polarisation förmlich \enquote{eingefroren} wird.
+\\
+Es gibt nun zwei mögliche Herangehensweisen um die Aktivierungsenergie $W$ zu berechnen. Diese sind im Folgenden erläutert.
+
+\subsection{Depolarisationsstrommethode}
+Der Depolarisationsstrom beschreibt den messbaren Strom der bei einer Polarisationsänderung einhergeht. Das E-Feld innerhalb der Probe ändert somit seinen Wert und über einen Kondensator lässt sich der abfließende Strom beobachten.
+\\
+Wichtig für den Strom stellt der Anteil aller Dipole dar, welche in Richtung des Gesamtdipolmoments zeigen. Werden die Dipole von außen über ein E-Feld in eine bestimmte Richtung ausgerichtet, so entspricht dies genau
+dieser. Mathematisch lässt sich dieser Anteil über eine Langevin-Funktion beschreiben. Für sie gilt nach \cite{KROGER201577}
+\begin{equation}
+L(x) = \text{coth}(x) - \frac{1}{x} \quad \Biggl| \quad x := \frac{|\vec{P}||E|}{k_{B} \text{T}}
+\end{equation}
+mit der Definition für $x$ aus \cite{altskript}. Für kleine Temperaturen $T$ lässt sich diese Gleichung bis zur zweiten Ordnung Taylorentwickeln.
+Es folgt
+\begin{equation}
+y(\text{T}) = \frac{|\vec{P}||E|}{3k_{B} \text{T}} 
+\end{equation}
 
 \begin{equation}
 \tau \left( \text{T} \right) = \tau_0  \text{exp} \left(\frac{\text{W}}{\text{k}_{\text{b}}\text{T}}\right) 
@@ -11,7 +76,7 @@ von Kaliumbromit, welches mit Strontium dotier ist, zu finden.
 \end{equation}
 
 \begin{equation}
-\text{j} \left( \text{T} \right) = \text{y} \left( \text{T}_{\text{p}}\right) \text{p} \frac{\text{dN}}{\text{dt}}
+j \left( \text{T} \right) = \text{y} \left( \text{T}_{\text{p}}\right) \text{p} \frac{\text{dN}}{\text{dt}}
 \label{eqn:dichte}
 \end{equation}
 
@@ -21,15 +86,15 @@ von Kaliumbromit, welches mit Strontium dotier ist, zu finden.
 \end{equation}
 
 \begin{equation}
-\text{j} \left( \text{T} \right) = \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau} \text{exp} \left( -\frac{1}{\text{b}} \int^{\text{T}}_{\text{T}_0} \text{dT'} \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dt} \right) \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
+j \left( \text{T} \right) = \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau} \text{exp} \left( -\frac{1}{\text{b}} \int^{\text{T}}_{\text{T}_0} \text{dT'} \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dt} \right) \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
 \label{killme}
 \end{equation}
 
-\begin{equation}
-\end{equation}
+% \begin{equation}
+% \end{equation}
 
-\begin{equation}
-\end{equation}
+% \begin{equation}
+% \end{equation}
 
-\begin{equation}
-\end{equation}
+% \begin{equation}
+% \end{equation}
