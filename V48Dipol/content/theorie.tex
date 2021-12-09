@@ -17,7 +17,7 @@ F_{C} \propto \frac{1}{r^2}.
 \newline
 Nun können ebenfalls weitere Stoffe in den Kristall eingebaut werden. Dieser Prozess wird als Dotierung bezeichnet und ist vor allem dann von Interesse, wenn die Eigenschaften des Kristalls 
 beinflusst werden wollen. Die Dotierung von Ionenkristallen mit einem weiteren Ion, welches eine andere Ladung im Vergleich zu den jeweils anderen Basisatomen in dem Kristall hat, sorgt für eine permanente Dipolausbildung.
-Ein Beispiel für eine solche Dipolbildung ist anhand einer strontiumdotierten Caesiumiodidkristallstruktur in Abbildung ... angedeutet.
+Ein Beispiel für eine solche Dipolbildung ist anhand einer strontiumdotierten Caesiumiodidkristallstruktur in Abbildung \ref{fig:theo1} angedeutet.
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{bilder/theo1.png}
@@ -69,7 +69,7 @@ Es folgt
 \begin{equation}
 y(\text{T}) = \frac{|\vec{P}||E|}{3k_{B} \text{T}}.
 \end{equation}
-Nun lässt sich folgende Form einer Stromdichte nach \cite{fuller} definieren
+Nun lässt sich folgende Form einer Stromdichte nach \cite{Fuller} definieren
 \begin{multline}
 j(\text{T}) \propto \{\text{Anteil der zu Beginn ausgerichteten Dipole} y(\text{T} = \text{T}_P)\} \\ \cdot \{\text{Dipolmoment}\} \cdot \{\text{Relaxationsrate}\}.
 \end{multline}
@@ -90,21 +90,62 @@ der folgende Zusammenhang
     j \left( \text{T} \right) = \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left( -\frac{1}{\text{b}\tau_0} \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \right) \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
     \label{killme}
 \end{equation}
-
+Für kleine Temperaturen $\text{T} \approx \text{T}_0$ folgt daraus
+\begin{equation*}
+    \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \approx 0 \quad \to \quad j \left( \text{T} \right) \approx \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
+\end{equation*}
+Nun kann dieser Ausdruck logarithmiert werden uns es ergibt sich eine lineare Gleichung gegeüber reziproker Temperatur mit Steigung $W$. Es folgt also
 \begin{equation}
-\tau \left( \text{T} \right) = \tau_0  \text{exp} \left(\frac{\text{W}}{\text{k}_{\text{b}}\text{T}}\right) 
-\label{eqn:relaxo}
+\text{ln}(j(\text{T})) = - \frac{W}{k_{B}} \left( \frac{1}{\text{T}}\right) + \underbrace{\text{ln}\left( \frac{|\vec{P}|^2 |E| \text{N}_P}{3 k_B \text{T}_P \tau_0}\right)}_{:= \text{const}}.
 \end{equation}
 
+\subsection{Polarisationsmethode}
+Der Unterschied zur vorherigen Methode besteht in der Betrachtung der Gesamtpolarisation $\vec{P}$ des Kristalls. Diese ergibt sich aus dem Gesamtdipolmoment pro Volumeneinheit. Nun wird die Polarisation als 
+proportional zur Anzahl der orientierten Dipole angenommen. Hierbei gilt nun wieder
 \begin{equation}
-j \left( \text{T} \right) = \text{y} \left( \text{T}_{\text{p}}\right) \text{p} \frac{\text{dN}}{\text{dt}}
-\label{eqn:dichte}
+    \label{eqn:theo3}
+\frac{\text{d}P}{\text{d}t} = - \frac{P(t)}{\tau(\text{T}(t))}.
 \end{equation}
+Die Änderung der Polarisation führt nun zu einem Strom um den Querschnitt $F$, somit lässt sich schreiben
+\begin{equation}
+    \label{eqn:theo2}
+I(t) = F \frac{\text{d}P}{\text{d}t}.
+\end{equation}
+Zusammen mit der Randbedingung, dass die Polarisation zum Zeitpunkt $t \to \infty$ wieder auf Null, also einer reinen statistischen Verteilung folgen soll, kann die Gleichung 
+\eqref{eqn:theo2} integriert werden und es ergibt sich
+\begin{equation}
+\int_{t(\text{T})}^{\infty} I(t) \text{d}t = - F P(t).
+\end{equation}
+Unter Verwendung von Gleichung \eqref{eqn:lol1} und \eqref{eqn:theo3} folgt daraus nun
+\begin{equation}
+\frac{W}{k_B \text{T}} = \text{ln} \left( \frac{\int_{\text{T}}^{\infty} I(\text{T'}) \text{dT'} }{I(\text{T}) \tau_0 b}\right).
+\end{equation}
+Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T*) = 0$ gilt. Unter 
+Berücksichtigung von Untergrundraten.
 
+\subsection{Bestimmung der charakteristischen Relaxationszeit}
+Für die Bestimmung der charakteristischen Relaxationszeit $\tau_0$ wird Gleichung \eqref{killme} nach $T$ abgeleitet
 \begin{equation}
-\text{N}\left( \text{T} \right) = \text{N}_{\text{p}} \text{exp} \left( - \frac{1}{\text{b}} \int^{\text{T}}_{\text{T}_0} \frac{\text{dT'}}{\text{dt}}\right)
-\label{eqn:orientierung}
+\frac{\partial j}{\partial \text{T}}\biggr|_{\text{T}_{\text{max}}} \stackrel{!}{=} 0.
 \end{equation}
+Dadurch lässt sich das Maximum $T_{\text{max}}$ bestimmen und in Gleichung \eqref{eqn:lol1} einsetzen und nach $\tau_0$ auflösen. Es folgt
+\begin{equation}
+\tau_0 = \frac{k_B \text{T}^2_{\text{max}}}{Wb} \cdot \text{exp} \left( - \frac{W}{k_B \text{T}_{\text{max}}}\right).
+\end{equation}
+% \begin{equation}
+% \tau \left( \text{T} \right) = \tau_0  \text{exp} \left(\frac{\text{W}}{\text{k}_{\text{b}}\text{T}}\right) 
+% \label{eqn:relaxo}
+% \end{equation}
+
+% \begin{equation}
+% j \left( \text{T} \right) = \text{y} \left( \text{T}_{\text{p}}\right) \text{p} \frac{\text{dN}}{\text{dt}}
+% \label{eqn:dichte}
+% \end{equation}
+
+% \begin{equation}
+% \text{N}\left( \text{T} \right) = \text{N}_{\text{p}} \text{exp} \left( - \frac{1}{\text{b}} \int^{\text{T}}_{\text{T}_0} \frac{\text{dT'}}{\text{dt}}\right)
+% \label{eqn:orientierung}
+% \end{equation}
 
 
 
