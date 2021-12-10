@@ -11,30 +11,28 @@ import uncertainties.unumpy as unp
 # matplotlib.pyplot.rcdefaults()
 
 
-t1a, T1ac, i1a = np.genfromtxt("../data/A1TproM.dat", unpack=True)
-t1p, T1pc, i1p = np.genfromtxt("../data/Peaks1TproM.dat", unpack=True)
+t1a, T1ac, i1a = np.genfromtxt("data/A1TproM.dat", unpack=True)
+t1p, T1pc, i1p = np.genfromtxt("data/Peaks1TproM.dat", unpack=True)
 T1a= T1ac +273.15
-print(T1a)
-print(i1a)
 T1p=T1pc + 273.15
 
-t2a, T2ac, i2a = np.genfromtxt("../data/A2TproM.dat", unpack=True)
-t2p, T2pc, i2p = np.genfromtxt("../data/Peaks2TproM.dat", unpack=True)
+t2a, T2ac, i2a = np.genfromtxt("data/A2TproM.dat", unpack=True)
+t2p, T2pc, i2p = np.genfromtxt("data/Peaks2TproM.dat", unpack=True)
 T2a= T2ac + 273.15
 T2p= T2pc + 273.15
 
-t1an, T1anc, i1an = np.genfromtxt("../data/anlauf1TproM.dat", unpack=True)
-t2an, T2anc, i2an = np.genfromtxt("../data/anlauf2TproM.dat", unpack=True)
+t1an, T1anc, i1an = np.genfromtxt("data/anlauf1TproM.dat", unpack=True)
+t2an, T2anc, i2an = np.genfromtxt("data/anlauf2TproM.dat", unpack=True)
 T1an= T1anc + 273.15
 T2an= T2anc + 273.15
 
-t1, Tneu1, dsfds = np.genfromtxt("../data/1GRADproMIN.dat", unpack=True)
-t2, Tneu2, fsddf = np.genfromtxt("../data/2GRADproMIN.dat", unpack=True)
+t1, Tneu1, dsfds = np.genfromtxt("data/1GRADproMIN.dat", unpack=True)
+t2, Tneu2, fsddf = np.genfromtxt("data/2GRADproMIN.dat", unpack=True)
 T1= Tneu1 + 273.15
 T2= Tneu2 + 273.15
 
-plt.plot(t1, T1, "ob", markersize="1.5", label="Messdaten")
-plt.plot(t2, T2, "ob", markersize="1.5", )
+plt.plot(t1, T1, "og", markersize="1.5", label="Messdaten: 1° pro min")
+plt.plot(t2, T2, "ob", markersize="1.5", label="Messdaten: 2° pro min")
 
 def sigmoid1(x, a, b):
     return a*x+b
@@ -58,6 +56,7 @@ def sigmoid1(x, a, b):
     return a*x+b
 
 
+
 params, covariance_matrix = curve_fit(sigmoid1, t2, T2)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
@@ -74,20 +73,20 @@ plt.plot(x, params[0]*x+params[1],
 
 
 plt.ylabel(r'T $[\si{\celsius}]$')
-plt.xlabel(r't $[\si{\minutes}]$')
+plt.xlabel(r't $[\si{\minute}]$')
 
 plt.grid()
 plt.legend()
-# plt.savefig("build/Temperatur.pdf")
+plt.savefig("build/Temperatur.pdf")
 plt.clf()
 
 
 
 
-plt.plot(T1a, i1a, "xb")
-plt.plot(T1p, i1p, "xr")
+plt.plot(T1a, i1a, "xb", label="Messdaten := Anstieg")
+plt.plot(T1p, i1p, "xr", label="Messdaten := Entladungsstrom")  
 
-def sigmoid1(x, a, b):
+def sigmoid1(x, a, b): 
     return a*np.exp(b*x)
 
 
@@ -102,12 +101,19 @@ x = np.linspace(200,310)
 
 plt.plot(x, params1[0]*np.exp(params1[1]*x),
         'k--',
-        label="lineare Regression",
+        label="Ausgleichsfunktion",
         linewidth=1)
-plt.show()
+
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
+
+plt.grid()
+plt.legend()
+plt.savefig("build/Strom1.pdf")
+
 plt.clf()
-plt.plot(T2a, i2a, "xb")
-plt.plot(T2p, i2p, "xr")
+plt.plot(T2a, i2a, "xb", label="Messdaten := Anstieg")
+plt.plot(T2p, i2p, "xr", label="Messdaten := Entladungsstrom") 
 
 def sigmoid1(x, a, b):
     return a*np.exp(b*x)
@@ -127,23 +133,42 @@ plt.plot(x, params2[0]*np.exp(params2[1]*x),
         label="lineare Regression",
         linewidth=1)
 
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
 
-plt.show()
+plt.grid()
+plt.legend()
+plt.savefig("build/Strom2.pdf")
+
+
 plt.clf()
 
-plt.plot(T1a, i1a-(params1[0]*np.exp(params1[1]*T1a)), "xb")
-plt.plot(T1p, i1p-(params1[0]*np.exp(params1[1]*T1p)), "xr")
+plt.plot(T1a, i1a-(params1[0]*np.exp(params1[1]*T1a)), "xb",label="Messdaten := Anstieg - Untergrund")
+plt.plot(T1p, i1p-(params1[0]*np.exp(params1[1]*T1p)), "xr",label="Messdaten := Strom")  
 plt.xlim(200,310)
 plt.ylim(-1,1.5)
-plt.show()
+
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
+
+plt.grid()
+plt.legend()
+plt.savefig("build/untegrrund1.pdf")
+
 
 plt.clf()
 
-plt.plot(T2a, i2a-(params2[0]*np.exp(params2[1]*T2a)), "xb")
-plt.plot(T2p, i2p-(params2[0]*np.exp(params2[1]*T2p)), "xr")
+plt.plot(T2a, i2a-(params2[0]*np.exp(params2[1]*T2a)), "xb", label="Messdaten := Anstieg - Untergrund")
+plt.plot(T2p, i2p-(params2[0]*np.exp(params2[1]*T2p)), "xr", label="Messdaten := Strom")  
 plt.xlim(200,320)
 plt.ylim(-1,3)
-plt.show()
+
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
+
+plt.grid()
+plt.legend()
+plt.savefig("build/untegrrund2.pdf")
 
 plt.clf()
 
@@ -159,9 +184,10 @@ print(ab)
 #print(ab)
 
 reziprokT = 1/(ab)
-MFL = np.log(i1an)
-
-plt.plot(reziprokT, -MFL, "xk")
+MFL = np.log(i1an-(params1[0]*np.exp(params1[1]*T1an)))
+print("############################")
+print(MFL)
+plt.plot(reziprokT, -MFL, "xk", label="Messdaten")
 
 def sigmoid1(x, a, b):
     return a*(x)+b
@@ -170,7 +196,7 @@ def sigmoid1(x, a, b):
 params3, covariance_matrix = curve_fit(sigmoid1, reziprokT, MFL)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
-print("Params:")
+print("Params energie1:")
 for name, value, uncertainty in zip('ab', params3, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
 
@@ -192,25 +218,29 @@ print(W* 6.241509*10**18)
 #
 #
 
-plt.show()
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
 
+plt.grid()
+plt.legend()
+plt.savefig("build/benergie1.pdf")
 plt.clf()
 
 ab = T2an 
 print(ab)
 
-#bb = T1an
+#bb = T1an 
 #print(ab)
 #for i in range(len(ab)):
 #    print(i)
-#    print(ab[i])
+#    print(ab[i]) 
 #    bb[i] = ab[i] + 273.15
 #print(ab)
 
 reziprokT = 1/(ab)
-MFL = np.log(i2an)
+MFL = np.log(i2an-(params2[0]*np.exp(params2[1]*T2an)))
 
-plt.plot(reziprokT, -MFL, "xk")
+plt.plot(reziprokT, -MFL, "xk", label="Messdaten")
 
 def sigmoid1(x, a, b):
     return a*(x)+b
@@ -219,7 +249,7 @@ def sigmoid1(x, a, b):
 params3, covariance_matrix = curve_fit(sigmoid1, reziprokT, MFL)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
-print("Params:")
+print("Params energie 2:")
 for name, value, uncertainty in zip('ab', params3, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
 
@@ -240,10 +270,14 @@ print(W* 6.241509*10**18)
 #
 #
 
-plt.show()
+plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.xlabel(r't $[\si{\minute}]$')
+
+plt.grid()
+plt.legend()
+plt.savefig("build/benergie2.pdf")
 plt.clf()
 
 
 # Aktivierungsarbeit durch integration
-
 
