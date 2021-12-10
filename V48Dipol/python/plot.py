@@ -129,7 +129,7 @@ for name, value, uncertainty in zip('ab', params2, uncertainties):
 x = np.linspace(200,310)
 
 plt.plot(x, params2[0]*np.exp(params2[1]*x),
-        'r--',
+        'k--',
         label="lineare Regression",
         linewidth=1)
 
