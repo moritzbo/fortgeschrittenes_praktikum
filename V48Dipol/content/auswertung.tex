@@ -3,39 +3,88 @@
 In dem Versuch wurde die Dipolrelaxation für zwei unterschiedliche Heizraten $b$ untersucht. Da die Temperatur zum Teil manuell nachgeregelt werden musste, bietet es sich an die Heizrate über
 die gemessenen Temperatur-Zeit-Abstände zu bestimmen. In der Abbildung \ref{fig:a1} sind die Temperatur-Zeit Verläufe dargestellt. Durch eine Lineare Regression lässt sich die Heizrate $b$ jeweils bestimmen zu
 \begin{align*}
-    b_1 &= \SI{1.009(9)}{\kelvin\per\second},\\
-    b_2 &= \SI{2.050(23)}{\kelvin\per\second}.\\
+    b_1 &= \SI{1.009(9)}{\kelvin\per\minute},\\
+    b_2 &= \SI{2.050(23)}{\kelvin\per\minute}.\\
 \end{align*}
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{build/?.png}
-%     \caption{Gemessene Temperaturverläufe beider Heizraten $b_1$ und $b_2$.
-%             }
-%     \label{fig:?}
-% \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/temperatur.pdf}
+    \caption{Gemessene Temperaturverläufe beider Heizraten $b_1$ und $b_2$.
+            }
+    \label{fig:a1}
+\end{figure}
 \subsection{Temperatur-Strom-Kurve}
 
-Aus den gemessenen Daten ... lassen sich nun die Temperatur-Strom Kurven auftragen. Dies ist in Abbildung \ref{fig:a2} gezeigt. Zusätzlich wird der Untergrund durch einen Exponentialfit angedeutet. 
+Aus den gemessenen Daten ... lassen sich nun die Temperatur-Strom Kurven auftragen. Dies ist in den Abbildungen \ref{fig:a2} und \ref{fog:a3} für die verschiedenen Heizraten gezeigt. Zusätzlich wird der Untergrund durch einen Exponentialfit angedeutet. 
 Dieser besitzt also die Form
 \begin{equation*}
-I(\text{T}) = m \text{exp} \left(nT\right).
+I(\text{T}) = m \cdot \text{exp} \left(nT\right).
 \end{equation*}
 Aus den Strom-Temperatur Wertepaaren ergeben sich somit die Parameter $m$ und $n$ für die jeweilige Heizrate angedeutet durch die Indizes zu
-% \begin{align*}
-%     m_1 &= \SI{}{\pico\ampere}\\  
-%     n_1 &= \SI{}{\per\kelvin}\\ 
-%     m_2 &= \SI{}{\pico\ampere}\\ 
-%     n_2 &= \SI{}{\per\kelvin}\\ 
-% \end{align*}
+\begin{align*}
+m_1 &= \SI{4.050(2121)e-9}{\pico\ampere}\\  
+n_1 &= \SI{0.059(18)}{\per\kelvin}\\ 
+m_2 &= \SI{1.309(581)e-7}{\pico\ampere}\\ 
+n_2 &= \SI{0.057(15)}{\per\kelvin}\\ 
+\end{align*}
 
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{build/?.png}
-%     \caption{Gemessene Strom-Temperaturverläufe beider Heizraten $b_1$ und $b_2$ mit Exponentialfit der Untergrundrate.
-%             }
-%     \label{fig:?}
-% \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/strom1.pdf}
+    \caption{Gemessene Strom-Temperaturverläufe bei einer Heizrate \newline $ b_1 = \SI{1.009(9)}{\kelvin\per\minute}$ mit Exponentialfit der Untergrundrate.
+            }
+    \label{fig:a2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/strom2.pdf}
+    \caption{Gemessene Strom-Temperaturverläufe bei einer Heizrate \newline $b_2 = \SI{2.050(23)}{\kelvin\per\minute}$ mit Exponentialfit der Untergrundrate.
+            }
+    \label{fig:a3}
+\end{figure}
 
-\subsection{Berechnung der Aktivierungsenergie}
 
-Die Aktivierungsenergie $W$ lässt sich wie in dem Abschnitt ...
+\subsection{Berechnung der Aktivierungsenergie über den Strom} 
+
+Die Aktivierungsenergie $W$ lässt sich wie in dem Abschnitt \ref{sec:strom} beschrieben nach Gleichung \eqref{eqn:theo6} berechnen. Dabei werden die Strommessdaten logarithmiert und gegen 
+die reziproke Temperatur aufgetragen. Wichtig hierbei ist, dass nur ein kleiner Abschnitt von Temperaturen verwendet werden darf, da
+die Näherung \eqref{eqn:theo5} noch gelten soll. Dafür wurde hier die Linke Flanke, der in Abbildung ... dargestellten ersten Maxima verwendet. Eine Ausgleichsgerade der Form
+\begin{equation}
+\text{ln}(I(T)) = a \cdot \left( \frac{1}{T}\right) + c,
+\end{equation}
+liefert die Fitparameter für die einzelnen Heizraten
+\begin{align*}
+a_1 &= \SI{-7374.38(52868)}{\kelvin},\\
+c_1&= \SI{29.02(214)}{},\\
+a_2 &= \SI{-9171.08(24711)}{\kelvin},\\
+c_2&= \SI{36.33(100)}{}.
+\end{align*}
+Aus Gleichung \eqref{eqn:theo6} lässt sich nun der Zusammenhang zur Aktivierungsenergie $W$ durch folgende Beziehung erreichen
+\begin{equation}
+W_i = - k_B \cdot a_i.
+\end{equation}
+Somit folgt für die Aktivierungsenergien 
+\begin{align}
+W_1 &= \SI{0.64(5)}{\electronvolt},\\
+W_2 &= \SI{0.79(2)}{\electronvolt}.
+\end{align}
+In den Abbildungen \ref{fig:a4} und \ref{fig:a5} sind die logarithmierten Messdaten, sowie die Ausgleichsgeraden für die jeweiligen Heizraten dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/benergie1.pdf}
+    \caption{Logarithmierter Stromverlauf bei einer Heizrate \newline $b_1 = \SI{1.009(9)}{\kelvin\per\minute}$ der linken Flanke des ersten Maximums.
+            }
+    \label{fig:a4}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/benergie2.pdf}
+    \caption{Logarithmierter Stromverlauf bei einer Heizrate \newline $b_2 = \SI{2.050(23)}{\kelvin\per\minute}$ der linken Flanke des ersten Maximums.
+            }
+    \label{fig:a5}
+\end{figure}
+
+\subsection{Berechnung der Aktivierungsenergie über die Polarisation}
+Die zweite Methode die Aktivierungsenergien zu berechnen, verwendet die Polarisationsmethode nach Abschnitt \ref{sec:pola}. Hierfür muss eine numerische 
+Integration des Integrals in Gleichung \eqref{eqn:idkwhat} durchgeführt werden. Eine Möglichkeit stellt eine Integration durch
+Aufsummieren von Trapeznäherungen. Hierbei gilt 

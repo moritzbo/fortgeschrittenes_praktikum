@@ -57,6 +57,7 @@ erreicht werden, wodurch die Polarisation förmlich \enquote{eingefroren} wird.
 Es gibt nun zwei mögliche Herangehensweisen um die Aktivierungsenergie $W$ zu berechnen. Diese sind im Folgenden erläutert.
 
 \subsection{Depolarisationsstrommethode}
+\label{sec:strom}
 Der Depolarisationsstrom beschreibt den messbaren Strom der bei einer Polarisationsänderung einhergeht. Das E-Feld innerhalb der Probe ändert somit seinen Wert und über einen Kondensator lässt sich der abfließende Strom beobachten.
 \\
 Wichtig für den Strom stellt der Anteil aller Dipole dar, welche in Richtung des Gesamtdipolmoments zeigen. Werden die Dipole von außen über ein E-Feld in eine bestimmte Richtung ausgerichtet, so entspricht dies genau
@@ -91,15 +92,18 @@ der folgende Zusammenhang
     \label{killme}
 \end{equation}
 Für kleine Temperaturen $\text{T} \approx \text{T}_0$ folgt daraus
-\begin{equation*}
+\begin{equation}
+    \label{eqn:theo5}
     \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \approx 0 \quad \to \quad j \left( \text{T} \right) \approx \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
-\end{equation*}
+\end{equation}
 Nun kann dieser Ausdruck logarithmiert werden uns es ergibt sich eine lineare Gleichung gegeüber reziproker Temperatur mit Steigung $W$. Es folgt also
 \begin{equation}
+    \label{eqn:theo6}
 \text{ln}(j(\text{T})) = - \frac{W}{k_{B}} \left( \frac{1}{\text{T}}\right) + \underbrace{\text{ln}\left( \frac{|\vec{P}|^2 |E| \text{N}_P}{3 k_B \text{T}_P \tau_0}\right)}_{:= \text{const}}.
 \end{equation}
 
 \subsection{Polarisationsmethode}
+\label{sec:pola}
 Der Unterschied zur vorherigen Methode besteht in der Betrachtung der Gesamtpolarisation $\vec{P}$ des Kristalls. Diese ergibt sich aus dem Gesamtdipolmoment pro Volumeneinheit. Nun wird die Polarisation als 
 proportional zur Anzahl der orientierten Dipole angenommen. Hierbei gilt nun wieder
 \begin{equation}
@@ -118,6 +122,7 @@ Zusammen mit der Randbedingung, dass die Polarisation zum Zeitpunkt $t \to \inft
 \end{equation}
 Unter Verwendung von Gleichung \eqref{eqn:lol1} und \eqref{eqn:theo3} folgt daraus nun
 \begin{equation}
+    \label{eqn:idkwhat}
 \frac{W}{k_B \text{T}} = \text{ln} \left( \frac{\int_{\text{T}}^{\infty} I(\text{T'}) \text{dT'} }{I(\text{T}) \tau_0 b}\right).
 \end{equation}
 Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T*) = 0$ gilt. Unter 
