@@ -72,7 +72,7 @@ plt.plot(x, params[0]*x+params[1],
         linewidth=1)    
 
 
-plt.ylabel(r'T $[\si{\celsius}]$')
+plt.ylabel(r'T $[\si{\kelvin}]$')
 plt.xlabel(r't $[\si{\minute}]$')
 
 plt.grid()
@@ -105,7 +105,7 @@ plt.plot(x, params1[0]*np.exp(params1[1]*x),
         linewidth=1)
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
 plt.legend()
@@ -134,8 +134,7 @@ plt.plot(x, params2[0]*np.exp(params2[1]*x),
         linewidth=1)
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
-
+plt.xlabel(r'T $[\si{\kelvin}]$')
 plt.grid()
 plt.legend()
 plt.savefig("build/Strom2.pdf")
@@ -149,7 +148,7 @@ plt.xlim(200,310)
 plt.ylim(-1,1.5)
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
 plt.legend()
@@ -164,7 +163,7 @@ plt.xlim(200,320)
 plt.ylim(-1,3)
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
 plt.legend()
@@ -219,7 +218,7 @@ print(W* 6.241509*10**18)
 #
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
 plt.legend()
@@ -271,7 +270,7 @@ print(W* 6.241509*10**18)
 #
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
-plt.xlabel(r't $[\si{\minute}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
 plt.legend()
