@@ -31,6 +31,9 @@ t2, Tneu2, fsddf = np.genfromtxt("data/2GRADproMIN.dat", unpack=True)
 T1= Tneu1 + 273.15
 T2= Tneu2 + 273.15
 
+
+
+
 plt.plot(t1, T1, "og", markersize="1.5", label="Messdaten: 1° pro min")
 plt.plot(t2, T2, "ob", markersize="1.5", label="Messdaten: 2° pro min")
 
@@ -161,6 +164,18 @@ plt.plot(T2a, i2a-(params2[0]*np.exp(params2[1]*T2a)), "xb", label="Messdaten :=
 plt.plot(T2p, i2p-(params2[0]*np.exp(params2[1]*T2p)), "xr", label="Messdaten := Strom")  
 plt.xlim(200,320)
 plt.ylim(-1,3)
+
+NFLStrom1 = dsfds - (params1[0]*np.exp(params1[1]*T1))
+NFLStrom2 = fsddf - (params2[0]*np.exp(params2[1]*T2))
+
+
+print(T1[27])
+print(T1[54])
+INT1 = 0
+for i in range(27):
+   INT1 = INT1 + (T1[i+28] - T1[i+27]) * (NFLStrom1[i+28] + NFLStrom1[i+27])/2
+   print(INT1) 
+print(f"HIER HIER HIER: {INT1:.2f}")
 
 plt.ylabel(r'I $[\si{\pico\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
