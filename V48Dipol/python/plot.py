@@ -107,7 +107,7 @@ plt.plot(x, params1[0]*np.exp(params1[1]*x),
         label="Ausgleichsfunktion",
         linewidth=1)
 
-plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
@@ -136,7 +136,7 @@ plt.plot(x, params2[0]*np.exp(params2[1]*x),
         label="lineare Regression",
         linewidth=1)
 
-plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
 plt.grid()
 plt.legend()
@@ -150,7 +150,7 @@ plt.plot(T1p, i1p-(params1[0]*np.exp(params1[1]*T1p)), "xr",label="Messdaten := 
 plt.xlim(200,310)
 plt.ylim(-1,1.5)
 
-plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
@@ -212,6 +212,8 @@ for i in range(27):
    print(INT1) 
 print(f"HIER HIER HIER: {INT1:.2f}")
 
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
+plt.xlabel(r'T $[\si{\kelvin}]$')
 
 print(T2[15])
 print(T2[33])
@@ -315,7 +317,7 @@ print(W* 6.241509*10**18)
 #
 #
 
-plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
@@ -367,7 +369,7 @@ print(W* 6.241509*10**18)
 #
 #
 
-plt.ylabel(r'I $[\si{\pico\ampere}]$')
+plt.ylabel(r'I $10^{-11}$[$\si{\ampere}]$')
 plt.xlabel(r'T $[\si{\kelvin}]$')
 
 plt.grid()
