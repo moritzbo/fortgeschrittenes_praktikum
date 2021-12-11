@@ -11,6 +11,13 @@ build/untegrrund1.pdf: python python/plot.py matplotlibrc header-matplotlib.tex 
 	TEXINPUTS=$$(pwd): python python/plot.py 
 build/untegrrund2.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python python/plot.py
+build/lol1.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py
+build/lol2.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py
+build/lolol1.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py
+
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/V48.pdf: build/Temperatur.pdf \
@@ -18,6 +25,9 @@ build/V48.pdf: build/Temperatur.pdf \
 			   build/Strom2.pdf \
 			   build/untegrrund1.pdf \
 			   build/untegrrund2.pdf \
+			   build/lol1.pdf \
+			   build/lol2.pdf \
+			   build/lolol1.pdf \
 
 build/V48.pdf: FORCE | build
 	  TEXINPUTS=build: \
