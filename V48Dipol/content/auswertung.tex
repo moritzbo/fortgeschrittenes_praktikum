@@ -112,5 +112,74 @@ Bei der Wahl der Intervalle muss stets die genannte Bedingung aus \ref{sec:pola}
 \increment T_2 &= \{\SI{239.15}{\kelvin}\text{, ...,} \underbrace{\SI{280.35}{\kelvin}}_{T*_2}\}, \\
 \end{align*}
 an. Die Integrale bilden für die Zwischenschritte der Temperatur, in den vorher genannten Intervallen, Wertepaare zusammen mit der reziproken Temperatur nach 
-Gleichung \eqref{eqn:idkwhat}. Diese wurden in den Abbildungen ... und ... aufgetragen. Die Austrittsarbeit ergibt sich dabei wieder durch eine lineare 
+Gleichung \eqref{eqn:idkwhat}. Diese wurden in den Abbildungen \ref{fig:lol1} und \ref{fig:lol2} aufgetragen. Die Austrittsarbeit ergibt sich dabei wieder durch eine lineare 
 Regression.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/lol1.pdf}
+    \caption{Integrierte Messwerte der ersten Heizrate \newline $b_1 = \SI{1.009(9)}{\kelvin\per\minute}$ gegen die reziproke Temperatur.
+            }
+    \label{fig:lol1}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/lol2.pdf}
+    \caption{Integrierte Messwerte der ersten Heizrate \newline $b_2 = \SI{2.050(23)}{\kelvin\per\minute}$ gegen die reziproke Temperatur.
+            }
+    \label{fig:lol2}
+\end{figure}
+Die Ausgleichsfunktion der Form
+\begin{equation}
+\text{ln} \left( \frac{\int_{\text{T}}^{\infty} I(\text{T'}) \text{dT'} }{I(\text{T})b}\right) = a \cdot \frac{1}{T} + c
+\end{equation}
+liefert die Parameter
+\begin{align*}
+    a_1 &= \SI{9551.42(25316)}{\kelvin},\\
+    c_1&= \SI{-35.32(96)}{},\\
+    a_2 &= \SI{7902.61(41423)}{\kelvin},\\
+    c_2&= \SI{-28.54(160)}{}.
+\end{align*}
+Woraus sich nun die Aktivierungsenergien aus dem Zusammenhang zu Gleichung \eqref{eqn:idkwhat} bestimmen lassen als
+\begin{align}
+    W_1 &= \SI{0.82(2)}{\electronvolt},\\
+    W_2 &= \SI{0.68(4)}{\electronvolt}.
+\end{align}
+ 
+\subsection{Bestimmung der charakteristischen Relaxationszeit}
+Für die Bestimmung der charakteristischen Relaxationszeit wird die Gleichung \eqref{eqn:hier} verwendet. Dazu werden aus den Abbildungen \ref{fig:b1} und \ref{fig:b2} die 
+Temperaturwerte des ersten Maximums abgelesen zu
+\begin{align}
+    T_{1\text{,max}} &= \SI{255.45}{\kelvin},\\
+    T_{2\text{,max}}&= \SI{260.35}{\kelvin}.
+\end{align}
+Nun wurden verschiedene Aktivierungsenergie $W$ für die jeweiligen Heizraten berechnet und somit liefern beide einen anderen Wert für $\tau_0$.
+Eingesetzt in Gleichung \eqref{eqn:hier} ergibt sich für die erste Heizrate $ b_1 = \SI{1.009(9)}{\kelvin\per\minute}$:
+\begin{align}
+    \tau_{0\text{,}1\text{,}\alpha} &= \SI{2.058(4834)e-12}{\second},\\
+    \tau_{0\text{,}1\text{,}\beta} &= \SI{4.513(4211)e-16}{\second}.
+\end{align}
+Sowie für die zweite Heizrate $b_2 = \SI{2.050(23)}{\kelvin\per\minute}$: 
+\begin{align}
+    \tau_{0\text{,}2\text{,}\alpha} &= \SI{1.839(1686)e-15}{\second},\\
+    \tau_{0\text{,}2\text{,}\beta} &= \SI{2.877(5299)e-13}{\second}.
+\end{align}
+Dabei steht der zweite Index für die Heizrate und der dritte Index für die Methode. Die Stromdichtenmethode wird mit $\alpha$ und die Polarisationsmethode mit $\beta$
+gekennzeichnet.
+
+\subsection{Darstellung des Temperaturverlaufs der Relaxationszeit}
+Nun wurden alle wichtigen Parameter für Gleichung \eqref{eqn:lol1} für jeweils zwei Heizraten bestimmt.
+Da es für $\tau_0$ und die Aktivierungsenergie $W$ jeweils zwei Werte gibt, werden diese gemittelt
+\begin{align}
+    \overline{\tau_{0\text{,}1}} &= \SI{1.029(2417)e-12}{\second},\\
+    \overline{\tau_{0\text{,}2}} &= \SI{1.448(2650)e-13}{\second}, \\
+    \overline{W_{1}} &= \SI{0.7301(269)}{\electronvolt}, \\
+    \overline{W_{2}} &= \SI{0.7351(224)}{\electronvolt}. 
+\end{align}
+Nach Einsetzen in Gleichung \eqref{eqn:lol1} können die resultierenden Funktionen in Abbildung \ref{fig:whatthefuck} dargestellt werden.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/lolol1.pdf}
+    \caption{Temperaturabhängigkeit der Relaxationszeit bei verschiedenen Heizraten.
+            }
+    \label{fig:whatthefuck}
+\end{figure}
