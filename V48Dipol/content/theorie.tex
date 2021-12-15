@@ -62,41 +62,41 @@ Der Depolarisationsstrom beschreibt den messbaren Strom der bei einer Polarisati
 \\
 Wichtig für den Strom stellt der Anteil aller Dipole dar, welche in Richtung des Gesamtdipolmoments zeigen. Werden die Dipole von außen über ein E-Feld in eine bestimmte Richtung ausgerichtet, so entspricht dies genau
 dieser. Mathematisch lässt sich dieser Anteil über eine Langevin-Funktion beschreiben. Für sie gilt nach \cite{KROGER201577}
-\begin{equation}
+\begin{equation*}
 L(x) = \text{coth}(x) - \frac{1}{x} \quad \Biggl| \quad x := \frac{|\vec{P}||E|}{k_{B} \text{T}}
-\end{equation}
+\end{equation*}
 mit der Definition für $x$ aus \cite{altskript}. Für kleine Temperaturen $T$ lässt sich diese Gleichung bis zur zweiten Ordnung Taylorentwickeln.
 Es folgt
-\begin{equation}
+\begin{equation*}
 y(\text{T}) = \frac{|\vec{P}||E|}{3k_{B} \text{T}}.
-\end{equation}
+\end{equation*}
 Nun lässt sich folgende Form einer Stromdichte nach \cite{Fuller} definieren
 \begin{multline}
 j(\text{T}) \propto \{\text{Anteil der zu Beginn ausgerichteten Dipole} y(\text{T} = \text{T}_P)\} \\ \cdot \{\text{Dipolmoment}\} \cdot \{\text{Relaxationsrate}\}.
 \end{multline}
 Daraus folgt also
-\begin{equation}
+\begin{equation*}
 j(\text{T}) = y(\text{T}_P) |\vec{P}| \left(\frac{\text{d}N}{\text{d}t}\right).
-\end{equation}
+\end{equation*}
 Wobei die Rate proportional zur Anzahl der Dipole ist und es gilt
-\begin{equation}
+\begin{equation*}
     \frac{\text{d}N}{\text{d}t} = - \frac{N}{\tau(\text{T})}.
-\end{equation}
+\end{equation*}
 Zusammen mit Gleichung \eqref{eqn:lol1} folgt daraus bei einer konstanten Heizrate 
-\begin{equation}
+\begin{equation*}
 b := \frac{\text{dT}}{\text{d}t} = \text{const},
-\end{equation}
+\end{equation*}
 der folgende Zusammenhang
 \begin{equation}
-    j \left( \text{T} \right) = \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left( -\frac{1}{\text{b}\tau_0} \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \right) \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
+    j \left( \text{T} \right) = \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left( -\frac{1}{\text{b}\tau_0} \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \right) \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right).
     \label{killme}
 \end{equation}
 Für kleine Temperaturen $\text{T} \approx \text{T}_0$ folgt daraus
 \begin{equation}
     \label{eqn:theo5}
-    \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \approx 0 \quad \to \quad j \left( \text{T} \right) \approx \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right)
+    \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \approx 0 \quad \to \quad j \left( \text{T} \right) \approx \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right).
 \end{equation}
-Nun kann dieser Ausdruck logarithmiert werden uns es ergibt sich eine lineare Gleichung gegeüber reziproker Temperatur mit Steigung $W$. Es folgt also
+Nun kann dieser Ausdruck logarithmiert werden uns es ergibt sich eine lineare Gleichung gegenüber reziproker Temperatur mit Steigung $W$. Es folgt also
 \begin{equation}
     \label{eqn:theo6}
 \text{ln}(j(\text{T})) = - \frac{W}{k_{B}} \left( \frac{1}{\text{T}}\right) + \underbrace{\text{ln}\left( \frac{|\vec{P}|^2 |E| \text{N}_P}{3 k_B \text{T}_P \tau_0}\right)}_{:= \text{const}}.
@@ -125,7 +125,7 @@ Unter Verwendung von Gleichung \eqref{eqn:lol1} und \eqref{eqn:theo3} folgt dara
     \label{eqn:idkwhat}
 \frac{W}{k_B \text{T}} = \text{ln} \left( \frac{\int_{\text{T}}^{\infty} I(\text{T'}) \text{dT'} }{I(\text{T}) \tau_0 b}\right).
 \end{equation}
-Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T*) = 0$ gilt. Unter 
+Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T^*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T^*) = 0$ gilt. Unter 
 Berücksichtigung von Untergrundraten.
 
 \subsection{Bestimmung der charakteristischen Relaxationszeit}
