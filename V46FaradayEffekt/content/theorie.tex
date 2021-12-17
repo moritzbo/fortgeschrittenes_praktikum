@@ -43,7 +43,48 @@ diese Bandlücken nur noch einige Millielektronenvolt groß. Sie sind so auch be
 Eine weitere Dotierungsmöglichkeit ist die p-Dotierung. Hierbei werden Fremdatome mit jeweils einem Valenzelektron weniger in den Festkörper gebracht. Es liegt also im Vergleich zum vorherigen Atom eine Elektronenfehlstelle vor. 
 Diese Fehlstelle kann nun von anderen Valenzelektron gefüllt werden. Die Löcher können also ab einer gewissen Energie durch den Festkörper wandern. Dieser Prozess wird Löcherleitung genannt.
 
+\subsection{Effektive Masse}
 
+Die effektive Masse stellt ein Hilfsmittel zur Beschreibung von Elektronen oder auch Elektronen-Loch-Paaren in Gittern dar. Diese bewegen sich in einem Kristall
+innerhalb des gesamten Gitterpotentials welches nur schwer zu beschreiben und damit zu rechnen ist. Viel einfacher ist eine Betrachtung von freien Teilchen wobei
+die Dispersionsrelation
+\begin{equation}
+E(\vec{k}) = \frac{\hbar^2 \vec{k}^2}{2m}
+\end{equation}
+bekannt ist. Damit diese Beziehung auch für quasifreie Teilchen gilt, muss die Masse angepasst werden. Man bezeichnet diese
+als effektive Masse $m^*$. Diese lässt sich durch die doppelte Ableitung aus der Energie extrahieren. Für ein eindimensionales Gitter mit ist dies leicht, da
+sich die Wellenzahl auf einen Skalar reduziert und es ergibt sich
+\begin{equation*}
+m^* = \hbar^2 \left( \frac{\partial^2 E(k)}{\partial k^2} \right)^{-1}.
+\end{equation*}
+Im Allgemeinen muss dies nicht nur auf drei Dimensionen erweitert, sondern es muss auch die Symmetrie und somit die Struktur des Kristalls berücksichtigt werden.
+Wenn der Wellenvektor $k_N$ Elemente besitzt dann lässt sich die effektive Masse als 
+\begin{equation}
+    (m^*)_{ij} = \hbar^2 \left( \frac{\partial^2 E(\vec{k})}{\partial k_i \partial k_j} \right)^{-1}. 
+\end{equation}
+angeben, also als Tensor welcher durch eine Matrix mit $N \times N$ Einträgen dargestellt werden kann.
+
+\subsection{Zirkulare Doppelbrechung}
+
+Unter zirkularer Doppelbrechung wird die Drehung der Polarisationsrichtung einer linear polarisierten Welle durch einen Kristall verstanden. 
+Im folgenden wird erläutert wie sich dies durch Superposition von links- und rechtszirkularen Wellen beschreiben lässt.
+\\
+Eine zirkualare Welle beschreibt eine in transversal zur Propagationsrichtung schwingende Welle. Wobei eine Komponente um $\pm \pi$/2 phasenverschoben ist.
+Daraus ergeben sich folgende Darstellungsmöglichkeiten für links- und rechtszirkulare Wellen
+\begin{align*}
+E_l &= (E_0 \hat{x} + i E_0 \hat{y}) e^{ik_l z}, \\
+E_r &= (E_0 \hat{x} - i E_0 \hat{y}) e^{ik_r z}.
+\end{align*}
+Hier wurde als mögliche Ausbreitungsrichtung die $z$-Richtung gewählt. Leicht zu erkennen ist, dass bei gleicher Phasengeschwindigkeit, also gleicher Wellenzahl $k_r = k_l$, bei Superposition eine lineare Welle entsteht.
+Es lässt sich also schreiben
+\begin{equation*}
+E(z) = \frac{1}{2} (E_l + E_r).
+\end{equation*}
+Bei Eintritt in einen Kristall beispielsweise, können durch die Gitterstrukturen die Phasengeschwindigkeit der links- und rechtszirkularen Wellen
+voneinander unterscheiden. Sei die Durchlaufslänge der Welle durch den Kristall $L$, so ergibt sich bei $z=L$
+\begin{equation*}
+    E(L) = E_0 e^{i \phi} (\text{cos}(\theta)\hat{x} + \text{sin}(\theta) \hat{y} ) \quad \text{mit} \quad \theta := \frac{L}{2} (k_r - k_l) \text{ , } \phi := \frac{L}{2} (k_r + k_l).
+\end{equation*}
 
 
 
