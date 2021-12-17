@@ -1,26 +1,21 @@
 all: build/V46.pdf
 
-# #hier Python-Skripte:
-# build/plot1.pdf: python/test.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/test.py 
-# build/plot11.pdf: python/test2.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/test2.py 
-# build/plot12.pdf: python/test2.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/test2.py
-# build/plot2.pdf: python/vielkanal.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/vielkanal.py
-# build/plotmessung.pdf: python/lebensdauer.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/lebensdauer.py
-# build/test3.pdf: python/lebensdauer.py matplotlibrc header-matplotlib.tex | build
-# 	TEXINPUTS=$$(pwd): python python/lebensdauer.py
-# # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-# build/V01.pdf: build/plot1.pdf \
-# 			   build/plot11.pdf \
-# 			   build/plot12.pdf \
-# 			   build/plot2.pdf \
-# 			   build/plotmessung.pdf \
-# 			   build/test3.pdf \
+ #hier Python-Skripte:
+build/plot1.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py 
+build/plot2.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py 
+build/plot3.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py 
+build/plot4.pdf: python python/plot.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python python/plot.py 
 
+ # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
+ build/V46.pdf: build/plot1.pdf \
+				build/plot2.pdf \
+				build/plot3.pdf \
+				build/plot4.pdf \
+ 			   
 build/V46.pdf: FORCE | build
 	  TEXINPUTS=build: \
 	  BIBINPUTS=build: \

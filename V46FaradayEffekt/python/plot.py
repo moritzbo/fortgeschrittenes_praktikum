@@ -9,10 +9,15 @@ import uncertainties.unumpy as unp
 
 
 
-Index16, Minimum16, WinkelGrad16 , WinkelMinute16, Filter = np.genfromtxt("../data/GaAsN16.dat", unpack=True)
-Index28, Minimum28, WinkelGrad28 , WinkelMinute28, Filter = np.genfromtxt("../data/GaAsN28.dat", unpack=True)
-IndexR,  MinimumR,  WinkelGradR,   WinkelMinuteR,  Filter = np.genfromtxt("../data/GaAsREIN.dat", unpack=True)
-tesla, Abstand = np.genfromtxt("../data/bfeld.dat", unpack=True)
+Index16, Minimum16, WinkelGrad16 , WinkelMinute16, Filter = np.genfromtxt("data/GaAsN16.dat", unpack=True)
+Index28, Minimum28, WinkelGrad28 , WinkelMinute28, Filter = np.genfromtxt("data/GaAsN28.dat", unpack=True)
+IndexR,  MinimumR,  WinkelGradR,   WinkelMinuteR,  Filter = np.genfromtxt("data/GaAsREIN.dat", unpack=True)
+tesla, Abstand = np.genfromtxt("data/bfeld.dat", unpack=True)
+
+LR  = 5.11
+L16 = 1.36
+L28 = 1.296
+
 
 # Minuten in Grad
 # 60min = 1grad
@@ -29,7 +34,7 @@ WinkelR = WinkelGradR + WinkelMinuteInGradR
 plt.plot(Abstand, tesla, "kx", label="Messwerte")
 plt.legend()
 plt.grid()
-plt.show()
+plt.savefig("build/plot1.pdf")
 
 plt.clf()
 
@@ -57,15 +62,41 @@ print(loopit(0,0))
 print(FilterI)
 print(WinkelRSumme)
 
+WinkelRarray = np.array(WinkelRSumme)
+WinkelRnor = WinkelRarray/(LR)
+
 BS = np.array(FilterI)
 print(BS)
-plt.plot(BS*BS, WinkelRSumme, "kx")
-plt.show()
-plt.clf()
+
+def sigmoid1(x, a, b):
+    return a*x+b
+
+
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelRnor)
+
+uncertainties = np.sqrt(np.diag(covariance_matrix))
+print("Params Anstieg für REINE PROBE:")
+for name, value, uncertainty in zip('ab', params, uncertainties): 
+    print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
+
+x = np.linspace(0,7.3)
+
+plt.plot(x, params[0]*x+params[1], 
+        'r--',
+        label="lineare Regression und Messwerte, rein",
+        linewidth=1)
+
+
+
+plt.plot(BS*BS, WinkelRnor, "rx")
+#plt.show()
+#plt.clf()
 
 a = len(Winkel16)/2
 Winkel16Summe = []
 FilterI = []
+
+
 
 for i in range(0, len(Winkel16), 2):
     FilterI.append(Filter[i])
@@ -85,11 +116,34 @@ print(loopit(0,0))
 print(FilterI)
 print(Winkel16Summe)
 
+Winkel16array = np.array(Winkel16Summe)
+Winkel16nor = Winkel16array/(L16)
+
 BS = np.array(FilterI)
 print(BS)
-plt.plot(BS*BS, Winkel16Summe, "kx")
-plt.show()
-plt.clf()
+
+def sigmoid1(x, a, b):
+    return a*x+b
+
+
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, Winkel16nor)
+
+uncertainties = np.sqrt(np.diag(covariance_matrix))
+print("Params Anstieg für UNREIN 1,2:")
+for name, value, uncertainty in zip('ab', params, uncertainties): 
+    print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
+
+x = np.linspace(0,7.3)
+
+plt.plot(x, params[0]*x+params[1], 
+        'k--',
+        label="lineare Regression und Messwerte, dotiert 1.2",
+        linewidth=1)
+
+
+plt.plot(BS*BS, Winkel16nor, "kx")
+#plt.show()
+#plt.clf()
 
 a = len(Winkel28)/2
 Winkel28Summe = []
@@ -113,8 +167,104 @@ print(loopit(0,0))
 print(FilterI)
 print(Winkel28Summe)
 
+Winkel28array = np.array(Winkel28Summe)
+Winkel28nor = Winkel28array/(L28)
+
+
 BS = np.array(FilterI)
 print(BS)
-plt.plot(BS*BS, Winkel28Summe, "kx")
-plt.show()
+
+def sigmoid1(x, a, b):
+    return a*x+b
+
+
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, Winkel28nor)
+
+uncertainties = np.sqrt(np.diag(covariance_matrix))
+print("Params Anstieg für UNREINE 2.8:")
+for name, value, uncertainty in zip('ab', params, uncertainties): 
+    print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
+
+x = np.linspace(0,7.3)
+
+plt.plot(x, params[0]*x+params[1], 
+        'b--',
+        label="lineare Regression und Messwerte, dotiert 2.8",
+        linewidth=1)
+
+BS = np.array(FilterI)
+print(BS)
+plt.plot(BS*BS, Winkel28nor, "bx")
+
+plt.grid()
+plt.legend()
+plt.savefig("build/plot2.pdf")
 plt.clf()
+
+
+#### NORMIERUNG DER WINKEL --> /L
+LR  = 5.11
+L16 = 1.36
+L28 = 1.296
+
+
+#### bestimmung effektiver Masse 
+
+WinkelDifferenzR16 = np.abs(WinkelRarray - Winkel16array)
+WinkelDifferenzR28 = np.abs(WinkelRarray - Winkel28array)
+
+
+
+BS = np.array(FilterI)
+print(BS)
+
+plt.plot(BS*BS, WinkelDifferenzR16, "ko",label="Winkeldifferenz")
+
+def sigmoid1(x, a, b):
+    return a*x+b
+
+
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelDifferenzR16)
+
+uncertainties = np.sqrt(np.diag(covariance_matrix))
+print("Params Anstieg für Differenz REIN und 1.2 2.8:")
+for name, value, uncertainty in zip('ab', params, uncertainties): 
+    print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
+
+x = np.linspace(0,7.3)
+
+plt.plot(x, params[0]*x+params[1], 
+        'k--',
+        label="lineare Regression",
+        linewidth=1)
+
+plt.grid()
+plt.legend()
+plt.savefig("build/plot3.pdf")
+plt.clf()
+
+plt.plot(BS*BS, WinkelDifferenzR28, "bo", label="Winkeldifferenz")
+
+
+
+def sigmoid1(x, a, b):
+    return a*x+b
+
+
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelDifferenzR28)
+
+uncertainties = np.sqrt(np.diag(covariance_matrix))
+print("Params Anstieg für Differenz REIN und 2.8:")
+for name, value, uncertainty in zip('ab', params, uncertainties): 
+    print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
+
+x = np.linspace(0,7.3)
+
+plt.plot(x, params[0]*x+params[1], 
+        'b--',
+        label="lineare Regression",
+        linewidth=1)
+
+plt.grid()
+plt.legend()
+plt.savefig("build/plot4.pdf")
