@@ -14,9 +14,9 @@ Index28, Minimum28, WinkelGrad28 , WinkelMinute28, Filter = np.genfromtxt("data/
 IndexR,  MinimumR,  WinkelGradR,   WinkelMinuteR,  Filter = np.genfromtxt("data/GaAsREIN.dat", unpack=True)
 tesla, Abstand = np.genfromtxt("data/bfeld.dat", unpack=True)
 
-LR  = 5.11
-L16 = 1.36
-L28 = 1.296
+LR  = 5.11e-2
+L16 = 1.36e-2
+L28 = 1.296e-2
 
 
 # Minuten in Grad
@@ -81,14 +81,14 @@ for name, value, uncertainty in zip('ab', params, uncertainties):
 
 x = np.linspace(0,7.3)
 
-plt.plot(x, params[0]*x+params[1], 
-        'r--',
-        label="lineare Regression und Messwerte, rein",
-        linewidth=1)
+#plt.plot(x, params[0]*x+params[1], 
+#        'r--',
+#        label="lineare Regression und Messwerte, rein",
+#        linewidth=1)
 
 
 
-plt.plot(BS*BS, WinkelRnor, "rx")
+plt.plot(BS*BS, np.deg2rad(WinkelRnor), "rx")
 #plt.show()
 #plt.clf()
 
@@ -135,13 +135,13 @@ for name, value, uncertainty in zip('ab', params, uncertainties):
 
 x = np.linspace(0,7.3)
 
-plt.plot(x, params[0]*x+params[1], 
-        'k--',
-        label="lineare Regression und Messwerte, dotiert 1.2",
-        linewidth=1)
+#plt.plot(x, params[0]*x+params[1], 
+#        'k--',
+#        label="lineare Regression und Messwerte, dotiert 1.2",
+#        linewidth=1)
 
 
-plt.plot(BS*BS, Winkel16nor, "kx")
+plt.plot(BS*BS, np.deg2rad(Winkel16nor), "kx")
 #plt.show()
 #plt.clf()
 
@@ -187,14 +187,17 @@ for name, value, uncertainty in zip('ab', params, uncertainties):
 
 x = np.linspace(0,7.3)
 
-plt.plot(x, params[0]*x+params[1], 
-        'b--',
-        label="lineare Regression und Messwerte, dotiert 2.8",
-        linewidth=1)
+# plt.plot(x, params[0]*x+params[1], 
+        # 'b--',
+        # label="lineare Regression und Messwerte, dotiert 2.8",
+        # linewidth=1)
 
 BS = np.array(FilterI)
 print(BS)
-plt.plot(BS*BS, Winkel28nor, "bx")
+plt.plot(BS*BS, np.deg2rad(Winkel28nor), "bx")
+
+plt.ylabel(r'$\theta_{norm}$ [$\si{\radian\per\meter}]$')
+plt.xlabel(r'$\lambda^2$ [$\si{\micro\meter^2}]$')
 
 plt.grid()
 plt.legend()
