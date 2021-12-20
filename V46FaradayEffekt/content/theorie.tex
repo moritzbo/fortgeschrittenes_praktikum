@@ -51,7 +51,7 @@ die Dispersionsrelation
 \begin{equation}
 E(\vec{k}) = \frac{\hbar^2 \vec{k}^2}{2m}
 \end{equation}
-bekannt ist. Damit diese Beziehung auch für quasifreie Teilchen gilt, muss die Masse angepasst werden. Man bezeichnet diese
+bekannt ist. Damit diese Beziehung auch für quasifreie Teilchen gilt, muss die Masse angepasst werden. Bezeichnet wird diese
 als effektive Masse $m^*$. Diese lässt sich durch die doppelte Ableitung aus der Energie extrahieren. Für ein eindimensionales Gitter mit ist dies leicht, da
 sich die Wellenzahl auf einen Skalar reduziert und es ergibt sich
 \begin{equation*}
@@ -145,3 +145,46 @@ eine Lösung der Gleichung. Gezeigt wurde also, dass es bei einem Festörper mit
 kommt.
 
 \subsection{Faraday-Effekt}
+Bisher wurde nur die Polarisationsänderung bei optisch aktiven Medien gezeigt. Nun lässt sich zeigen, dass diese Drehung ebenfalls bei Anlegen eins magnetischen Feldes parallel in Ausbreitungsrichtung der Welle,
+an optisch inaktive Medien geschieht. Durch die zuvor dargelegte dielektrische Suszeptibilität lässt sich ein optisch inaktives Medium durch vollständig verschwindende
+nicht Diagonalelemente, also $\chi_{ij} = 0 \text{ für }i \neq k$, beschreiben.
+\\
+In dem Fall eines angeschalteten B-Feldes verhalten sich die Elektronen in den Bändern des Festkörpers anders. Auf sie wirkt nun zusätzlich die Lorentzkraft.
+Es lässt sich eine Bewegungsgleichung für die Elektronen aufstellen, unter der Annahme einer Bindung der Elektronen durch ein harmonisches Potential mit Bindungskonstante
+$K$. Die Bewegungsgleichung nimmt die folgende Form an 
+\begin{equation}
+\underbrace{m \frac{\text{d}^2\vec{r}}{\text{d}t^2}}_{\text{Newton}} + \underbrace{K\vec{r}}_{\text{Bindung}} = \underbrace{-e \vec{E}}_{\text{Coulomb}} - \underbrace{-e \frac{\text{d}\vec{r}}{\text{d}t} \times \vec{B}}_{\text{Lorentz}}.
+\end{equation}
+Das $\vec{r}$ beschreibt die Auslenkung eines Elektrons aus seiner Gleichgewichtslage. In einem klassischen Wellenansatz steckt die zeitabhängigkeit lediglich in einem Phasenfaktor
+$\vec{r} \propto \text{exp}(i\omega t)$, wodurch sich die Differentialgleichung vereinfachen lässt.
+Außerdem geht mit der Verschiebung $\vec{r}$ auch eine Polarisation einher. Diese ist proportional zur Anzahl der Elektronen pro Volumeneinheit $N$
+\begin{equation}
+\vec{P} = - e N\vec{r}.
+\end{equation}
+Dies kann nun genutzt werden, um die Differentialgleichung zu lösen. Hierbei muss wieder ein Ansatz für die Suszeptibilität gemacht werden. Diagonalemente sind nötig, für die Existenz
+einer nicht-trivialen Lösung, und die nicht Diagonalelemente müssen rein imaginär sein, damit diese Komponenten nicht von den Feldstärken abhängen, denn dann wären sie bereits ohne 
+magnetisches Feld doppelbrechend.
+Ein möglicher Ansatz sieht folgendermaßen aus 
+\begin{equation}
+    \tilde{\chi} = \begin{pmatrix}
+        \chi_{xx} & i\chi_{xy} & 0 \\
+        i\chi_{yx} & \chi_{xx} & 0 \\
+        0 & 0 & \chi_{zz}
+        \end{pmatrix}.
+\end{equation}
+Die Lösung der Differentialgleichung liefert die Bedingung $\chi_{xy} = -\chi_{yx}$, wodurch dieselbe Form wie in ... hergestellt wurde.
+Diese durch das B-Feld entstehende Drehung der Polarisationsrichtung wird Faraday-Effekt genannt.
+Der Drehwinkel ergibt sich zu
+\begin{equation}
+\theta = \frac{e^3}{2 \epsilon_0 c} \frac{\omega^2}{(K - \omega^2 m)^2 - (e\omega B)^2} \frac{NBL}{n}.
+\end{equation}
+Wie bei einem klassischen harmonischen Oszillator lässt sich noch eine Resonanzfrequenz $\omega_0$ definieren, sowie auch eine Zyklotronfrequenz $\omega_c$ als
+\begin{align}
+\omega_0 &= \sqrt{\frac{K}{m}}, \\
+\omega_c &= \frac{e}{m}B.
+\end{align}
+Die Zyklotronfrequenz ist bei Magnetfeldern von $B \approx \SI{1}{\tesla}$ bei Größenordnungen von $10^{11}\si{\hertz}$, wobei die Resonanzfrequenz, sowie die verwendete Frequenz im
+Infrarotbereich $10^{14}$ - $10^{15}\si{\hertz}$ liegt. Die Näherung $(\omega^2_0 \omega^2)^2 >> \omega^2\omega^2_c$ liefert nun
+\begin{equation}
+    \theta \approx \frac{e^3}{2 \epsilon_0 c m^2} \frac{\omega^2}{(\omega^2_0 -\omega^2)^2} \frac{NBL}{n}.
+\end{equation}
