@@ -29,7 +29,7 @@ WinkelMinuteInGradR = WinkelMinuteR* 1/60
 Winkel16 = WinkelGrad16 + WinkelMinuteInGrad16
 Winkel28 = WinkelGrad28 + WinkelMinuteInGrad28
 WinkelR = WinkelGradR + WinkelMinuteInGradR
-
+ 
 
 plt.plot(Abstand, tesla, "kx", label="Messwerte")
 plt.legend()
@@ -290,5 +290,6 @@ m2 = (n*8*const.pi**2*const.epsilon_0*const.c**3*unp.nominal_values(params[0]))
 print("hier soll die masse stehen 2.8:")
 print((-m1/m2)**(1/2))
 
-print("###########")
+print("########### BITTE HIER SCHAUEN")
 print(WinkelDifferenzR16)
+print(WinkelDifferenzR28)
