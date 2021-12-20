@@ -18,19 +18,6 @@ Die Messdaten versprechen, dass die Probe einer Feldstärke von
     $B \approx \SI{408}{\tesla}$
 ausgesetzt waren.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{build/plot3.pdf}
-    \caption{hallo}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{build/plot4.pdf}
-    \caption{hallo}
-\end{figure}
-
-
 \subsection{Bestimmung der effektiven Masse}
 Um die effektive Masse zu bestimmen werden die einzelnen, gemessenen Winkel unter denen ein Minimum gefunden wurde
 normiert, also als Verhältnis von Winkel zu Länge der Probe dargestellt. 
@@ -55,4 +42,30 @@ jeweils gegen das Quadrat der, durch den Filter, erlaubten Wellenlänge aufgetra
 
 Die gleichen Filter wurden bei jeder Probe verwendet, weswegen es sich nicht anbietet die Werte durch eine \enquote{Fit} zu modellieren.
 Sie können also direkt, um die Differenz zu der undotierten Probe zu bekommen, voneinander abgezogen werden.
-In der Tabelle \ref{tabelle} sind die Differenzen aufgelistet.
+\begin{equation}
+\theta_{\text{frei}} = \theta_{\text{dotiert}} - \theta_{\text{undotiert}}
+\end{equation}
+In der Tabelle \ref{tabelle} sind die Differenzen aufgelistet. Diese Winkel lassen sich nun wieder gegen $\lambda^2$ auftragen und eine lineare Regression
+der Form
+\begin{equation}
+\theta = a \lambda^2 + b
+\end{equation}
+berechnen.
+Es ergeben sich die Parameter 
+\begin{align*}
+a &= \SI{1}{\radian\micro\meter\squared},\\
+b &= \SI{1}{\radian}.
+\end{align*}
+Die Messwerte, inklusive Ausgleichsgerade sind in den Abbildungen ... und .. für die jeweiligen Dotierungen angegeben.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{build/plot3.pdf}
+    \caption{hallo}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{build/plot4.pdf}
+    \caption{hallo}
+\end{figure}
