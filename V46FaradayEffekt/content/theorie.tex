@@ -185,6 +185,16 @@ Wie bei einem klassischen harmonischen Oszillator lässt sich noch eine Resonanz
 \end{align}
 Die Zyklotronfrequenz ist bei Magnetfeldern von $B \approx \SI{1}{\tesla}$ bei Größenordnungen von $10^{11}\si{\hertz}$, wobei die Resonanzfrequenz, sowie die verwendete Frequenz im
 Infrarotbereich $10^{14}$ - $10^{15}\si{\hertz}$ liegt. Die Näherung $(\omega^2_0 \omega^2)^2 >> \omega^2\omega^2_c$ liefert nun
-\begin{equation}
+\begin{equation*}
     \theta \approx \frac{e^3}{2 \epsilon_0 c m^2} \frac{\omega^2}{(\omega^2_0 -\omega^2)^2} \frac{NBL}{n}.
+\end{equation*}
+Nun lässt sich noch der Fall quasifreier Ladungsträger betrachten. Dazu kann $\omega_0 \to 0$ angenommen werden. Zusätzlich lässt sich die Frequenz $\omega$ durch die Wellenlänge $\lambda$ ausdrücken
+\begin{equation}
+    \theta \approx \frac{e^3}{8 \pi^2 \epsilon_0 c^3 m^2} \lambda^2 \frac{NBL}{n}.
 \end{equation}
+Damit diese Gleichung trotz leichter Bindung der Leitungselektronen gilt, wird hier die Masse $m$ mit der effektiven Masse $m^*$ ersetzt. Außerdem ist es sinnvoll
+den Winkel $\theta$ auf die Probenlänge $L$ zu normieren, wodurch folgt
+\begin{equation}
+    \theta \approx \frac{e^3}{8 \pi^2 \epsilon_0 c^3 {m^*}^2} \lambda^2 \frac{NB}{n}.
+\end{equation}
+Anhand dieses Verhältnisses lässt sich also die effektive Masse eines Kristalls am Faraday-Effekt bestimmen.
