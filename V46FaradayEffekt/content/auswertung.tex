@@ -1,7 +1,7 @@
 \newpage
 \section{Auswertung}
-Die Auswertung sei in zwei Abschnitte unterteilt, die einmal auf die Messung des Magnetfelds eingeht und zum 
-anderen die Bestimmung der effektiven Masse nach \ref{theo} versucht. 
+Die Auswertung ist in zwei Abschnitte unterteilt, die einmal auf die Messung des Magnetfelds eingeht und zum 
+anderen die Bestimmung der effektiven Masse nach \ref{theo} durchführt. 
 \subsection{Bestimmung des magnetischen Feld}
 Die Messdaten der Kraftflussdichte vom angelegten, magnetischen Feld sind in Abbildung \ref{fig:mag}
 bei entsprechender Entfernung zur Probeleerstelle aufgetragen.
@@ -9,22 +9,14 @@ bei entsprechender Entfernung zur Probeleerstelle aufgetragen.
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
     \caption{In der Abbildung sind die Messwerte aus der Bestimmung des magnetischen Feldes aufegtragen. 
-            Deutlich zu sehen ist ein Platoo um die Probenleerstelle herum. Es lässt sich also annehmen, dass
-            um die leige ein annährend konstantes Feld an.}
+            Deutlich zu sehen ist ein Plateau um die Probenleerstelle herum. Es lässt sich also annehmen, dass
+            um die Probe ein annähernd konstantes Feld anliegt.}
     \label{fig:mag}
 \end{figure}
 \\
-Die Messdaten verpsrechen, dass die Probe einer Feldstärke von 
-\begin{equation}
-    \SI{408}{\tesla}
-\end{equation}
+Die Messdaten versprechen, dass die Probe einer Feldstärke von 
+    $B \approx \SI{408}{\tesla}$
 ausgesetzt waren.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{build/plot2.pdf}
-    \caption{hallo}
-    \label{maf2}
-\end{figure}
 
 \begin{figure}
     \centering
@@ -41,9 +33,26 @@ ausgesetzt waren.
 
 \subsection{Bestimmung der effektiven Masse}
 Um die effektive Masse zu bestimmen werden die einzelnen, gemessenen Winkel unter denen ein Minimum gefunden wurde
-normiert, also als Verhältnis von Winkel zu Länge der Probe dargestellt.
+normiert, also als Verhältnis von Winkel zu Länge der Probe dargestellt. 
+Die Messmethodik zur Bestimmung der Polarisationsdrehung verwendet die Umpolung des B-Feldes, wodurch die gemessenen Winkel pro Wellenlänge und Probe durch 
+\begin{equation}
+\theta = \frac{1}{2L} (|\theta_1 - \theta_2|)
+\end{equation}
+berechnet werden. Die Dicken der Proben entsprechen in diesem Fall der Durchlauflänge $L$ und sie betragen für die verwendeten Proben
+\begin{align}
+L_{\text{undotiert}} &= \\
+L_{} &=\\
+L_{} &=\\
+\end{align}
 Für die drei Proben sind die Messwerte in der Abbildung \ref{fig:maf2} gezeigt, wobei der Winkel 
 jeweils gegen das Quadrat der, durch den Filter, erlaubten Wellenlänge aufgetragen ist.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{build/plot2.pdf}
+    \caption{Messwerte der Faraday-Rotationswinkel für die drei unterschiedlichen Proben. }
+    \label{maf2}
+\end{figure}
+
 Die gleichen Filter wurden bei jeder Probe verwendet, weswegen es sich nicht anbietet die Werte durch eine \enquote{Fit} zu modellieren.
-Sie können also direkt, um die Differenz zu der undotierten Probe zu bekommen, voneinander Abgezogen werden.
+Sie können also direkt, um die Differenz zu der undotierten Probe zu bekommen, voneinander abgezogen werden.
 In der Tabelle \ref{tabelle} sind die Differenzen aufgelistet.
