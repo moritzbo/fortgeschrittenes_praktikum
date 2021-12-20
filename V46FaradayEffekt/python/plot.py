@@ -227,7 +227,7 @@ def sigmoid1(x, a, b):
 params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelDifferenzR16)
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
-print("Params Anstieg für Differenz REIN und 1.2 2.8:")
+print("Params Anstieg für Differenz REIN und 1.2:")
 for name, value, uncertainty in zip('ab', params, uncertainties): 
     print(f'{name} = {value:.4f} ± {uncertainty:.4f}')
 
@@ -242,6 +242,18 @@ plt.grid()
 plt.legend()
 plt.savefig("build/plot3.pdf")
 plt.clf()
+
+#params[0] = ((const.elemenerycharge**3*N*B)/(n*8*const.pi**2*const.epsilonnull*const.speedoflight**3*m**2))
+
+N = 1.2e12
+B = 408
+n = 3.87 #!!!!!!!!!!
+
+m1 = (const.e**3*N*B)
+m2 = (n*8*const.pi**2*const.epsilon_0*const.c**3*unp.nominal_values(params[0]))
+print("hier soll die masse stehen 1.2:")
+print((-m1/m2)**(1/2))
+
 
 plt.plot(BS*BS, WinkelDifferenzR28, "bo", label="Winkeldifferenz")
 
@@ -268,3 +280,15 @@ plt.plot(x, params[0]*x+params[1],
 plt.grid()
 plt.legend()
 plt.savefig("build/plot4.pdf")
+
+N = 2.8e12
+B = 408
+n = 3.87 #!!!!!!!!!!
+
+m1 = (const.e**3*N*B)
+m2 = (n*8*const.pi**2*const.epsilon_0*const.c**3*unp.nominal_values(params[0]))
+print("hier soll die masse stehen 2.8:")
+print((-m1/m2)**(1/2))
+
+print("###########")
+print(WinkelDifferenzR16)
