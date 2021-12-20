@@ -14,9 +14,9 @@ Index28, Minimum28, WinkelGrad28 , WinkelMinute28, Filter = np.genfromtxt("data/
 IndexR,  MinimumR,  WinkelGradR,   WinkelMinuteR,  Filter = np.genfromtxt("data/GaAsREIN.dat", unpack=True)
 tesla, Abstand = np.genfromtxt("data/bfeld.dat", unpack=True)
 
-LR  = 5.11e-2
-L16 = 1.36e-2
-L28 = 1.296e-2
+LR  = 5.11e-3
+L16 = 1.36e-3
+L28 = 1.296e-3
 
 
 # Minuten in Grad
@@ -83,12 +83,12 @@ x = np.linspace(0,7.3)
 
 #plt.plot(x, params[0]*x+params[1], 
 #        'r--',
-#        label="lineare Regression und Messwerte, rein",
+#        label="Messwerte, rein",
 #        linewidth=1)
 
 
 
-plt.plot(BS*BS, np.deg2rad(WinkelRnor), "rx")
+plt.plot(BS*BS, np.deg2rad(WinkelRnor), "rx", label="Messwerte, rein")
 #plt.show()
 #plt.clf()
 
@@ -137,11 +137,11 @@ x = np.linspace(0,7.3)
 
 #plt.plot(x, params[0]*x+params[1], 
 #        'k--',
-#        label="lineare Regression und Messwerte, dotiert 1.2",
+#        label="Messwerte, dotiert 1.2",
 #        linewidth=1)
 
 
-plt.plot(BS*BS, np.deg2rad(Winkel16nor), "kx")
+plt.plot(BS*BS, np.deg2rad(Winkel16nor), "kx",  label="Messwerte, dotiert 1.2")
 #plt.show()
 #plt.clf()
 
@@ -189,14 +189,15 @@ x = np.linspace(0,7.3)
 
 # plt.plot(x, params[0]*x+params[1], 
         # 'b--',
-        # label="lineare Regression und Messwerte, dotiert 2.8",
+        # label="Messwerte, dotiert 2.8",
         # linewidth=1)
 
 BS = np.array(FilterI)
 print(BS)
-plt.plot(BS*BS, np.deg2rad(Winkel28nor), "bx")
+plt.plot(BS*BS, np.deg2rad(Winkel28nor), "bx",
+label="Messwerte, dotiert 2.8",)
 
-plt.ylabel(r'$\theta_{norm}$ [$\si{\radian\per\meter}]$')
+plt.ylabel(r'$\theta_{\text{norm}}$ [$\si{\radian\per\meter}]$')
 plt.xlabel(r'$\lambda^2$ [$\si{\micro\meter^2}]$')
 
 plt.grid()
@@ -280,6 +281,7 @@ plt.plot(x, params[0]*x+params[1],
         label="lineare Regression",
         linewidth=1)
 
+plt.tight_layout()
 plt.grid()
 plt.legend()
 plt.savefig("build/plot4.pdf")
@@ -296,3 +298,7 @@ print((-m1/m2)**(1/2))
 print("########### BITTE HIER SCHAUEN")
 print(WinkelDifferenzR16)
 print(WinkelDifferenzR28)
+
+print("########### HIER IN RADIANT")
+print(np.deg2rad(WinkelDifferenzR16))
+print(np.deg2rad(WinkelDifferenzR28))
