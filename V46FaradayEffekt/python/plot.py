@@ -59,7 +59,6 @@ def loopit(i,j):
 
 print(loopit(0,0))
 
-print(FilterI)
 print(WinkelRSumme)
 
 WinkelRarray = np.array(WinkelRSumme)
@@ -207,28 +206,29 @@ plt.clf()
 
 
 #### NORMIERUNG DER WINKEL --> /L
-LR  = 5.11
-L16 = 1.36
-L28 = 1.296
+
+LR  = 5.11e-3
+L16 = 1.36e-3
+L28 = 1.296e-3
 
 
 #### bestimmung effektiver Masse 
 
-WinkelDifferenzR16 = np.abs(WinkelRarray - Winkel16array)
-WinkelDifferenzR28 = np.abs(WinkelRarray - Winkel28array)
+WinkelDifferenzR16 = np.abs(WinkelRnor - Winkel16nor)
+WinkelDifferenzR28 = np.abs(WinkelRnor - Winkel28nor)
 
 
 
 BS = np.array(FilterI)
-print(BS)
+#BS = BS1*10**(-6)
 
-plt.plot(BS*BS, WinkelDifferenzR16, "ko",label="Winkeldifferenz")
+plt.plot(BS*BS, np.deg2rad(WinkelDifferenzR16), "ko",label="Winkeldifferenz")
 
 def sigmoid1(x, a, b):
     return a*x+b
 
 
-params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelDifferenzR16)
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, np.deg2rad(WinkelDifferenzR16))
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 print("Params Anstieg für Differenz REIN und 1.2:")
@@ -249,14 +249,14 @@ plt.clf()
 
 #params[0] = ((const.elemenerycharge**3*N*B)/(n*8*const.pi**2*const.epsilonnull*const.speedoflight**3*m**2))
 
-N = 1.2e12
-B = 408
+N = 1.2e24
+B = 408e-3
 n = 3.87 #!!!!!!!!!!
 
-m1 = (const.e**3*N*B)
-m2 = (n*8*const.pi**2*const.epsilon_0*const.c**3*unp.nominal_values(params[0]))
+m1 = ((const.e**3)*N*B)
+m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params[0]*10**(12)))
 print("hier soll die masse stehen 1.2:")
-print((-m1/m2)**(1/2))
+print((m1/m2)**(1/2))
 
 
 plt.plot(BS*BS, WinkelDifferenzR28, "bo", label="Winkeldifferenz")
@@ -267,7 +267,7 @@ def sigmoid1(x, a, b):
     return a*x+b
 
 
-params, covariance_matrix = curve_fit(sigmoid1,BS*BS, WinkelDifferenzR28)
+params, covariance_matrix = curve_fit(sigmoid1,BS*BS, np.deg2rad(WinkelDifferenzR28))
 
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 print("Params Anstieg für Differenz REIN und 2.8:")
@@ -286,14 +286,15 @@ plt.grid()
 plt.legend()
 plt.savefig("build/plot4.pdf")
 
-N = 2.8e12
-B = 408
-n = 3.87 #!!!!!!!!!!
+N = 2.8e24
+B = 408e-3
+n = 3.56 #!!!!!!!!!!
 
-m1 = (const.e**3*N*B)
-m2 = (n*8*const.pi**2*const.epsilon_0*const.c**3*unp.nominal_values(params[0]))
+m1 = ((const.e**3)*N*B)
+m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params[0]*10**(12)))
 print("hier soll die masse stehen 2.8:")
-print((-m1/m2)**(1/2))
+print(const.e)
+print(np.sqrt(m1/m2))
 
 print("########### BITTE HIER SCHAUEN")
 print(WinkelDifferenzR16)
@@ -301,4 +302,4 @@ print(WinkelDifferenzR28)
 
 print("########### HIER IN RADIANT")
 print(np.deg2rad(WinkelDifferenzR16))
-print(np.deg2rad(WinkelDifferenzR28))
+print(np.deg2rad(WinkelDifferenzR28)) 
