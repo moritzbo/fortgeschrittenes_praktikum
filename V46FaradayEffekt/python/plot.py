@@ -338,3 +338,5 @@ abweichung1 = (verhältnis1 - theorie)/(theorie)*100
 abweichung2 = (verhältnis2 - theorie)/(theorie)*100
 print(f'{abweichung1:.4}')
 print(f'{abweichung2:.4}')
+
+print("NUR SPAß")

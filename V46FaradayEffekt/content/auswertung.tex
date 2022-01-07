@@ -53,22 +53,22 @@ der Form
 berechnen.
 Es ergeben sich die Parameter für die jeweilige Probe
 \begin{align*}
-a_{1} &= \SI{1}{\radian\micro\meter\squared},\\
-b_{1} &= \SI{1}{\radian}, \\
-a_{2} &= \SI{1}{\radian\micro\meter\squared},\\
-b_{2} &= \SI{1}{\radian}, \\
+a_{1} &= \SI{3.170(2308)e-4}{\radian\per\meter\tothe{3}},\\
+b_{1} &= \SI{16.228(10106)}{\radian}, \\
+a_{2} &= \SI{4.381(2326)e-4}{\radian\per\meter\tothe{3}},\\
+b_{2} &= \SI{34.951(10187)}{\radian}, \\
 \end{align*}
 Die Messwerte, inklusive Ausgleichsgerade sind in den Abbildungen \ref{plt1} und \ref{plt2} für die jeweiligen Dotierungen angegeben.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{build/plot3.pdf}
-    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{1.2e18}{\per\centi\meter^3}$ gegen $\lambda^2$ aufgetragen.}
+    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{1.2e18}{\per\centi\meter\tothe{3}}$ gegen $\lambda^2$ aufgetragen.}
     \label{plt1}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{build/plot4.pdf}
-    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{2.3e18}{\per\centi\meter^3}$ gegen $\lambda^2$ aufgetragen.}
+    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{2.3e18}{\per\centi\meter\tothe{3}}$ gegen $\lambda^2$ aufgetragen.}
     \label{plt2}
 \end{figure}
 Nun kann unter Verwendung von Gleichung \eqref{eqn:wichtig} die effektive Masse über die Steigungsparameter der Ausgleichsgeraden bestimmt werden.
@@ -78,6 +78,6 @@ m^{*} = \sqrt{\frac{e^3 NB}{8 \pi^2 \epsilon_0 c^3 n a}}.
 \end{equation}
 Unter Verwendung des Literaturwerts für den Brechungsindex der Galliumarsenidprobe \cite{GaAs}, sowie den Dotierungen $N$ und dem gemessenen B-Feld, ergibt sich
 \begin{align}
-m_1^{*} &= \SI{11}{\kilo\gram} \hat{=} \SI{}{}m_e,\\
-m_2^{*} &= \SI{1}{\kilo\gram} \hat{=} \SI{}{}m_e.
+m_1^{*} &= \SI{9.335(3398)e-32}{\kilo\gram} \quad \hat{=} \SI{0.10(4)}{}m_e,\\
+m_2^{*} &= \SI{1.265(336)e-31}{\kilo\gram} \quad \hat{=} \SI{0.14(4)}{}m_e.
 \end{align}
