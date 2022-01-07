@@ -32,8 +32,14 @@ WinkelR = WinkelGradR + WinkelMinuteInGradR
  
 
 plt.plot(Abstand, tesla, "kx", label="Messwerte")
+
+plt.ylabel(r'$B$ [$\si{\milli\tesla}]$')
+plt.xlabel(r'$x$ [$\si{\milli\meter}]$')
+
 plt.legend()
 plt.grid()
+plt.tight_layout()
+
 plt.savefig("build/plot1.pdf")
 
 plt.clf()
@@ -107,7 +113,7 @@ def loopit(i,j):
         Winkel16Summe.append(((Winkel16[i]-Winkel16[i+1])**2)**(1/2)/2)
         #print(Winkel16Summe[j])
         j = j+1
-        i = i+2
+        i = i+2 
         loopit(i,j)
 
 print(loopit(0,0))
@@ -201,6 +207,8 @@ plt.xlabel(r'$\lambda^2$ [$\si{\micro\meter^2}]$')
 
 plt.grid()
 plt.legend()
+plt.tight_layout()
+
 plt.savefig("build/plot2.pdf")
 plt.clf()
 
@@ -244,6 +252,10 @@ plt.plot(x, params[0]*x+params[1],
 
 plt.grid()
 plt.legend()
+
+plt.ylabel(r'$\theta_{\text{frei}}$ [$\si{\radian\per\meter}]$')
+plt.xlabel(r'$\lambda^2$ [$\si{\micro\meter^2}]$')
+plt.tight_layout()
 plt.savefig("build/plot3.pdf")
 plt.clf()
 
@@ -253,13 +265,21 @@ N = 1.2e24
 B = 408e-3
 n = 3.87 #!!!!!!!!!!
 
+params12ERR0 = ufloat(params[0], uncertainties[0])
+params12ERR1 = ufloat(params[1], uncertainties[1])
+print(params12ERR0)
+
 m1 = ((const.e**3)*N*B)
-m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params[0]*10**(12)))
+m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params12ERR0*10**(12)))
 print("hier soll die masse stehen 1.2:")
-print((m1/m2)**(1/2))
+print(f'{(m1/m2)**(1/2):.4}')
+verhältnis1 = ((m1/m2)**(1/2))/const.m_e
+print(verhältnis1)
 
 
-plt.plot(BS*BS, WinkelDifferenzR28, "bo", label="Winkeldifferenz")
+
+
+plt.plot(BS*BS, np.deg2rad(WinkelDifferenzR28), "bo", label="Winkeldifferenz")
 
 
 
@@ -281,20 +301,28 @@ plt.plot(x, params[0]*x+params[1],
         label="lineare Regression",
         linewidth=1)
 
-plt.tight_layout()
 plt.grid()
 plt.legend()
+
+plt.ylabel(r'$\theta_{\text{frei}}$ [$\si{\radian\per\meter}]$')
+plt.xlabel(r'$\lambda^2$ [$\si{\micro\meter^2}]$')
+plt.tight_layout()
+
 plt.savefig("build/plot4.pdf")
 
 N = 2.8e24
 B = 408e-3
 n = 3.56 #!!!!!!!!!!
 
+params28ERR0 = ufloat(params[0], uncertainties[0])
+params28ERR1 = ufloat(params[1], uncertainties[1])
+
 m1 = ((const.e**3)*N*B)
-m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params[0]*10**(12)))
+m2 = (n*8*(const.pi**2)*const.epsilon_0*(const.c**3)*(params28ERR0*10**(12)))
 print("hier soll die masse stehen 2.8:")
-print(const.e)
-print(np.sqrt(m1/m2))
+print(f'{(m1/m2)**(1/2):.4}')
+verhältnis2 = ((m1/m2)**(1/2))/const.m_e
+print(verhältnis2)
 
 print("########### BITTE HIER SCHAUEN")
 print(WinkelDifferenzR16)
@@ -303,3 +331,10 @@ print(WinkelDifferenzR28)
 print("########### HIER IN RADIANT")
 print(np.deg2rad(WinkelDifferenzR16))
 print(np.deg2rad(WinkelDifferenzR28)) 
+
+print("############ ABWEICHUNGEN:")
+theorie  = 0.06
+abweichung1 = (verhältnis1 - theorie)/(theorie)*100
+abweichung2 = (verhältnis2 - theorie)/(theorie)*100
+print(f'{abweichung1:.4}')
+print(f'{abweichung2:.4}')
