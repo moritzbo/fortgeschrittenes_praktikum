@@ -99,7 +99,7 @@ plt.plot(BS*BS, np.deg2rad(WinkelRnor), "rx", label="Messwerte, rein")
 
 a = len(Winkel16)/2
 Winkel16Summe = []
-FilterI = []
+FilterI = [] 
 
 
 
