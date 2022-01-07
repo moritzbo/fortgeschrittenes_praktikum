@@ -1,7 +1,7 @@
 \newpage
 \section{Auswertung}
 Die Auswertung ist in zwei Abschnitte unterteilt, die einmal auf die Messung des Magnetfelds eingeht und zum 
-anderen die Bestimmung der effektiven Masse nach \ref{theo} durchführt. 
+anderen die Bestimmung der effektiven Masse nach \eqref{eqn:wichtig} durchführt. 
 \subsection{Bestimmung des magnetischen Feld}
 Die Messdaten der Kraftflussdichte vom angelegten, magnetischen Feld sind in Abbildung \ref{fig:mag}
 bei entsprechender Entfernung zur Probeleerstelle aufgetragen.
@@ -15,7 +15,7 @@ bei entsprechender Entfernung zur Probeleerstelle aufgetragen.
 \end{figure}
 \\
 Die Messdaten versprechen, dass die Probe einer Feldstärke von 
-    $B \approx \SI{408}{\tesla}$
+    $B \approx \SI{408}{\milli\tesla}$
 ausgesetzt waren.
 
 \subsection{Bestimmung der effektiven Masse}
@@ -37,7 +37,7 @@ jeweils gegen das Quadrat der, durch den Filter, erlaubten Wellenlänge aufgetra
     \centering
     \includegraphics[width=0.9\textwidth]{build/plot2.pdf}
     \caption{Messwerte der Faraday-Rotationswinkel für die drei unterschiedlichen Proben. }
-    \label{maf2}
+    \label{fig:maf2}
 \end{figure}
 
 Die gleichen Filter wurden bei jeder Probe verwendet, weswegen es sich nicht anbietet die Werte durch eine \enquote{Fit} zu modellieren.
@@ -51,21 +51,33 @@ der Form
 \theta = a \lambda^2 + b
 \end{equation}
 berechnen.
-Es ergeben sich die Parameter 
+Es ergeben sich die Parameter für die jeweilige Probe
 \begin{align*}
-a &= \SI{1}{\radian\micro\meter\squared},\\
-b &= \SI{1}{\radian}.
+a_{1} &= \SI{1}{\radian\micro\meter\squared},\\
+b_{1} &= \SI{1}{\radian}, \\
+a_{2} &= \SI{1}{\radian\micro\meter\squared},\\
+b_{2} &= \SI{1}{\radian}, \\
 \end{align*}
-Die Messwerte, inklusive Ausgleichsgerade sind in den Abbildungen ... und .. für die jeweiligen Dotierungen angegeben.
-
+Die Messwerte, inklusive Ausgleichsgerade sind in den Abbildungen \ref{plt1} und \ref{plt2} für die jeweiligen Dotierungen angegeben.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{build/plot3.pdf}
-    \caption{hallo}
+    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{1.2e18}{\per\centi\meter^3}$ gegen $\lambda^2$ aufgetragen.}
+    \label{plt1}
 \end{figure}
-
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{build/plot4.pdf}
-    \caption{hallo}
+    \caption{$\theta_{\text{frei}}$ für die Probe mit einer Dotierung von $N_{\text{dot}}=\SI{2.3e18}{\per\centi\meter^3}$ gegen $\lambda^2$ aufgetragen.}
+    \label{plt2}
 \end{figure}
+Nun kann unter Verwendung von Gleichung \eqref{eqn:wichtig} die effektive Masse über die Steigungsparameter der Ausgleichsgeraden bestimmt werden.
+Hierbei ergibt sich durch Umformen genannter Gleichung mit den Parametern $a$
+\begin{equation}
+m^{*} = \sqrt{\frac{e^3 NB}{8 \pi^2 \epsilon_0 c^3 n a}}.
+\end{equation}
+Unter Verwendung des Literaturwerts für den Brechungsindex der Galliumarsenidprobe \cite{GaAs}, sowie den Dotierungen $N$ und dem gemessenen B-Feld, ergibt sich
+\begin{align}
+m_1^{*} &= \SI{11}{\kilo\gram} \hat{=} \SI{}{}m_e,\\
+m_2^{*} &= \SI{1}{\kilo\gram} \hat{=} \SI{}{}m_e.
+\end{align}

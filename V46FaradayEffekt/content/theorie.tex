@@ -48,9 +48,9 @@ Diese Fehlstelle kann nun von anderen Valenzelektron gefüllt werden. Die Löche
 Die effektive Masse stellt ein Hilfsmittel zur Beschreibung von Elektronen oder auch Elektronen-Loch-Paaren in Gittern dar. Diese bewegen sich in einem Kristall
 innerhalb des gesamten Gitterpotentials welches nur schwer zu beschreiben und damit zu rechnen ist. Viel einfacher ist eine Betrachtung von freien Teilchen wobei
 die Dispersionsrelation
-\begin{equation}
+\begin{equation*}
 E(\vec{k}) = \frac{\hbar^2 \vec{k}^2}{2m}
-\end{equation}
+\end{equation*}
 bekannt ist. Damit diese Beziehung auch für quasifreie Teilchen gilt, muss die Masse angepasst werden. Bezeichnet wird diese
 als effektive Masse $m^*$. Diese lässt sich durch die doppelte Ableitung aus der Energie extrahieren. Für ein eindimensionales Gitter mit ist dies leicht, da
 sich die Wellenzahl auf einen Skalar reduziert und es ergibt sich
@@ -59,9 +59,9 @@ m^* = \hbar^2 \left( \frac{\partial^2 E(k)}{\partial k^2} \right)^{-1}.
 \end{equation*}
 Im Allgemeinen muss dies nicht nur auf drei Dimensionen erweitert, sondern es muss auch die Symmetrie und somit die Struktur des Kristalls berücksichtigt werden.
 Wenn der Wellenvektor $k_N$ Elemente besitzt dann lässt sich die effektive Masse als 
-\begin{equation}
+\begin{equation*}
     (m^*)_{ij} = \hbar^2 \left( \frac{\partial^2 E(\vec{k})}{\partial k_i \partial k_j} \right)^{-1}. 
-\end{equation}
+\end{equation*}
 angeben, also als Tensor welcher durch eine Matrix mit $N \times N$ Einträgen dargestellt werden kann.
 
 \subsection{Zirkulare Doppelbrechung}
@@ -94,12 +94,12 @@ Darauf aufbauend lässt sich nun eine makroskopische Erklärung finden.
 In einem Festkörper wird die zirkulare Doppelbrechung durch viele elektrische Dipolmomente hervorgerufen. Diese bilden sich zwischen den Bandelektronen
 und den Gitteratomen durch der in dem Festkörper propagierenden Welle aus.
 Die makroskopische Polarisation eines Kristalls beschreibt die Summer aller Dipolmomente pro Volumeneinheit und lässt sich beschreiben durch
-\begin{equation}
+\begin{equation*}
 \vec{P} = \epsilon_0 \chi \vec{E}.
-\end{equation}
+\end{equation*}
 Dabei beschreibt das $\chi$ die dielektrische Suszeptibilität und sie hängt maßgeblich von dem vorliegenden Kristall, nicht nur im Wert, sondern auch in der Form ab.
 Bei einem isotropen Kristall reduziert sich die Suszeptibilität auf ein Skalar. Im Allgemeinen ist diese aber ein Tensor, wodurch sich die Gleichung ... auch in Matrixschreibweise formulieren lässt
-\begin{equation}
+\begin{equation*}
 \begin{pmatrix}
 P_x \\
 P_y \\
@@ -116,20 +116,20 @@ E_x \\
 E_y \\
 E_z 
 \end{pmatrix}
-\end{equation}
+\end{equation*}
 In einem Festörper mit makroskopischer Polarisation werden die Maxellgleichungen nun über die dielektrische Verschiebung bestimmt. 
 Dabei gilt
-\begin{equation}
+\begin{equation*}
 \vec{D} = \epsilon_o \vec{E} + \vec{P}.
-\end{equation}
+\end{equation*}
 Für einen Ansatz der dielektrischen Suszeptibilität kann die Wellengleichung nun gelöst werden und es zeigt sich, dass dieser Ansatz
-\begin{equation}
+\begin{equation*}
     \tilde{\chi} = \begin{pmatrix}
         \chi_{xx} & i\chi_{xy} & 0 \\
         -i\chi_{xy} & \chi_{xx} & 0 \\
         0 & 0 & \chi_{zz}
         \end{pmatrix}
-\end{equation}
+\end{equation*}
 die Transversalität der Welle wahrt und zwei Lösungen mit
 \begin{align*}
     k_+ &= \frac{\omega}{c} \sqrt{(1+\chi_{xx})+ \chi_{xy}} \quad \to \quad v_{\text{ph,r}} = \frac{c}{\sqrt{(1+\chi_{xx})+ \chi_{xy}}}, \\
@@ -161,26 +161,26 @@ nicht Diagonalelemente, also $\chi_{ij} = 0 \text{ für }i \neq k$, beschreiben.
 In dem Fall eines angeschalteten B-Feldes verhalten sich die Elektronen in den Bändern des Festkörpers anders. Auf sie wirkt nun zusätzlich die Lorentzkraft.
 Es lässt sich eine Bewegungsgleichung für die Elektronen aufstellen, unter der Annahme einer Bindung der Elektronen durch ein harmonisches Potential mit Bindungskonstante
 $K$. Die Bewegungsgleichung nimmt die folgende Form an 
-\begin{equation}
+\begin{equation*}
 \underbrace{m \frac{\text{d}^2\vec{r}}{\text{d}t^2}}_{\text{Newton}} + \underbrace{K\vec{r}}_{\text{Bindung}} = \underbrace{-e \vec{E}}_{\text{Coulomb}} - \underbrace{-e \frac{\text{d}\vec{r}}{\text{d}t} \times \vec{B}}_{\text{Lorentz}}.
-\end{equation}
+\end{equation*}
 Das $\vec{r}$ beschreibt die Auslenkung eines Elektrons aus seiner Gleichgewichtslage. In einem klassischen Wellenansatz steckt die zeitabhängigkeit lediglich in einem Phasenfaktor
 $\vec{r} \propto \text{exp}(i\omega t)$, wodurch sich die Differentialgleichung vereinfachen lässt.
 Außerdem geht mit der Verschiebung $\vec{r}$ auch eine Polarisation einher. Diese ist proportional zur Anzahl der Elektronen pro Volumeneinheit $N$
-\begin{equation}
+\begin{equation*}
 \vec{P} = - e N\vec{r}.
-\end{equation}
+\end{equation*}
 Dies kann nun genutzt werden, um die Differentialgleichung zu lösen. Hierbei muss wieder ein Ansatz für die Suszeptibilität gemacht werden. Diagonalemente sind nötig, für die Existenz
 einer nicht-trivialen Lösung, und die nicht Diagonalelemente müssen rein imaginär sein, damit diese Komponenten nicht von den Feldstärken abhängen, denn dann wären sie bereits ohne 
 magnetisches Feld doppelbrechend.
 Ein möglicher Ansatz sieht folgendermaßen aus 
-\begin{equation}
+\begin{equation*}
     \tilde{\chi} = \begin{pmatrix}
         \chi_{xx} & i\chi_{xy} & 0 \\
         i\chi_{yx} & \chi_{xx} & 0 \\
         0 & 0 & \chi_{zz}
         \end{pmatrix}.
-\end{equation}
+\end{equation*}
 Die Lösung der Differentialgleichung liefert die Bedingung $\chi_{xy} = -\chi_{yx}$, wodurch dieselbe Form wie in ... hergestellt wurde.
 Diese durch das B-Feld entstehende Drehung der Polarisationsrichtung wird Faraday-Effekt genannt.
 Der Drehwinkel ergibt sich zu
@@ -188,22 +188,23 @@ Der Drehwinkel ergibt sich zu
 \theta = \frac{e^3}{2 \epsilon_0 c} \frac{\omega^2}{(K - \omega^2 m)^2 - (e\omega B)^2} \frac{NBL}{n}.
 \end{equation}
 Wie bei einem klassischen harmonischen Oszillator lässt sich noch eine Resonanzfrequenz $\omega_0$ definieren, sowie auch eine Zyklotronfrequenz $\omega_c$ als
-\begin{align}
+\begin{align*}
 \omega_0 &= \sqrt{\frac{K}{m}}, \\
 \omega_c &= \frac{e}{m}B.
-\end{align}
+\end{align*}
 Die Zyklotronfrequenz ist bei Magnetfeldern von $B \approx \SI{1}{\tesla}$ bei Größenordnungen von $10^{11}\si{\hertz}$, wobei die Resonanzfrequenz, sowie die verwendete Frequenz im
 Infrarotbereich $10^{14}$ - $10^{15}\si{\hertz}$ liegt. Die Näherung $(\omega^2_0 \omega^2)^2 >> \omega^2\omega^2_c$ liefert nun
 \begin{equation*}
     \theta \approx \frac{e^3}{2 \epsilon_0 c m^2} \frac{\omega^2}{(\omega^2_0 -\omega^2)^2} \frac{NBL}{n}.
 \end{equation*}
 Nun lässt sich noch der Fall quasifreier Ladungsträger betrachten. Dazu kann $\omega_0 \to 0$ angenommen werden. Zusätzlich lässt sich die Frequenz $\omega$ durch die Wellenlänge $\lambda$ ausdrücken
-\begin{equation}
+\begin{equation*}
     \theta \approx \frac{e^3}{8 \pi^2 \epsilon_0 c^3 m^2} \lambda^2 \frac{NBL}{n}.
-\end{equation}
+\end{equation*}
 Damit diese Gleichung trotz leichter Bindung der Leitungselektronen gilt, wird hier die Masse $m$ mit der effektiven Masse $m^*$ ersetzt. Außerdem ist es sinnvoll
 den Winkel $\theta$ auf die Probenlänge $L$ zu normieren, wodurch folgt
 \begin{equation}
+    \label{eqn:wichtig}
     \theta \approx \frac{e^3}{8 \pi^2 \epsilon_0 c^3 {m^*}^2} \lambda^2 \frac{NB}{n}.
 \end{equation}
 Anhand dieses Verhältnisses lässt sich also die effektive Masse eines Kristalls am Faraday-Effekt bestimmen.
