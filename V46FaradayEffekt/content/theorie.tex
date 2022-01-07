@@ -16,7 +16,7 @@ der hohen Atomanzahl $N$ oft als kontinuirlich angenommen werden.
 \\
 Die Zustände welche bei $T = \SI{0}{\kelvin}$ besetzt sind liegen per Definition im Valenzband. Eine wichtige Eigenschaft von Festkörpern ist die Leitfähigkeit. Diese
 hängt sehr stark von der vorliegenden Bandstruktur ab. Unterschieden wird zwischen Leitern, Halbleitern und Isolatoren. Alle weisen eine unterschiedliche Charakteristik in der
-Bandstruktur auf, welche in Abbildung ... angedeutet wird.
+Bandstruktur auf, welche in Abbildung \ref{fig:bandstruktur} angedeutet wird.
 \\
 Bei leitenden Stoffen sind unmittelbar über den bereits besetzten Zuständen noch erlaubte Energieniveaus frei. Somit tragen diese ohne weiteres zur elektrischen Leitfähigkeit bei.
 Dies kann beispielweise durch eine Überlappung von Valenzband und Leitungsband oder einem nicht voll besetztem Valenzband entstehen.
@@ -24,7 +24,7 @@ Dies kann beispielweise durch eine Überlappung von Valenzband und Leitungsband 
 Halbleiter und Isolatoren besitzen eine Bandlücke zwischen Valenz- und Leitungsband wodurch die Valenzelektronen eine gewisse Energie von außen benötigen bevor sie in das Leitungsband gelangen können.
 Zusätzlich ist das Valenzband voll gefüllt und trägt nicht zur Leitfähigkeit bei. Der Unterschied zwischen Halbleiter und Isolator besteht in der Größenordnung der Bandlücke. 
 Isolatoren besitzen ohne Verunreinigungen Bandlücken von mehreren Elektronenvolt Größenordnung. Diese Energie kann bei Normalbedingungen also beispielsweise einer Raumtemperatur von $\SI{300}{\kelvin}$ 
-nicht aufgebracht werden. Bei Halbleiter ist diese Bandlücke meist klein genug, um auch bei Raumtemperatur schon elektrisch leitend zu sein. 
+nicht aufgebracht werden. Bei Halbleitern ist diese Bandlücke meist klein genug, um auch bei Raumtemperatur schon elektrisch leitend zu sein. 
 Wenn dies nicht der Fall ist, oder die Leitfähigkeit angepasst werden soll, kann der Halbleiter dotiert werden.
 \begin{figure}
     \centering
@@ -52,7 +52,7 @@ die Dispersionsrelation
 E(\vec{k}) = \frac{\hbar^2 \vec{k}^2}{2m}
 \end{equation*}
 bekannt ist. Damit diese Beziehung auch für quasifreie Teilchen gilt, muss die Masse angepasst werden. Bezeichnet wird diese
-als effektive Masse $m^*$. Diese lässt sich durch die doppelte Ableitung aus der Energie extrahieren. Für ein eindimensionales Gitter mit ist dies leicht, da
+als effektive Masse $m^*$. Diese lässt sich durch die doppelte Ableitung aus der Energie extrahieren. Für ein eindimensionales Gitter ist dies leicht, da
 sich die Wellenzahl auf einen Skalar reduziert und es ergibt sich
 \begin{equation*}
 m^* = \hbar^2 \left( \frac{\partial^2 E(k)}{\partial k^2} \right)^{-1}.
@@ -71,10 +71,12 @@ Im folgenden wird erläutert wie sich dies durch Superposition von links- und re
 \\
 Eine zirkualare Welle beschreibt eine in transversal zur Propagationsrichtung schwingende Welle. Wobei eine Komponente um $\pm \pi$/2 phasenverschoben ist.
 Daraus ergeben sich folgende Darstellungsmöglichkeiten für links- und rechtszirkulare Wellen
-\begin{align*}
+\begin{align}
+    \label{eqn:crying1}
 E_l &= (E_0 \hat{x} + i E_0 \hat{y}) e^{ik_l z}, \\
+    \label{eqn:crying2}
 E_r &= (E_0 \hat{x} - i E_0 \hat{y}) e^{ik_r z}.
-\end{align*}
+\end{align}
 Hier wurde als mögliche Ausbreitungsrichtung die $z$-Richtung gewählt. Leicht zu erkennen ist, dass bei gleicher Phasengeschwindigkeit, also gleicher Wellenzahl $k_r = k_l$, bei Superposition eine lineare Welle entsteht.
 Es lässt sich also schreiben
 \begin{equation*}
@@ -94,11 +96,12 @@ Darauf aufbauend lässt sich nun eine makroskopische Erklärung finden.
 In einem Festkörper wird die zirkulare Doppelbrechung durch viele elektrische Dipolmomente hervorgerufen. Diese bilden sich zwischen den Bandelektronen
 und den Gitteratomen durch der in dem Festkörper propagierenden Welle aus.
 Die makroskopische Polarisation eines Kristalls beschreibt die Summer aller Dipolmomente pro Volumeneinheit und lässt sich beschreiben durch
-\begin{equation*}
+\begin{equation}
+    \label{eqn:ayoo}
 \vec{P} = \epsilon_0 \chi \vec{E}.
-\end{equation*}
+\end{equation}
 Dabei beschreibt das $\chi$ die dielektrische Suszeptibilität und sie hängt maßgeblich von dem vorliegenden Kristall, nicht nur im Wert, sondern auch in der Form ab.
-Bei einem isotropen Kristall reduziert sich die Suszeptibilität auf ein Skalar. Im Allgemeinen ist diese aber ein Tensor, wodurch sich die Gleichung ... auch in Matrixschreibweise formulieren lässt
+Bei einem isotropen Kristall reduziert sich die Suszeptibilität auf ein Skalar. Im Allgemeinen ist diese aber ein Tensor, wodurch sich die Gleichung \ref{eqn:ayoo} auch in Matrixschreibweise formulieren lässt
 \begin{equation*}
 \begin{pmatrix}
 P_x \\
@@ -123,13 +126,14 @@ Dabei gilt
 \vec{D} = \epsilon_o \vec{E} + \vec{P}.
 \end{equation*}
 Für einen Ansatz der dielektrischen Suszeptibilität kann die Wellengleichung nun gelöst werden und es zeigt sich, dass dieser Ansatz
-\begin{equation*}
+\begin{equation}
+    \label{eqn:lolwtf}
     \tilde{\chi} = \begin{pmatrix}
         \chi_{xx} & i\chi_{xy} & 0 \\
         -i\chi_{xy} & \chi_{xx} & 0 \\
         0 & 0 & \chi_{zz}
         \end{pmatrix}
-\end{equation*}
+\end{equation}
 die Transversalität der Welle wahrt und zwei Lösungen mit
 \begin{align*}
     k_+ &= \frac{\omega}{c} \sqrt{(1+\chi_{xx})+ \chi_{xy}} \quad \to \quad v_{\text{ph,r}} = \frac{c}{\sqrt{(1+\chi_{xx})+ \chi_{xy}}}, \\
@@ -138,10 +142,10 @@ die Transversalität der Welle wahrt und zwei Lösungen mit
 liefert. Daraus folgt also, dass die Lösungen verschiedene Phasengeschwindigkeiten haben.
 Außerdem entstehen die folgenden Zusammenhänge der Feldkomponenten
 \begin{equation*}
-    E_x = i E_y \quad \text{für } k_+ \quad \quad E_x = -i E_y \quad \text{für } k_-
+    E_x = i E_y \quad \text{für } k_+{,} \quad \quad E_x = -i E_y \quad \text{für } k_-{.}
 \end{equation*}
-Diese weisen die gleiche Form auf, wie die in Gleichung ... und da die Wellengleichung stets linear ist, ist auch eine Superposition der $k_+$ und $k_-$ Lösungen 
-eine Lösung der Gleichung. Gezeigt wurde also, dass es bei einem Festörper mit einer dielektrischen Suszeptibilität der Form ...., zu einer Drehung der Polarisationsrichtung
+Diese weisen die gleiche Form auf, wie die in Gleichung \eqref{eqn:crying1} und \eqref{eqn:crying2}, da die Wellengleichung stets linear ist, ist auch eine Superposition der $k_+$ und $k_-$ Lösungen 
+eine Lösung der Gleichung. Gezeigt wurde also, dass es bei einem Festörper mit einer dielektrischen Suszeptibilität der Form \eqref{eqn:lolwtf}, zu einer Drehung der Polarisationsrichtung
 kommt.
 
 \subsection{Faraday-Effekt}
@@ -181,7 +185,7 @@ Ein möglicher Ansatz sieht folgendermaßen aus
         0 & 0 & \chi_{zz}
         \end{pmatrix}.
 \end{equation*}
-Die Lösung der Differentialgleichung liefert die Bedingung $\chi_{xy} = -\chi_{yx}$, wodurch dieselbe Form wie in ... hergestellt wurde.
+Die Lösung der Differentialgleichung liefert die Bedingung $\chi_{xy} = -\chi_{yx}$, wodurch dieselbe Form wie in \eqref{eqn:lolwtf} hergestellt wurde.
 Diese durch das B-Feld entstehende Drehung der Polarisationsrichtung wird Faraday-Effekt genannt.
 Der Drehwinkel ergibt sich zu
 \begin{equation}

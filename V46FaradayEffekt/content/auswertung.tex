@@ -3,12 +3,12 @@
 Die Auswertung ist in zwei Abschnitte unterteilt, die einmal auf die Messung des Magnetfelds eingeht und zum 
 anderen die Bestimmung der effektiven Masse nach \eqref{eqn:wichtig} durchführt. 
 \subsection{Bestimmung des magnetischen Feld}
-Die Messdaten der Kraftflussdichte vom angelegten, magnetischen Feld sind in Abbildung \ref{fig:mag}
+Die Messdaten der Kraftflussdichte vom angelegten magnetischen Feld sind in Abbildung \ref{fig:mag}
 bei entsprechender Entfernung zur Probeleerstelle aufgetragen.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
-    \caption{In der Abbildung sind die Messwerte aus der Bestimmung des magnetischen Feldes aufegtragen. 
+    \caption{In der Abbildung sind die Messwerte aus der Bestimmung des magnetischen Feldes aufgetragen. 
             Deutlich zu sehen ist ein Plateau um die Probenleerstelle herum. Es lässt sich also annehmen, dass
             um die Probe ein annähernd konstantes Feld anliegt.}
     \label{fig:mag}
@@ -39,13 +39,12 @@ jeweils gegen das Quadrat der, durch den Filter, erlaubten Wellenlänge aufgetra
     \caption{Messwerte der Faraday-Rotationswinkel für die drei unterschiedlichen Proben. }
     \label{fig:maf2}
 \end{figure}
-
 Die gleichen Filter wurden bei jeder Probe verwendet, weswegen es sich nicht anbietet die Werte durch eine \enquote{Fit} zu modellieren.
 Sie können also direkt, um die Differenz zu der undotierten Probe zu bekommen, voneinander abgezogen werden.
 \begin{equation}
 \theta_{\text{frei}} = \theta_{\text{dotiert}} - \theta_{\text{undotiert}}
 \end{equation}
-In der Tabelle \ref{tabelle} sind die Differenzen aufgelistet. Diese Winkel lassen sich nun wieder gegen $\lambda^2$ auftragen und eine lineare Regression
+In der Tabelle \ref{tab:diff} sind die Differenzen aufgelistet. Diese Winkel lassen sich nun wieder gegen $\lambda^2$ auftragen und eine lineare Regression
 der Form
 \begin{equation}
 \theta = a \lambda^2 + b
@@ -54,9 +53,9 @@ berechnen.
 Es ergeben sich die Parameter für die jeweilige Probe
 \begin{align*}
 a_{1} &= \SI{3.170(2308)e12}{\radian\per\meter\tothe{3}},\\
-b_{1} &= \SI{16.228(10106)}{\radian}, \\
+b_{1} &= \SI{16.228(10106)}{\radian\per\meter}, \\
 a_{2} &= \SI{4.381(2326)e12}{\radian\per\meter\tothe{3}},\\
-b_{2} &= \SI{34.951(10187)}{\radian}, \\
+b_{2} &= \SI{34.951(10187)}{\radian\per\meter}, \\
 \end{align*}
 Die Messwerte, inklusive Ausgleichsgerade sind in den Abbildungen \ref{plt1} und \ref{plt2} für die jeweiligen Dotierungen angegeben.
 \begin{figure}
@@ -78,6 +77,6 @@ m^{*} = \sqrt{\frac{e^3 NB}{8 \pi^2 \epsilon_0 c^3 n a}}.
 \end{equation}
 Unter Verwendung des Literaturwerts für den Brechungsindex der Galliumarsenidprobe \cite{GaAs}, sowie den Dotierungen $N$ und dem gemessenen B-Feld, ergibt sich
 \begin{align}
-m_1^{*} &= \SI{9.335(3398)e-32}{\kilo\gram} \quad \hat{=} \SI{0.10(4)}{}m_e,\\
-m_2^{*} &= \SI{1.265(336)e-31}{\kilo\gram} \quad \hat{=} \SI{0.14(4)}{}m_e.
+m_1^{*} &= \SI{9.335(3398)e-32}{\kilo\gram} \quad \hat{=} (\SI{0.10(4)}{})m_e,\\
+m_2^{*} &= \SI{1.265(336)e-31}{\kilo\gram} \quad \hat{=} (\SI{0.14(4)}{})m_e.
 \end{align}
