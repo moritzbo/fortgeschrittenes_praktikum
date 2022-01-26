@@ -4,12 +4,19 @@ Ziel des Versuches ist die Untersuchung mehrerer Materialzusammensetzungen von W
 \section{Theoretische Grundlagen}
 
 \subsection{Caesium als Gammastrahler}
-Unter dem Begriff Gammastrahlung $\gamma$ ist im allgemeinen eine elektromagnetische Strahlung mit Energien über $\SI{200}{\kilo\electronvolt}$ gemeint. 
+Unter dem Begriff Gammastrahlung $\gamma$ ist im Allgemeinen eine elektromagnetische Strahlung mit Energien über $\SI{200}{\kilo\electronvolt}$ gemeint. 
 Die Wechselwirkungsmöglichkeiten dieser Strahlung mit Materie werden im folgenden diskutiert. Als Strahlungsquelle bieten sich einige Möglichkeiten, wie hochenergetische Röntgenröhren, oder radioaktive Isotope, an. 
-In diesem Fall wird Caesium 137 (\ce{^{137}_{55}Cs}) verwendet. Das Zerfallsschema einer \ce{^{137}_{55}Cs}-Quelle ist dabei in Abbildung ... aufgezeigt. Zu erkennen ist ein anfänglicher $\beta^{-}$-Zerfall in einen Bariumzustand. 
-Diese beiden Prozesse mitteln sich zu einer Halbwertszeit von $\tau_{1\text{/}2} = $. Der deutlich wahrscheinlichere Zerfall geht über einen angeregten Bariumzustand \ce{^{137m}_{56}Ba}. 
-Dieser fällt jedoch mit einer kurzen Halbwertszeit von $\tau_{1\text{/}2} = $ in den stabilen Bariumzustand und gibt dabei eine charakterische Gammastrahlung ab. 
-Diese Energie stellt den Peak des Energiespektrums von \ce{^{137}_{55}Cs} dar. Aufgrund der langen Halbwertszeit von \ce{^{137}_{55}Cs} handelt es sich um einen Dauerstrahler.
+In diesem Fall wird Caesium 137 (\ce{^{137}_{55}Cs}) verwendet. Das Zerfallsschema einer \ce{^{137}_{55}Cs}-Quelle ist dabei in Abbildung \ref{fig:decay} aufgezeigt.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{bilder/decay.png}
+    \caption{Zerfallsschema von Caesium 137 nach \cite{decay}.}
+    \label{fig:decay}
+\end{figure}
+Zu erkennen ist ein anfänglicher $\beta^{-}$-Zerfall in einen Bariumzustand. 
+Diese beiden Prozesse mitteln sich zu einer Halbwertszeit von $\tau_{1\text{/}2} = 30.07 \text{ Jahren}$. Der deutlich wahrscheinlichere Zerfall geht über einen angeregten Bariumzustand \ce{^{137m}_{56}Ba}. 
+Dieser fällt jedoch mit einer kurzen Halbwertszeit von $\tau_{1\text{/}2} = \SI{153}{\second}$ in den stabilen Bariumzustand und gibt dabei eine charakterische Gammastrahlung ab. 
+Diese Energie von $E = \SI{661.7}{\kilo\electronvolt}$ stellt den Peak des Energiespektrums von \ce{^{137}_{55}Cs} dar. Aufgrund der langen Halbwertszeit von \ce{^{137}_{55}Cs} handelt es sich um einen Dauerstrahler.
 \subsection{Wechselwirkung von Gammastrahlung mit Materie}
 Wenn Strahlung jeglicher Art auf ein Medium einfällt, gibt es viele wichtige Faktoren, die die Wechselwirkung mit dem Stoff bestimmen. 
 Ein wichtiger Faktor stellt die Art von Strahlung dar. Oft wird hier zu erst zwischen direkt und indirekt ionisierender Strahlung unterschieden. 
@@ -37,8 +44,9 @@ Der Energieübertrag auf das Elektron lässt sich dabei durch geometrische Betra
     \increment \lambda = \frac{h}{m_e c} (1 - \text{cos}(\theta)),
 \end{equation}
 wobei $\theta$ den Winkel zwischen ein- und ausfallendem Photon darstellt. 
-Wichtig ist, dass durch diesen Effekt mehrere Dinge passieren. Zum einen wird hier das Photon nicht vollständig aufgenommen, sondern nur um einen Energiebruchteil verringert und in eine Richtung $\theta$ gestreut. 
+Wichtig ist, dass durch diesen Effekt neue Phänomene entstehen. Zum einen wird hier das Photon nicht vollständig aufgenommen, sondern nur um einen Energiebruchteil verringert und in eine Richtung $\theta$ gestreut. 
 Dies wird sich auch durch eine erhöhte Zählrate niedirger Energien beim Einsetzen möglicher Streuobjekte in den Strahlengang zeigen. Die Winkelverteilungen und Häufigkeiten lassen sich über den Klein-Nishina-Wirkungsquerschnitt ermitteln. 
+In dem Energiebereich der Gammastrahlung kommt es bereits vermehrt zum Comptoneffekt, deshalb ist dieser in dem Versuch ein auschlaggebender Prozess.
 \subsection{Tomographie}
 Unter der Tomographie versteht sich ein bildgebendes Verfahren, welches ein Gesamtbild aus einzelnen Schnittbildern konstruieren kann. Gemessen wird hierbei
 lediglich eine Intensitätsveränderung vor- und hinter dem abzubildendem System. 
