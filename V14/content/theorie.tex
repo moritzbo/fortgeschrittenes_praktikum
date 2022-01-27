@@ -80,8 +80,8 @@ In dem Energiebereich der Gammastrahlung kommt es bereits vermehrt zum Comptonef
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{bilder/paarbildung.pdf}
-        \label{fig:lol1}
         \caption{Paarbildung.}
+        \label{fig:lol1}
     \end{minipage}
     \end{figure}
 
@@ -134,3 +134,39 @@ Dies lässt sich schreiben als
 \begin{equation}
 \vec{\mu} = (A^{\text{T}}A)^{-1} A^{\text{T}} \vec{I}.
 \end{equation}
+Der zu untersuchende Block hat die folgende Auslegung.
+\begin{table}
+    \centering
+    \caption*{} 
+    \label{tab:3}
+    \begin{tabular}{c | c | c}
+        $\mu_1$ & $\mu_2$ & $\mu_3$ \\
+        \midrule
+        $\mu_4$ & $\mu_5$ & $\mu_6$  \\
+        \midrule
+        $\mu_7$ & $\mu_8$ & $\mu_9$  \\
+    \end{tabular}
+\end{table}
+\begin{flushleft}
+Für die Bestimmung aller Absorptionskonstanten wird die Matrix 
+\end{flushleft}
+\begin{equation}
+A = 
+\begin{pmatrix}
+    1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+    0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 \\
+    \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
+    0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 \\
+    0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
+    1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 \\
+    0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+    0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix}
+\end{equation}
+\begin{flushleft}
+gewählt. Sie ist mit der Dimension $12 \times 9$ überbestimmt und die einzelnen Messrichtungen sind festgelegt.
+\end{flushleft}
