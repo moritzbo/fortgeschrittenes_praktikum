@@ -1,5 +1,5 @@
 \section{Aufbau}
-Der Aufbau wird aufgeteilt in drei verschiedene Elemente. Zum einen die Quelle, wobei hier $^137\text{Cs}$ verwendet wurde, 
+Der Aufbau wird aufgeteilt in drei verschiedene Elemente. Zum einen die Quelle, wobei hier $^{137}\text{Cs}$ verwendet wurde, 
 zum anderen das zu durchleuchtende Objekt und letzlich den Detektoraufbau. 
 Die Quelle selbst wird aus Strahlenschutzgründen von Blei umgeben wobei eine kleine Öffnung dem Strahl erlaubt zum Detekor zu gelangen.
 Als Target werden in dem Versuch mehrere Würfel gewählt, mit der Dimension von $\SI{3}{\centi\meter}$ x $\SI{3}{\centi\meter}$ x $\SI{3}{\centi\meter}$,
@@ -24,10 +24,25 @@ der Energie nach einem \enquote{Channel} zugewiesen und jeder weitere Einfall mi
 \section{Durchführung}
 Zu Beginn wird Aufschluss über die Absorptionskoeffizienten der drei Materialen gewonnen. 
 Dafür werden die Würfel 1 bis 3 auf der Montur in den Strahlengang gelegt, sodass, sollten Elemantarwürfel enthalten sein, jeweils eine Zeile solcher elementaren Würfel 
-durchstrahlt wird. Das Programm am PC wird nun gestartet und msist für $\SI{300}{\second}$ die Einfallende Strahlung am Detekor. Drei Messreihen pro Würfel, also jede Zeile einmal, geben genug Aufschluss über den anschließend gemittelten Absorptionskoeffizienten.
+durchstrahlt wird. Das Programm am PC wird nun gestartet und misst für $\SI{300}{\second}$ die Einfallende Strahlung am Detekor. Drei Messreihen pro Würfel, also jede Zeile einmal, geben genug Aufschluss über den anschließend gemittelten Absorptionskoeffizienten.
 Final wird der Würfel mit Nummer 4 durchleuchtet. Hier ist das Material nicht homogen, es kommt also stark auf die Ausrichtung zum Strahl an, welche Stärke
 die Abschwäschung hat. Es folgen 12 Messungen, beginnend mit dem abfahren der drei Zeilen wie davor auch. Anschließend wird der Würfel um 
 $\frac{\pi}{4}$ wahlweise nach links oder rechts gedreht, wobei die Richtung bei der Auswertung sehrwohl eine Rolle spielt.
-Nun soll der Strahlengang genau so ausgreichtet werden, dass eben zwei dann drei und wieder zwei unterschiedliche ELementarwüfel bei gleichbleibender Drehung
+Nun soll der Strahlengang genau so ausgreichtet werden, dass eben zwei dann drei und wieder zwei unterschiedliche Elementarwüfel bei gleichbleibender Drehung
 durchleuchtet werden. Nach erneuter Rotation um $\frac{\pi}{4}$ in die gleiche Richtung wie zuvor wiederholt sich der Schritt um 
 allen 12 Messreihen nachzukommen.
+
+\section{Messwerte}
+Für die Auswertung von Bedeutung ist nicht das komplette Spektrum der Strahlung, sondern es genügt sich die maximal auftretende Energie mit enstprechendem
+Channel über den Versuch hinweg anzuschauen. Bei etwaiger Absorption durch Würfel im Strahlengang darf sich so die Verteilung nicht verschieben, sondern 
+nur die Amplitude, die hier durch Counts dargestellt ist, verringern.
+Um Festzustellen welcher Channal sich eignet wird eine Messreihe ohne Würfel gestartet wobei ein deutliches Maximum  an Counts bei dem Kanal 157 gefunden wurde.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{bilder/test.png}
+    \caption{Die Abbildung zeigt einen Aufbau um durch Tomographie Aufschluss über den Inhalt eines Würfels, gefüllt mit Elementarwürfeln zu bekommen.
+    Links im Bild strahlt eine bleiverdeckte Quelle auf den zentrierten Würfel. Rechts im Bild ist ein Detekor zu sehen. \cite{skript}}
+    \label{fig:1}
+\end{figure}
