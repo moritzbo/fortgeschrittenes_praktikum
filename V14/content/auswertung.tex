@@ -1,7 +1,7 @@
 \section{Auswertung}
 Kern der Auswertung ist die Bestimmung der Absorptionskoeffizienten und damit die Deutung der einzelnen Elementarwürfel aus Würfel 4.
 Dafür wird in den ersten Schritten Aufschluss über die ersten drei Würfel durch Mittellung der eindeutigen Absorptionskoeffizienten erlangt. 
-In passender Literatur \cite{...} finden sich Referenzwerte dieser Koeffizienten wodurch sich die hier verwendeten Materialien finden lassen.  
+In passender Literatur \cite{wqs} finden sich Referenzwerte dieser Koeffizienten wodurch sich die hier verwendeten Materialien finden lassen.  
 Folglich wird die Auswertung in vier Teile aufgebaut, die sich jeweils mit einem Würfel befasst. 
 
 \subsection{Würfel 1-3}
@@ -9,19 +9,19 @@ Die Messreihen für den ersten Würfel dienen, da dieser nur aus einer Ummantelu
 für die Intensität $I_0$. Da alle nachfolgenden Würfel ebenfalls aus dieser Ummantelung bestehen bleibt dieser $I_0$-Wert für alle Messungen gleich. Bei der Bestimmung des Absorptionskoeffizienten für die Alluminiumhülle
 wird die Intensität ohne Würfel als $I_0$ verwendet. 
 Die Strecke die der Strahl durch das Material bewältigen muss ist die doppelte Dicke der Ummandlung also
-\begin{equation}
+\begin{equation*}
     \increment x = \SI{2}{\milli\meter}.
-\end{equation}
+\end{equation*}
 Die Gleichung \eqref{eqn:hierlol} reduziert sich für die ersten drei Würfel in einen Term. Dieser lässt sich schreiben als
-\begin{equation}
+\begin{equation*}
 \mu = - \text{ln} \left( \frac{I(\increment x)}{I_0} \right) \frac{1}{\increment x}.
-\end{equation}
+\end{equation*}
 Mit den gemessenen Zählraten aus Tabelle \ref{tab:1} lassen sich nun die Absorptionskoeffizienten bestimmen. Diese ergeben sich zu
-\begin{align}
+\begin{align*}
 \mu_{\text{Würfel 1}} &= \SI{0.270(60)}{\per\centi\meter},\\
 \mu_{\text{Würfel 2}} &= \SI{0.055(4)}{\per\centi\meter},\\
 \mu_{\text{Würfel 3}} &= \SI{1.080(90)}{\per\centi\meter}. 
-\end{align}
+\end{align*}
 \subsection{Würfel 4}
 Für diesen Würfel wird die Matrix $A$ aus Gleichung \eqref{eqn:lul} verwendet. Außerdem kann bereits über Matrizenrechungen der Term $x = (A^{\text{T}}A)^{-1} A^{\text{T}}$ berechnet werden. Dieser ergibt sich zu
 \setcounter{MaxMatrixCols}{20}
@@ -41,7 +41,7 @@ Für diesen Würfel wird die Matrix $A$ aus Gleichung \eqref{eqn:lul} verwendet.
 \end{equation*}
 Die Messungen der Intensitäten entlang der Projektionen des Würfels, die an der Matrix $A$ von oben nach unten schauend ersichtlich sind, stehen in der Tabelle \ref{tab:1}. 
 Sie werden, wie nach der rechten Seite von Gleichung \eqref{eqn:hierlol} ersichtlich, mit dem Logarithmus und der Intensität $I_0$ modifiziert. Es ergibt sich somit der Vektor
-\begin{equation}
+\begin{equation*}
 \vec{I} = 
 \begin{pmatrix}
     \SI{1.296(31)}{} \\ 
@@ -57,9 +57,9 @@ Sie werden, wie nach der rechten Seite von Gleichung \eqref{eqn:hierlol} ersicht
     \SI{1.762(38)}{} \\ 
     \SI{1.596(35)}{} \\ 
 \end{pmatrix}.
-\end{equation}
+\end{equation*}
 Aus Matrixmultiplikation der beiden folgt nun 
-\begin{equation}
+\begin{equation*}
 \vec{\mu} = 
 \begin{pmatrix}
     \SI{0.075(30)}{\per\centi\meter} \\ 
@@ -72,7 +72,8 @@ Aus Matrixmultiplikation der beiden folgt nun
     \SI{1.046(28)}{\per\centi\meter} \\ 
     \SI{0.118(42)}{\per\centi\meter} \\ 
 \end{pmatrix}.
-\end{equation}
+\end{equation*}
+Die Zuordnungen der Absorptionskoeffizienten sind in der folgenden Tabelle \ref{tab:wurfel4} eingetragen.
 \begin{table}
     \centering
     \caption{Absorptionskoeffizienten und Zuordnungen des zusammengesetzten Würfels.}
@@ -80,17 +81,17 @@ Aus Matrixmultiplikation der beiden folgt nun
     \begin{tabular}{c c c c c}
       \toprule
       {Index} & $\mu$ [$\si{\per\centi\meter}$] & {Material}
-                & Literatur & Abweichung\\
+                & Literatur & Abweichung [$\SI{}{\percent}$]\\
       \midrule
-       1 & $\SI{0.075(30)}{}$ & Holz  & 0.02 & 19  \\
-       2 & $\SI{1.110(29)}{}$ & Blei  &   0.02& 81  \\
-       3 & $\SI{0.064(35)}{}$ & Holz  &   0.02& 90  \\
-       4 & $\SI{0.024(39)}{}$ & Holz  & 0.02 & 14  \\
-       5 & $\SI{1.095(28)}{}$ & Blei  &   0.02& 91  \\
-       6 & $\SI{0.032(41)}{}$ & Holz  &   0.02& 78  \\
-       7 & $\SI{0.116(42)}{}$ & Holz  & 0.02 &  3  \\
-       8 & $\SI{1.046(28)}{}$ & Blei  & 0.02 & 18  \\
-       9 & $\SI{0.118(42)}{}$ & Holz  & 0.02 & 10  \\
+       1 & $\SI{0.075(30)}{}$ & Holz  & 0,052 & 40.0  \\
+       2 & $\SI{1.110(29)}{}$ & Blei  & 1,174 & 5.5  \\
+       3 & $\SI{0.064(35)}{}$ & Holz  & 0,052 & 20.0  \\
+       4 & $\SI{0.024(39)}{}$ & Holz  & 0,052 & 50.0  \\
+       5 & $\SI{1.095(28)}{}$ & Blei  & 1,174 & 6.7  \\
+       6 & $\SI{0.032(41)}{}$ & Holz  & 0,052 & 40.0  \\
+       7 & $\SI{0.116(42)}{}$ & Holz  & 0,052 &  120.0  \\
+       8 & $\SI{1.046(28)}{}$ & Blei  & 1,174 & 10.9  \\
+       9 & $\SI{0.118(42)}{}$ & Holz  & 0,052 & 130.0  \\
       \bottomrule
     \end{tabular}
 \end{table}
