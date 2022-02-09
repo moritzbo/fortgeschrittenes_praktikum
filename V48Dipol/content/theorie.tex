@@ -1,5 +1,5 @@
 \section{Zielsetzung}
-In diesem Versuch geht es um die Bestimmung der Relaxationszeit $\tau_0$ einer strontiumdotierten Kaliumbromitprobe in Abgängigkeit von der Temperatur. Ebenfalls wird die charakteristische Aktivierungsenergie $W$ für die Diffusion der Leerstellen
+In diesem Versuch geht es um die Bestimmung der Relaxationszeit $\tau_0$ einer strontiumdotierten Kaliumbromitprobe in Abgängigkeit von der Temperatur. Ebenfalls wird die charakteristische Relaxationszeit und stoffspezifische Aktivierungsenergie $W$ für die Diffusion der Leerstellen
 untersucht.
 
 \section{Theoretische Grundlagen}
@@ -8,7 +8,7 @@ Im Folgenden werden die theoretischen Prinzipien von Polarisationen in Ionenkris
 
 \subsection{Ionenkristalle}
 Ionenkristalle beschreiben die periodische Anordnung von verschieden geladenen Atomen (Ionen). Diese sind auf Grund ihrer unterschiedlichen Ladungsvorzeichen vor allem über eine Ionenbindung 
-gebunden. Ein idealer Kristall besitzt lokal sowie makroskopisch eine Ladungsneutralität, da die Gesamtbindungsenergie so maximiert wird. In einem reellen Kristall kommt es allerdings in den meisten Fällen auf Grund von 
+gebunden. Ein idealer Kristall besitzt lokal sowie makroskopisch eine Ladungsneutralität, da die Gesamtbindungsenergie so maximiert wird. In einem realen Kristall kommt es allerdings in den meisten Fällen auf Grund von 
 Unreinheiten durch Wechselwirkung mit der Umgebung,
 nur lokal zu Ladungsneutralen Konfigurationen, da die Coulombwechselwirkung vorallem bei kleinen Abständen von Bedeutung ist. Denn es gilt
 \begin{equation*}
@@ -16,7 +16,7 @@ F_{C} \propto \frac{1}{r^2}.
 \end{equation*}
 \newline
 Nun können ebenfalls weitere Stoffe in den Kristall eingebaut werden. Dieser Prozess wird als Dotierung bezeichnet und ist vor allem dann von Interesse, wenn die Eigenschaften des Kristalls 
-beinflusst werden wollen. Die Dotierung von Ionenkristallen mit einem weiteren Ion, welches eine andere Ladung im Vergleich zu den jeweils anderen Basisatomen in dem Kristall hat, sorgt für eine permanente Dipolausbildung.
+beinflusst werden sollen. Die Dotierung von Ionenkristallen mit einem weiteren Ion, welches eine andere Ladung im Vergleich zu den jeweils anderen Basisatomen in dem Kristall hat, sorgt für eine permanente Dipolausbildung.
 Ein Beispiel für eine solche Dipolbildung ist anhand einer strontiumdotierten Caesiumiodidkristallstruktur in Abbildung \ref{fig:theo1} angedeutet.
 \begin{figure}
     \centering
@@ -29,8 +29,7 @@ Das Dotierungsmaterial, sowie die Leerstelle, verdrängen hierbei die vorher vor
 sowohl Leerstelle, als auch Strontium, an die diskreten Gitterplätze gebunden. Es liegen somit nur diskrete Dipolmomente $\vec{P}$ vor.
 \\
 Bei Temperaturen unterhalb $T = \SI{500}{\celsius}$ bewegen sich hauptsächlich die Leerstellen durch den Kristall \cite{altskript}. Somit wird in diesem Versuch nur diese Art von Polarisation berücksichtigt.
-Damit es zur Umpolarisation kommt müssen die Leerstellen nun die periodischen Potentialschwellen überwinden können. Die benötigte Energie ist eine charakteristische Größe für die verwendete Probe und 
-sie wird Aktivierungsenergie $W$ bezeichnet.
+Damit es zur Umpolarisation kommt müssen die Leerstellen nun die periodischen Potentialschwellen überwinden können. Die benötigte Energie ist eine charakteristische Größe für die verwendete Probe und wird als Aktivierungsenergie $W$ bezeichnet.
 
 \subsection{Dipolrelaxation und Boltzmann-Statistik}
 In einem makroskopischen Kristall der zuvor genannten Art ist die Richtung der vorliegenden Dipole statistisch verteilt, wodurch sich im Mittel ohne äußere Einwirkung ein Gesamtdipolmoment
@@ -44,7 +43,7 @@ P_n \propto e^{- E_n / k_{B}\text{T}}.
 \end{equation*}
 Interessant wird es bei Energien $E_n \geq W$, dann haben die Leerstellen genügend Energie um sich im Raum zu bewegen.
 \\
-Die Relaxationszeit beschreibt nun die Zeit $\tau_0$ zwischen der ersten Umpolarisation des Dipols und der Rückkehr an seine ursprünglichen Stelle.
+Die Relaxationszeit beschreibt nun die Zeit $\tau_0$ zwischen der Umpolarisation des Dipols und der Rückkehr an seine ursprünglichen Stelle.
 Somit lässt sich für die Relaxationszeit die folgende Proportionalität erwarten
 \begin{equation}
     \label{eqn:lol1}
@@ -96,7 +95,7 @@ Für kleine Temperaturen $\text{T} \approx \text{T}_0$ folgt daraus
     \label{eqn:theo5}
     \int^{\text{T}}_{\text{T}_0}  \text{exp} \left( - \frac{\text{W}}{\text{k}_{\text{B}}\text{T'}} \right) \text{dT'} \approx 0 \quad \to \quad j \left( \text{T} \right) \approx \frac{\text{p}^2 \text{E}}{3\text{k}_{\text{b}}\text{T}_{\text{p}}} \frac{\text{N}_{\text{p}}}{\tau_0} \text{exp} \left(-\frac{\text{W}}{\text{k}_{\text{b}}\text{T}} \right).
 \end{equation}
-Nun kann dieser Ausdruck logarithmiert werden uns es ergibt sich eine lineare Gleichung gegenüber reziproker Temperatur mit Steigung $W$. Es folgt also
+Nun kann dieser Ausdruck logarithmiert werden und es ergibt sich eine lineare Gleichung gegenüber reziproker Temperatur mit Steigung $-\frac{W}{k_{\text{B}}}$. Es folgt also
 \begin{equation}
     \label{eqn:theo6}
 \text{ln}(j(\text{T})) = - \frac{W}{k_{B}} \left( \frac{1}{\text{T}}\right) + \underbrace{\text{ln}\left( \frac{|\vec{P}|^2 |E| \text{N}_P}{3 k_B \text{T}_P \tau_0}\right)}_{:= \text{const}}.
@@ -110,7 +109,7 @@ proportional zur Anzahl der orientierten Dipole angenommen. Hierbei gilt nun wie
     \label{eqn:theo3}
 \frac{\text{d}P}{\text{d}t} = - \frac{P(t)}{\tau(\text{T}(t))}.
 \end{equation}
-Die Änderung der Polarisation führt nun zu einem Strom um den Querschnitt $F$, somit lässt sich schreiben
+Die Änderung der Polarisation führt nun zu einem Kreisstrom um den Querschnitt $F$, somit lässt sich schreiben
 \begin{equation}
     \label{eqn:theo2}
 I(t) = F \frac{\text{d}P}{\text{d}t}.
@@ -125,7 +124,7 @@ Unter Verwendung von Gleichung \eqref{eqn:lol1} und \eqref{eqn:theo3} folgt dara
     \label{eqn:idkwhat}
 \frac{W}{k_B \text{T}} = \text{ln} \left( \frac{\int_{\text{T}}^{\infty} I(\text{T'}) \text{dT'} }{I(\text{T}) \tau_0 b}\right).
 \end{equation}
-Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T^*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T^*) = 0$ gilt. Unter 
+Das Problem der oberen Integrationsgrenze lässt sich durch die Wahl einer Temperatur $T^*$ beheben, diese sollte dabei so groß gewählt werden, dass ab der Temperatur $I(T \geq T^*) = 0$ gilt, unter 
 Berücksichtigung von Untergrundraten.
 
 \subsection{Bestimmung der charakteristischen Relaxationszeit}
