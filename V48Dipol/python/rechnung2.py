@@ -49,9 +49,11 @@ print(f"{Wmean2/(1.602*10**(-19)):.4g}")
 
 
 theo = 4*10**(-14)
-abweichung1= (tau1mean-theo)/(tau1mean)*100
-abweichung2= (tau2mean-theo)/(tau2mean)*100
+abweichung1= (tau1mean-theo)/(theo)*100
+abweichung2= (tau2mean-theo)/(theo)*100
 
 print("########################")
-print(abweichung1)
-print(abweichung2)
+print(tau1mean)
+print(tau2mean)
+print(f"{abweichung1:.6}")
+print(f"{abweichung2:.6}")
